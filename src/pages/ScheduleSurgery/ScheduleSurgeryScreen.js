@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { useHistory } from 'react-router';
 import { SubNavBarComponent } from '../../components/layouts/layout1/subnavbar/SubNavBarComponent';
 
 import { ATQModal } from './ScheduleModals/ATQModal/ATQModal';
@@ -9,7 +8,7 @@ import { ListPricesModal } from './ScheduleModals/ListPricesModal/ListPricesModa
 import { MedicModal } from './ScheduleModals/MedicsModal/MedicModal';
 import { CgOpenCollective } from "react-icons/cg";
 import './sass/styles.sass';
-import { getClientsSuccess, getClientsToSchedule, getInstitutionsSucess, getInstitutionsToSchedule, getMedicsSucess, getMedicsToSchedule, getPatientsSuccess, getPatientsToSchedule, getPriceListSuccess, getPriceListToSchedule, setQuoteToSchedule } from '../../actions/scheduleSurgeryAction';
+import { getPriceListSuccess, getPriceListToSchedule, setQuoteToSchedule } from '../../actions/scheduleSurgeryAction';
 import { InstitutionModal } from './ScheduleModals/InstitutionModal/InstitutionModal';
 import { PatientModal } from './ScheduleModals/PatientModal/PatientModa';
 import { DateModal } from './ScheduleModals/DateModal/DateModal';
@@ -53,9 +52,9 @@ export const ScheduleSurgeryScreen = () => {
     const [openModal, setOpenModal] = useState(null);
     const [messageModal, setMessageModal] = useState(null);
     const [lastOpenModal, setLastOpenModal] = useState(null);
-    const [sendForm, setSendForm] = useState(null);
+    const [, setSendForm] = useState(null);
     const [typeSurgeryList, setTypeSurgeryList] = useState(null);
-    const [firstRender, setFirstRender] = useState(false);
+
     const [formValid, setFormValid] = useState(
         {
             TipoCirugia: null ,
@@ -86,17 +85,6 @@ export const ScheduleSurgeryScreen = () => {
         }
     }, [scheduleSurgery.listElementTypeSurgeryCompleted])
 
-   /*  useEffect(() => {
-        if(sendForm ){
-            handleValidForm();
-            if( firstRender === false ){
-                setFirstRender( true )
-            }else if( firstRender === true ){
-                handleNavigate();
-            }
-        }
-    }, [scheduleSurgery, firstRender, sendForm]); */
-
     const handleValidForm = () => {
         let formValidCopy = {...formValid};
         formValidCopy['TipoCirugia'] = !scheduleSurgery.MedicToSchedule
@@ -110,29 +98,6 @@ export const ScheduleSurgeryScreen = () => {
 
     const handleNavigate = () => {
         setSendForm( true );
-        /* if( firstRender ){
-            console.warn('por primera vez hace esto');
-            setFirstRender( `complete` );
-            if( Object.values(formValid).every(item => item === false ) ){
-                history.replace('/ProgramarCX/ScheduleSurgeryPreOrderView')
-            }else{
-                handleValidForm();
-                history.replace('/ProgramarCX/ScheduleSurgeryPreOrderView')
-
-            }
-        }else if(firstRender === `complete`){
-            if( Object.values(formValid).every(item => item === false ) ){
-                history.replace('/ProgramarCX/ScheduleSurgeryPreOrderView')
-            }else{
-                handleValidForm();
-                Swal.fire({
-                    icon: 'error',
-                    title: '',
-                    text: '¡No se han llenado los campos obligatorios!',
-                  })
-            }
-        } */
-
         handleValidForm();
         if( listElementTypeSurgeryCompleted && listElementTypeSurgeryCompleted.length === 0 && 
             listElementRequireMaterialSucces && listElementRequireMaterialSucces.every(el => el.MandatoryProductDeleted) && 
@@ -148,7 +113,6 @@ export const ScheduleSurgeryScreen = () => {
 
             if(item !== null){
                 if(item === true ){
-                    /* console.warn('encontro un formulario faltante') */
                         Swal.fire({
                         icon: 'error',
                         title: '',
@@ -159,7 +123,6 @@ export const ScheduleSurgeryScreen = () => {
                     history.replace('/ProgramarCX/ScheduleSurgeryPreOrderView')
                 }
             }else{
-                /* console.warn('encontro un formulario nulo') */
                 Swal.fire({
                     icon: 'error',
                     title: '',
@@ -169,22 +132,6 @@ export const ScheduleSurgeryScreen = () => {
             }
             });
         }
-        /*else{
-            console.warn('entro aca',formValid['TipoCirugia'])
-
-            history.replace('/ProgramarCX/TipoCirugia');
-        } */
-        /*  if( Object.values(formValid).some( item => !item ) ){
-            Swal.fire({
-            icon: 'error',
-            title: '',
-            text: '¡No se han completado algunos campos obligatorios!',
-          })
-          history.replace(`/ProgramarCX/CompletarCampos/${shortid.generate()}`)
-
-        }else if( Object.values(formValid).every( item =>  item === false ) ){
-            history.replace('/ProgramarCX/ScheduleSurgeryPreOrderView')
-        }  */
     }
 
     useEffect(() => {

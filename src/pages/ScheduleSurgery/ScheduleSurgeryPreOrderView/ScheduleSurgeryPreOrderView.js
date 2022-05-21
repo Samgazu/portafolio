@@ -11,7 +11,6 @@ import './sass/styless.scss';
 import Swal from 'sweetalert2';
 import shortid from 'shortid';
 import { PreRequerimentsComponent } from '../../../components/PreRequerimentsComponent/PreRequerimentsComponent';
-import { StoreHouseStockRigthIconografia } from '../../../components/StoreHouseComponents/StoreHouseStockComponent/StoreHouseStockRigthIconografia';
 
 export const ScheduleSurgeryPreOrderView = () => {
     
@@ -107,7 +106,6 @@ export const ScheduleSurgeryPreOrderView = () => {
 
                 </section>
                 <section className='schedulePreOrder-section-rigth'>
-                <StoreHouseStockRigthIconografia />
                 {
                     surgeryList &&
                     surgeryList.length > 0 &&

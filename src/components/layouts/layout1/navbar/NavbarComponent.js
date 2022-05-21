@@ -15,23 +15,15 @@ import { resetToInitialStateQuote } from '../../../../actions/newQuoteAction';
 import { resetToInitialState } from '../../../../actions/systemsAction';
 import { ChatComponent } from '../../../ChatComponent/ChatComponent';
 import { useState } from 'react';
-import { NotificationComponent } from '../../../NotificationComponent/NotificationComponent';
 import { setStateNewNotification } from '../../../../actions/notification-chatAction';
-
-
 
 export const NavbarComponent = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const [openElement, setOpenElement] = useState(false);
-    const [openNotification, setOpenNotification] = useState(false);
     const stateNewNotification = useSelector((state) => state.notificationChat.stateNewNotification);
 
-
     const handleLogout = () => {
-
-    
-
         dispatch(userLogout());
         dispatch(resetToInitialStateQuote());
         dispatch(resetToInitialState());
@@ -41,9 +33,6 @@ export const NavbarComponent = () => {
     const handleChangeSideBarActive = () => {
         dispatch(initialSideActive());
     }
-
-
-
 
     return (
         <nav className='c-navbar'>
@@ -75,7 +64,6 @@ export const NavbarComponent = () => {
                     <img className='tools-logo-img tools-logo-Notificaciones-img' src={icoNotificacionesBlanco} alt="" />
                 </button>
 
-
                 <button className='tools-logo tools-logo-Ajustes'>
                     <img className='tools-logo-img tools-logo-Ajustes-img' src={icoAjustesBlanco} alt="" />
                 </button>
@@ -89,10 +77,6 @@ export const NavbarComponent = () => {
             {
                 openElement.status && openElement.typeElement === 'CHAT' &&
                 <ChatComponent />
-            }
-            {
-                openElement.status && openElement.typeElement === 'NOTIFICATION' &&
-                <NotificationComponent />
             }
 
             <SideBarComponent />

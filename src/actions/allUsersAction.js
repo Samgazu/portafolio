@@ -1,5 +1,4 @@
 import {
-
     SET_USER_ROL_SELECTED_BEGIN,
     SET_USER_ROL_SELECTED_SUCCESS,
     SET_USER_ROL_SELECTED_FAILURE,
@@ -712,7 +711,7 @@ export function removeUserSpecificProductGroup( deleteItems ) {
             }
         })
         .then(response => response.json())
-        .then(data => {
+        .then(() => {
             dispatch(removeUserSpecificProductGroupSuccess(true));
         })
         .catch(err => {
@@ -778,7 +777,7 @@ export function deleteSpecificBundle( deleteItem ) {
             }
         })
         .then(response => response.json())
-        .then(data => {
+        .then(() => {
             dispatch(deleteSpecificBundleSuccess(true));
         })
         .catch(err => {
@@ -842,7 +841,7 @@ export function removeUserSpecificPricelist( deleteItem ) {
             body: {request: deleteItem}
         })
         .then(response => response.json())
-        .then(data => {
+        .then(() => {
             dispatch(removeUserSpecificPricelistSuccess(true));
         })
         .catch(err => {
@@ -875,10 +874,8 @@ export function getUserIdSelected( id=null, dataRol ) {
 
 export function getPatientsInUser( ) {
     
-    return function (dispatch, getState) {
+    return function (dispatch) {
         dispatch(getPatientsInUserBegin());
-        const userId = getState().allUsers.selectedUserId;
-        // AQUI VA LA PETICION DONDE SE TRAE LOS PATIENTS DEL USUARIO CON EL ID userID
         const patients = [
             {
                 id: 1,
@@ -909,10 +906,8 @@ export function getPatientsInUser( ) {
 
 export function getProcessesInUser( ) {
     
-    return function (dispatch, getState) {
+    return function (dispatch) {
         dispatch(getProcessesInUserBegin());
-        const userId = getState().allUsers.selectedUserId;
-        // AQUI VA LA PETICION DONDE SE TRAE LOS PROCESOS DEL USUARIO CON EL ID userID
         const processes = [
             {
                 id: 1,
@@ -1663,14 +1658,10 @@ export function getProcessesInUser( ) {
     }
 }
 
-// GET STATES IN PROCESSES
-
 export function getStatesInProcesses( ) {
     
-    return function (dispatch, getState) {
+    return function (dispatch) {
         dispatch(getStatesInProcessesBegin());
-        const userId = getState().allUsers.selectedUserId;
-        // AQUI VA LA PETICION DONDE SE TRAE LOS STATES DE LOS PROCESOS DEL USUARIO CON UN ROL ESPECIFICO
         const states = [
             {
                 id: 1,
@@ -1697,15 +1688,10 @@ export function getStatesInProcesses( ) {
     }
 }
 
-// GET SURGERIES IN USER
-
 export function getSurgeriesInUser( ) {
     
-    return function (dispatch, getState) {
+    return function (dispatch) {
         dispatch(getSurgeriesBegin());
-        const userId = getState().allUsers.selectedUserId;
-        // AQUI VA LA PETICION DONDE SE TRAE LAS SURGERIES DEL USER CON EL userId
-        
         const surgeries = [
             {
                 id: 1,
@@ -1744,14 +1730,9 @@ export function getSurgeriesInUser( ) {
     }
 }
 
-// GET USER ROLS
-
 export function getUserRols( ) {
-    
-    return function (dispatch, getState) {
+    return function (dispatch) {
         dispatch(getUserRolsBegin());
-        // AQUI VA LA PETICION DONDE SE TRAE LOS ROLES
-
     const rols = [
         {
             id: 1,
@@ -1782,13 +1763,9 @@ export function getUserRols( ) {
     }
 }
 
-// GET USERS CHAT
-
 export function getUsersChat( idRol ) {
-    
-    return function (dispatch, getState) {
+    return function (dispatch) {
         dispatch(getUsersChatBegin());
-        // AQUI VA LA PETICION DONDE SE TRAE LOS USUARIOS CON QUIEN TENGA CONVERSACIONES USANDO idRol
         let users;
         if ( idRol == 1 ) {
         users = [
@@ -1872,36 +1849,6 @@ export function getUsersChat( idRol ) {
         dispatch(getUsersChatSuccess(users));
     }
 }
-
-// GET CHAT FROM USER
-
-export function getChatFromUser( idRol ) {
-    
-    return function (dispatch, getState) {
-        dispatch(getChatsFromUserBegin());
-        // AQUI VA LA PETICION DONDE SE TRAE LOS CHATS
-        let users;
-        chats = [
-            {
-                id: 1,
-                sender: 1,
-                receiver: 2,
-                message: 'Lrem ipsum dolor sit amet, consecture',
-                sendDate: '13/05/2021'
-            },
-            {
-                id: 1,
-                sender: 2,
-                receiver: 1,
-                message: 'Lrem ipsum dolor sit amet, consecture',
-                sendDate: '12/05/2021'
-            }
-        ];
-        dispatch(getChatsFromUserSuccess(chats));
-    }
-}
-
-// SET USER CHAT SELECTED
 
 export function setUserChatSelected( id=null ) {
     

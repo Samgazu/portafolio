@@ -26,7 +26,7 @@ function configureStoreProd(initialState) {
 
   return createStore(
     createRootReducer(history), // root reducer with router state
-     initialState,
+      initialState,
     compose(applyMiddleware(...middlewares))
   );
 }
