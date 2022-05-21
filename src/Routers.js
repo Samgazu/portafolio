@@ -54,7 +54,6 @@ export const routes = ({ permissions }) =>{
     const availableRoutes = [
         {
             uid: shortid.generate(),
-            rolePermissions: 'Login',
             title:'Inicio',
             path: 'Inicio',
             icon: icoUsuario,
@@ -66,7 +65,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'Login',
             title:'Usuario',
             path: 'usuarios',
             icon: icoUsuario,
@@ -78,7 +76,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'Manage Users',
             title:'Usuarios pendientes',
             path: `usuarios-pendientes`,
             icon: icoUsuario,
@@ -89,7 +86,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'Manage Users',
             title:'PermissionsManage',
             path: `permisos_usuarios`,
             icon: icoUsuario,
@@ -100,7 +96,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'Quotations History',
             title:'Mis cotizaciones',
             path: 'cotizaciones_finalizadas',
             icon: icoHistorial,
@@ -111,7 +106,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'Quotations History',
             title:'Cotizaciones',
             path: 'facturacion',
             icon: icoFacturacion,
@@ -122,7 +116,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'All Quotations',
             title:'Facturación',
             path: 'facturacion/:id',
             exact: true,
@@ -132,7 +125,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'All Quotations',
             title:'Cotizacion',
             path: 'facturacion2/:id/:value/:idCX',
             exact: true,
@@ -142,7 +134,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: '',
             title:'Productos',
             path: 'Inicio',
             icon: icoProductos,
@@ -152,8 +143,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            role:4,
-            rolePermissions: 'Login',
             title:'Programar',
             path: 'ProgramarCX',
             icon: icoProgramar,
@@ -165,8 +154,6 @@ export const routes = ({ permissions }) =>{
                 
         {
             uid: shortid.generate(),
-            role:4,
-            rolePermissions: 'Login',
             title:'Programar',
             path: 'ProgramarCX/CompletarCampos/:RestElements',
             icon: icoProgramar,
@@ -177,7 +164,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'Login',
             title:'searchproduct',
             path: `ProgramarCX/search/:searchToProgramCX`,
             authenticatedAccess: true,
@@ -186,8 +172,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'Login',
-            role:'test',
             title:'ScheduleSurgeryPreOrderView',
             path: 'ProgramarCX/ScheduleSurgeryPreOrderView',
             exact: true,
@@ -197,8 +181,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            role:'test',
-            rolePermissions: '',
             title:'Estatus',
             path: 'Inicio',
             icon: icoEstatus,
@@ -208,7 +190,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: '',
             title:'Encuestas',
             path: 'Inicio',
             icon: icoEncuestas,
@@ -218,7 +199,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: '',
             title:'Perfil',
             path: 'Inicio',
             icon: icoPerfil,
@@ -228,7 +208,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: '',
             title:'PQX',
             path: 'Inicio',
             icon: icoPQX,
@@ -238,7 +217,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'Templates Configuration',
             title:'Configuración de Plantillas',
             path: 'configuracionPlantillas',
             icon: icoPaquetes,
@@ -249,7 +227,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: '',
             title:'Ajustes',
             path: 'Inicio',
             icon: icoAjustes,
@@ -259,7 +236,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: '',
             title:'Perfil',
             path: 'Inicio',
             icon: icoProgramarCX,
@@ -269,7 +245,6 @@ export const routes = ({ permissions }) =>{
         }, 
         {
             uid: shortid.generate(),
-            rolePermissions: 'Login',
             title:'Agenda',
             path: `agenda/:page`,
             icon: icoProgramar,
@@ -280,7 +255,6 @@ export const routes = ({ permissions }) =>{
         }, 
         {
             uid: shortid.generate(),
-            rolePermissions: 'MakeQuotation',
             title:'Cotizar productos',
             path: 'cotizaciones',
             icon: icoCotizar,
@@ -291,7 +265,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'MakeQuotation',
             title:'cotizaciones',
             path: 'cotizacion/:systemId',
             exact: true,
@@ -301,8 +274,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            role:4,
-            rolePermissions: 'Login',
             title:'TipoCirugia',
             path: 'ProgramarCX/:tipoCirugia',
             exact: true,
@@ -312,7 +283,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'MakeQuotation',
             title:'orden_solicitada_1',
             path: 'cotizacion_finalizacion/:orden_solicitada_1',
             exact: true,
@@ -322,7 +292,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'Quotations History',
             title:'cotizaciones_finalizadas',
             path: 'cotizaciones_finalizadas/searchQuote/:searchQuoteFinished',
             exact: true,
@@ -332,7 +301,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'Login',
             title:'cotizaciones_finalizadas',
             path: 'ProgramarCX/searchQuote/:searchQuoteFinishedSchedule',
             exact: true,
@@ -342,7 +310,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'All Quotations',
             title:'Facturación_Search',
             path: 'facturacion/searchFactura/:factura',
             exact: true,
@@ -352,7 +319,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'MakeQuotation',
             title:'orden_solicitada',
             path: 'orden_solicitada',
             exact: true,
@@ -362,7 +328,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'MakeQuotation',
             title:'schedule_surgery',
             path: 'Cirugia_Programada',
             exact: true,
@@ -372,7 +337,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'MakeQuotation',
             title:'orden_solicitada',
             path: 'cotizaciones_finalizadas/:id',
             exact: true,
@@ -382,7 +346,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'MakeQuotation',
             title:'cotizacion_schedule',
             path: 'cotizacion_cirugia/:schedule/:id',
             exact: true,
@@ -392,7 +355,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'MakeQuotation',
             title:'product',
             path: 'cotizaciones/datos',
             exact: true,
@@ -402,7 +364,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'MakeQuotation',
             title:'product',
             path: 'cotizaciones/ordenes',
             exact: true,
@@ -412,7 +373,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'MakeQuotation',
             title:'product',
             path: 'cotizaciones/:mainSurgeryTypeId/:systemId',
             exact: true,
@@ -422,8 +382,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            role:4,
-            rolePermissions: 'Login',
             title:'product',
             path: 'programarCX/:mainSurgeryTypeId/:systemId',
             exact: true,
@@ -433,7 +391,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'MakeQuotation',
             title:'search',
             path: `search`,
             authenticatedAccess: true,
@@ -442,7 +399,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'MakeQuotation',
             title:'searchproduct',
             path: `searchproduct/:systemId`,
             authenticatedAccess: true,
@@ -451,7 +407,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'Quotations History',
             title:'scheduleQuoteFinished',
             path: `CotizacionesFinalizadas`,
             authenticatedAccess: true,
@@ -460,7 +415,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'Templates Configuration',
             title:'Configuración de Materiales',
             path: `materialFactory`,
             authenticatedAccess: true,
@@ -470,7 +424,6 @@ export const routes = ({ permissions }) =>{
         }, 
         {
             uid: shortid.generate(),
-            rolePermissions: 'Login',
             title:'Médicos',
             path: 'usuarios/medicos',
             icon: icoUsuario,
@@ -482,7 +435,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'Login',
             title:'Instituciones',
             path: 'usuarios/instituciones',
             icon: icoUsuario,
@@ -494,7 +446,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'Login',
             title:'Pacientes',
             path: 'usuarios/pacientes',
             icon: icoUsuario,
@@ -506,7 +457,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'Login',
             title:'Repartidores',
             path: 'usuarios/repartidores',
             icon: icoUsuario,
@@ -518,7 +468,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'Login',
             title:'Vendedores',
             path: 'usuarios/:vendedores',
             icon: icoUsuario,
@@ -530,7 +479,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            rolePermissions: 'Login',
             title:'Permiso de Vendedores',
             path: 'usuarios/vendedores/permisos',
             icon: icoUsuario,
@@ -539,22 +487,14 @@ export const routes = ({ permissions }) =>{
             isSideBarLinks: true,
             layout: AppBar,
             Component: SellerPermisions,
-        },    
+        },
+    
         {
             Component: NotFoundPage,
         },
     ];
 
-    if(availableRoutes && permissions){
-        const array = [];
-        for (let i = 0; i < availableRoutes.length; i++) {
-            for (let j = 0; j < permissions.length; j++) {
-                if(availableRoutes[i]['rolePermissions'] === permissions[j]['permissionTypeDescription']){
-                    array.push(availableRoutes[i]);
-                } 
-            }
-        }
-
-        return array;
+    if(availableRoutes){
+        return availableRoutes;
     }
 };

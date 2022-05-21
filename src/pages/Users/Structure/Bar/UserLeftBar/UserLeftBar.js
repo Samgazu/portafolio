@@ -1,18 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import { withRouter } from "react-router-dom";
-// import './DoctorsLeftBar.sass';
 import ListItem1 from '../../../../../components/shared/Molecules/ListItem1';
-import SearchInput from '../../../../../components/shared/Atoms/SearchInput';
 
 import grayBorderImage from '../../../../../assets/img/512PX/Logo_TSI_512PX.jpg';
-// import grayBorderImage from '../../../../../assets/img/126PX/boy-border-gray.png';
-import { getSellers, getUserIdSelected, getUsersByRoleId, getUsersByRoleIdSuccess, setUserIdSelected } from '../../../../../actions/allUsersAction';
+import { getUserIdSelected, getUsersByRoleId, getUsersByRoleIdSuccess, setUserIdSelected } from '../../../../../actions/allUsersAction';
 
 import { getMedicsList } from '../../../../../actions/allUsersAction';
 import { routesFilt, responsesFilt, rolsTypes } from '../../Vars';
 import PropTypes from 'prop-types';
-// STYLES 
 import './UserLeftBar.scss';
 import { useParams } from 'react-router-dom';
 
@@ -20,7 +16,7 @@ const UserLeftBar = ( {selectedSeller, setSelectedSeller} ) => {
 
     const {vendedores} = useParams();
     const dispatch = useDispatch();
-    const [ doctors, setDoctors ] = useState(null)
+    const [, setDoctors ] = useState(null)
     const data = useSelector(state => state.allUsers);
     const listUsersByRoleId = useSelector(state => state.allUsers.listUsersByRoleId);
     const [selectedTabId, setSelectedTabId] = useState(null);

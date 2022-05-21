@@ -1,8 +1,5 @@
 import request from '../utils/request';
 import {
-    USER_LOGIN_BEGIN,
-    USER_LOGIN_SUCCESS,
-    USER_LOGIN_FAILURE,
     USER_LOGOUT_BEGIN,
     USER_LOGOUT_SUCCESS,
     USER_LOGOUT_FAILURE,
@@ -52,22 +49,6 @@ import {
     SEARCH_USERS_FAILURE,
 
   } from '../constants/actionTypes';
-  
-
-  export const userLoginBegin = () =>({
-    type: USER_LOGIN_BEGIN,
-  });
-
-  export const userLoginSuccess = (user) =>({
-      type: USER_LOGIN_SUCCESS,
-      user,
-  });
-
-  export const userLoginFailure = (error) =>({
-      type: USER_LOGIN_FAILURE,
-      error,
-  });
-
 
   // SIGN UP
 
@@ -312,35 +293,6 @@ export const SearchUsersSuccess = (data) =>({
 export const SearchUsersFailure = () =>({
   type: SEARCH_USERS_FAILURE
 });
-
-
-
-// POST ------- LOGIN USER
-  export function userLogin(email, password){
-    return (dispatch, getState) => {
-        dispatch(userLoginBegin());
-        return request(
-          {
-            partialUrl: `/API/Auth/Login/`,
-            method: 'POST',
-            state: getState().user.request,
-            body: {
-              "password": Buffer.from(password).toString("base64"),
-              "Email": Buffer.from(email).toString("base64"),
-            },
-          }
-        )
-        .then( response => {
-          if (response.status !==  200 || response.status !==  200) throw response.status;
-          return response.json()
-        }).then(data => {
-          dispatch(userLoginSuccess(data));
-        })
-        .catch(err => {
-          return dispatch(userLoginFailure(err));
-        })
-    };
-  }
 
   // POST ------ ADD USER PERMISSION
   export function AddUserPermission(userID, userPermissionTypeID){

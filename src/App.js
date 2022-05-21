@@ -9,27 +9,16 @@ import { routes } from './Routers';
 import Login from './pages/LogIn/Login';
 
 import ResetPassword from "./pages/ResetPassword/ResetPassword";
-import { Signup } from "./pages/SignUp/SignUp";
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 class App extends React.Component {
   render() {
-    const CustomRoute = ({ exact, path = null, Component, layout = null, index, authenticatedAccess = false }) => {
+    const CustomRoute = ({ exact, path = null, Component, layout = null, index }) => {
       return (
         <Route key={index} exact={exact} path={`/${path}`} render={(routeProps) => {
-          if (authenticatedAccess && !this.props.isAuthenticated) {
-            return (
-              <Redirect
-                to={{
-                  pathname: '/',
-                  state: { from: routeProps.location },
-                }}
-              />
-            );
-          }
-          else if (layout) {
+          if (layout) {
             return (
               <AppBar>
                 <Component {...routeProps} />
@@ -49,14 +38,10 @@ class App extends React.Component {
         <ToastContainer />
         <Switch>
           <Route exact path='/' component={Login} />
-          <Route exact path='/signup' component={Signup} />
           <Route exact path={`/password/:token`} component={ResetPassword} />
           {
-            this.props.roleUserPermissions.identity &&
             routes(
               {
-                permissions: this.props.roleUserPermissions.identity && this.props.roleUserPermissions.identity.permissions,
-                role: this.props.roleUser.identity && this.props.roleUser.identity.roleID,
                 isSideBarLinks: false
               }).map((r, index) => CustomRoute({ ...r, index }))
           }

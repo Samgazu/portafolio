@@ -4,7 +4,6 @@ import './sass/styles.sass';
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { MdAdd } from "react-icons/md";
 import { NavLink } from "react-router-dom";
-import { routes } from "../../../../Routers";
 
 
 export const InfoDetalleProducto = ( { product, deteleProductHandler }) => {

@@ -12,9 +12,6 @@ import { getDriveAccess } from '../../../../actions/systemsAction';
 export const SideBarComponent = () => {
     
     const { isBarActive } = useSelector( state => state.sidebar );
-    const permissionsState = useSelector(state => state.user.user.identity.permissions);
-    const user = useSelector(state => state.user.user.identity);
-    const permissions = permissionsState.map(permission => permission.permissionTypeDescription);
     const dispatch = useDispatch();
 
     const handleChangeBarActive = () => {
@@ -54,7 +51,6 @@ export const SideBarComponent = () => {
                                 </NavLink>
                             )
                         }else if(!item.type){
-                            if( permissions.includes( item.rolePermissions ) || (item.rols && item.rols.find( item => item === user.roleID.toString()))){
                                 return (
                                     <NavLink key={item.uid} to={`/${item.path}`} 
                                             onClick={handleChangeBarActive}
@@ -72,7 +68,7 @@ export const SideBarComponent = () => {
                                 );           
                             }
                         }
-                    })
+                    )
                 
                 }
             </ul>
