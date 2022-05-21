@@ -1,0 +1,137 @@
+.ListElementsCXAbstractComponent-left-item-overview{
+    width: 97%;
+
+
+
+    .second-letter2{
+        display: flex;
+        margin-bottom: 3vh;
+        .letter{
+            align-self: center;
+            color: #303030;
+            font-size: 1.4vw;
+            font-family: "Poppins";
+            font-weight: 400;
+        }
+
+    }
+
+    .second-letter-Trans{
+        padding-top: 6vh;
+        padding-bottom: 4vh;
+        display: grid;
+
+        .letter-Trans{
+            align-self: center;
+            color: #303030;
+            font-size: 1.2vw;
+            font-family: "Poppins";
+            font-weight: 400;
+
+        }
+
+    }
+
+
+    .second-letter{
+        padding-top: 6vh;
+        padding-bottom: 4vh;
+        display: grid;
+        grid-template-columns: .1fr 1fr;
+
+        .img_paloma{
+            width: 5vh;
+        }
+
+        .letter{
+            align-self: center;
+            color: #303030;
+            font-size: 1.4vw;
+            font-family: "Poppins";
+            font-weight: 400;
+                
+        }
+    }
+    .second-letter3{
+        padding-top: 6vh;
+        padding-bottom: 4vh;
+        .letter{
+            align-self: center;
+            color: #303030;
+            font-size: 1.4vw;
+            font-family: "Poppins";
+            font-weight: 400;
+                
+        }
+    }
+
+    .ListElementsCXAbstractComponent-section-left-title-container-colorTitlePQX{
+        background: linear-gradient(90deg, rgba(55,167,185,1) 0%, rgba(26,188,156,1) 93%, rgba(26,188,156,1) 100%);
+    }
+    .ListElementsCXAbstractComponent-section-left-title-container-colorTitleStore{
+        background: #777777;
+    }
+    .ListElementsCXAbstractComponent-section-left-title-container{
+        width: 50%;
+        padding: 8px 0px;
+        border-radius: 40px;
+        text-align: center;
+        .ListElementsCXAbstractComponent-section-left-title{
+            padding: 0;
+            margin: 0;
+            color: #FFFFFF;
+            font-size: 1.1vw;
+            font-family: 'Poppins';
+            font-weight: 300;
+        }
+    }
+    .ListElementsCXAbstractComponent-left-overview-item-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #777777;
+        font-family: 'Poppins';
+        .ListElementsCXAbstractComponent-left-overview-item-title{
+            color: #094070;
+            font-size: 1vw;
+            font-weight: 400;
+        }
+        .ListElementsCXAbstractComponent-left-overview-item-title_green{
+            color: #1ABC9C;
+            font-size: 1vw;
+            font-weight: 300;
+        }
+        .ListElementsCXAbstractComponent-left-overview-item-name{
+            color: #777778;
+            font-weight: 400;
+            font-size: 1vw;
+            text-align: end;
+        }
+
+        .ListElementsCXAbstractComponent-left-overview-item-name_green{
+            font-weight: 400;
+            font-size: 1vw;
+            text-align: end;
+            color: #1ABC9C;
+        }
+        .ListElementsCXAbstractComponent-left-overview-item-component{
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .ListElementsCXAbstractComponent-left-overview-item-name{
+                color: #777778;
+                font-weight: 400;
+                font-size: 1vw;
+                text-align: start;
+            }
+            .ListElementsCXAbstractComponent-left-overview-item-img{
+                width: 1.5vw;
+                cursor: pointer;
+                outline: none;
+            }
+        }
+
+    }
+
+}

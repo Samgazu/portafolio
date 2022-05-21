@@ -1,0 +1,18 @@
+
+.container_PermissionsManage{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 88vh;
+    padding-top: 10vh;
+    padding-bottom: 2vh;
+    .container_PermissionsManage_Components{
+        width: 70%;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: 1fr .5fr;
+        grid-gap: 5vw;
+    }
+}

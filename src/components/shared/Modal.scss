@@ -1,0 +1,57 @@
+.paper {
+    position: absolute;
+    min-width: 650px;
+    border-radius: 12px;
+    background: white;
+    padding: 0;
+    // font-size: 32px;
+    font-weight: bold;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: var(--b-w-5);
+    &:focus {
+        outline: none;
+    }
+    .simple-modal-title {
+        background: linear-gradient(270deg, rgba(0,50,93,1) 0%, rgba(42,153,171,1) 91%);
+        font-family: 'Poppins';
+        font-size: 22px;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 12px 0;
+        text-align: center;
+        color: white;
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+        .img-modal-general{
+            width: 2.3vw;
+            margin-right: 20px;
+        }
+    }
+    .closeModal {
+        svg {
+            text-align: left;
+            position: absolute;
+            left: -12px;
+            top: -12px;
+            border-radius: 100px;
+            background-color: white;
+            width: auto;
+            height: 25px;
+            color: red;
+            padding: 8px;
+            cursor: pointer;
+        }
+    }
+    .simple-modal-body {
+        padding: 18px;
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+}
+.smallWidth {
+    min-width: 450px;
+}

@@ -1,0 +1,151 @@
+%ButtonToAddOrDelete{
+    position: absolute;
+    border-radius: 50%;
+    width: 2.5vw;
+    height: 2.5vw;
+    border: none;
+    box-shadow: 0px 1px 6px -1px rgb(0 0 0 / 35%);
+    background: #FFFFFF;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+}
+
+.schedulePreOrder-container {
+    padding-top: 20vh;
+    height: 80vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr .2fr;
+    justify-items: center;
+    .schedulePreOrder-section-container{
+        width: 95%;
+        display: grid;
+        grid-template-areas: 'schedulePreOrder-section-left' 'schedulePreOrder-section-rigth' ;
+        grid-template-columns: repeat( 2, 50%);
+        .schedulePreOrder-section-left{
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            overflow-y: scroll;
+            padding-bottom: 10vh;
+            height: 55vh;
+            .schedulePreOrder-left-item{
+                margin-top: 5vh;
+            }
+        }
+        .schedulePreOrder-section-rigth{
+            width: 100%;
+            font-family: 'Poppins';
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-gap: 2vw;
+            overflow-y: scroll;
+            height: 60vh;
+            .schedulePreOrder-section-rigth-card-container{
+                width: 90%;
+                position: relative;
+                justify-self: center;
+                padding: 1.8vw 0;
+                .schedulePreOrder-section-rigth-card-container-delete-container{
+                    left: -1vw;
+                    top: .5vw;
+                    @extend %ButtonToAddOrDelete;
+                    .schedulePreOrder-section-rigth-card-container-delete{
+                        font-size: 1.7vw;
+                        color: rgb(199, 0, 0);
+                    }
+                }
+                .schedulePreOrder-section-rigth-card-container-add-container{
+                    right: -1vw;
+                    bottom: .5vw;
+                    @extend %ButtonToAddOrDelete;
+                    .schedulePreOrder-section-rigth-card-container-add{
+                        font-size: 1.7vw;
+                        color: rgb(199, 0, 0);
+                        width: 1.7vw;
+                    }
+                }
+                .schedulePreOrder-section-rigth-table-container{
+                    width: 100%;
+                    background: #FFFFFF;
+                    box-shadow: 0px 1px 6px -1px rgb(0 0 0 / 35%);
+                    border-collapse: collapse;
+                    .schedulePreOrder-section-rigth-table-head{
+                        
+                        .schedulePreOrder-section-rigth-table-head-row{
+                            .schedulePreOrder-section-rigth-table-title{
+                                border-bottom: 1px solid #c2c2c2;
+                                font-weight: 300;
+                                font-size: 1vw;
+                                color: #5c5c5c;
+                                font-family: 'Poppins';
+                                font-weight: 300;
+                                padding: 10px 10px;
+                                border-spacing: 0;
+                            }
+                        }
+                    }
+                    .schedulePreOrder-section-rigth-table-body{
+                        .schedulePreOrder-section-rigth-table-body-row{
+                            
+                            .schedulePreOrder-section-rigth-table-data:nth-child(2){
+                                text-align: start;
+                                width: 35%;
+                            }
+
+                            .schedulePreOrder-section-rigth-table-data{
+                                text-align: center;
+                                padding: 10px 0 4vh 0;
+                                width: 19%;
+                                color:rgb(156, 156, 156);
+                                font-family: 'Poppins';
+                                font-size: 1.1vw;
+                                font-weight: 300;
+                                .schedulePreOrder-section-rigth-table-data-img-check{
+                                    width: 1.3vw;
+                                }
+                                .schedulePreOrder-section-rigth-table-data-delete-container{
+                                    width: 2.3vw;
+                                    height: 2.3vw;
+                                    border-radius: 50%;
+                                    border: none;
+                                    box-shadow: 0px 1px 6px -1px rgb(0 0 0 / 35%);
+                                    background: #FFFFFF;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    cursor: pointer;
+                                    outline: none;
+                                    .schedulePreOrder-section-rigth-table-data-delete{
+                                        color: rgb(199, 0, 0);
+                                        font-size: 1.4vw;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    .schedulePreOrder-section-bottom-button-continue{
+        height: 3vw;
+        margin-top: 10px;
+        border-radius: 30px;
+        width: 18vw;
+        background: rgb(9,64,112);
+        background: linear-gradient(90deg, rgba(9,64,112,1) 0%, rgba(55,167,185,1) 100%);
+        border: none;
+        font-size: 1.6vw;
+        font-family: 'Poppins';
+        color: #FFFFFF;
+        cursor: pointer;
+        outline: none;
+    }
+
+}

@@ -1,0 +1,29 @@
+.SearchChatComponent-tools-c-input-search{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    .c-SearchChatComponent-tools-search-icobuscar{
+        background: #dddddd;
+        padding: 0px 6px 0px 12px;
+        border-radius: 20px 0 0 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 27px;
+        border: none;
+        img{
+            width: 18px;
+        }
+    }
+    .SearchChatComponent-tools-input-search{
+        border: none;
+        width: 100%;
+        background: #dddddd;
+        border-radius: 0 20px 20px 0;
+        outline: none;
+        padding: 5px;
+        height: 17px;
+        color: #777777;
+    }
+}

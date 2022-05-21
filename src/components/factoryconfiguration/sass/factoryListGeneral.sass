@@ -1,0 +1,80 @@
+%cardToFactoryContainer
+    width: 80%
+    display: flex
+    flex-direction: row
+    align-items: center
+    min-height: 4vw
+    border: .1vw solid #a7a7a7
+    margin-bottom: 1vw
+    cursor: pointer
+    border-radius: 1vw
+    padding: .5vw
+    .factoryConfigList-card-container-img
+        width: 50%
+        .factoryConfigList-card-img
+            width: 50%
+    .factoryConfigList-card-container-info
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        width: 95%
+        margin-right: 5px
+        font-weight: 300
+        overflow: hidden
+        font-family: 'Poppins'
+        font-size: 1.2vw
+    .factoryConfigList-card-container-arrow
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        width: 10%
+        margin-right: 5px
+        .arrowRight
+
+
+.container-factoryConfigList
+    width: 100%
+    height: 73vh
+    display: grid
+    justify-content: center
+    grid-template-columns: 1fr
+    grid-template-rows: .1fr 1fr .2fr
+    border-radius: 18px
+    background: linear-gradient(145deg, #ffffff, #e6e6e6)
+    box-shadow:  0px 2px 5px #666666, 1px -5px 0px #ffffff
+    .factoryConfigList-container-title
+        .factoryConfigList-title
+            text-align: center
+            font-family: 'Poppins'
+            font-weight: 400
+            color: #00325D
+            font-size: 1.5vw
+    .factoryConfigList-container-cards
+        overflow: auto
+        height: 59vh
+        display: flex
+        flex-direction: column
+        align-items: center
+        .factoryConfigList-container-card-selected
+            @extend %cardToFactoryContainer
+            background: rgba(9,64,112,1)
+            color: #fff
+            border-left: .5vw solid #37a7b9
+        .factoryConfigList-container-card
+            @extend %cardToFactoryContainer
+            background: #fff
+            border-left: .5vw solid rgba(9,64,112,1)
+        .factoryConfigList-button
+            width: 30px
+            height: 30px
+            border-radius: 50%
+            border: none
+            outline: none
+            cursor: pointer
+            display: flex
+            justify-content: center
+            align-items: center
+            .factoryConfigList-buttons-img
+                width: 30px

@@ -1,0 +1,172 @@
+$grayBorder: #878792;
+$gradient: linear-gradient(270deg, rgba(9,64,112,1) 0%, rgba(55,167,185,1) 91%);
+
+.title {
+    color: #0000cc;
+    padding: 16px 0 0 16px !important;
+}
+.systemCard {
+    border-top:    1px solid $grayBorder;
+    border-right:  1px solid $grayBorder;
+    border-bottom: 1px solid $grayBorder;
+    border-left:   5px solid rgba(9,64,112,1);
+    &:active{
+        background: $gradient;
+    }
+    .systemCardImage {
+        width: 50px;
+        padding: 15px;
+    }
+}
+.systemCardActive {
+    background-color: 'red';
+    .systemCardImage {
+        width: 50px;
+        padding: 15px;
+    }
+}
+.configurationCard {
+    border-top:    1px solid $grayBorder;
+    border-right:  1px solid $grayBorder;
+    border-bottom: 1px solid $grayBorder;
+    border-left:   5px solid rgba(9,64,112,1);
+    height: 84px;
+    &:active{
+        background: $gradient;
+    }
+    .systemCardImage {
+        width: 50px;
+        padding: 15px;
+    }
+}
+.leftContainer {
+    border-right: 2px solid $grayBorder;
+    box-shadow: 15px 0 5px -10px  $grayBorder;
+}
+.content {
+    border: 1px solid black;
+}
+.tab {
+    background-color: $grayBorder;
+    max-width: 50% !important;
+}
+.arrowRight {
+  width: 0; 
+  height: 0; 
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid green;
+}
+.summary {
+    margin : 5px 100px 5px 100px;
+    .systemImg{
+        width: 100px;
+        border: 3px solid rgba(9,64,112,1);
+        border-radius: 50%;
+    }
+}
+
+.CXTypeCard {
+    cursor: pointer;
+    &:active{
+        background: $gradient;
+    }
+}
+
+ .quote-navbar-c-search {
+        margin: 0 0 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-right: 40px;
+        .quote-navbar-c-search-img {
+            padding: 5px 6px 0px 8px;
+            height: 22px;
+            border-radius: 20px 0px 0px 20px;
+            background: rgba(#000, .3);
+        }
+        .quote-navbar-search-img {
+            width: 16px;
+        }
+        .quote-navbar-search-input {
+            border: none;
+            height: 15px;
+            padding: 6px;
+            width: 200px;
+            border-radius: 0 20px 20px 0;
+            background: rgba(#000, .3);
+            outline: none;
+            color: #fff;
+            font-weight: 100;
+            font-size: 12px;
+            &::placeholder {
+                color: #e0e0e0;
+            }
+        }            
+ }
+
+.productTabCard {
+    border-top: none;
+    max-height: 70%;
+    border-top-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+}
+
+.productCard {
+    background-color: #dbdbdb !important;
+    cursor: pointer;
+    &:active{
+        background: $gradient;
+        color: #fff;
+    }
+}
+
+.productCard-Active {
+    background: $gradient !important;
+    color: #fff !important;
+    cursor: pointer;
+    &:active{
+        background: $gradient;
+        color: #fff;
+    }
+}
+
+.quantityInput {
+    width: 100%;
+    border: none;
+    border-top: 1px solid $grayBorder;
+    border-bottom: 1px solid $grayBorder;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: relative;
+    font-size: 20px;
+}
+
+.deleteProductButton {
+    border-radius: 50%;
+    border: 1px solid #fff;
+    width: 25px;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    outline: none;
+    box-shadow: #000 3px 3px 6px -3px;
+    cursor: pointer;
+    .deleteImg {
+        width: 25px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.productSummary {
+    border-bottom: 1px solid $grayBorder;
+    .productSummaryDescription {
+        color: $grayBorder;
+        font-size: 13px;
+    }
+}

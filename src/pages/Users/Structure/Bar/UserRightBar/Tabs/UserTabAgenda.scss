@@ -1,0 +1,178 @@
+.doctor-tab-agenda-container {
+    display: flex;
+    flex-direction: row;
+    padding-top: 1rem;
+    .bar-title {
+        font-size: 22px;
+        font-family: 'Poppins';
+        font-weight: 500;
+        color: #37A7B9;
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    .doctor-tab-agenda-left-container {
+        width: 40%;
+        display: flex;
+        border-right: 1px solid #777777;
+        padding-right: 20px;
+        flex-direction: column;
+        }
+    .doctor-tab-agenda-right-container {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        padding-left: 40px;
+        .bar-date-selected {
+            font-family: 'Poppins';
+            font-size: 18px;
+            font-weight: 500;
+            color: #00325D;
+        }
+        .doctor-tab-agenda-ul {
+            text-decoration: none;
+            list-style-type: none;
+            justify-content: space-around;
+            padding-left: 1.5rem;
+            .doctor-tab-agenda-li {
+                padding: 1rem 0;
+                border-bottom: 2px solid #CDCCCC;
+                .doctor-tab-agenda-li-header {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    border: none;
+                    background-color: white;
+                    outline: none;
+                    font-family: 'Poppins';
+                    font-size: 15px;
+                    font-weight: 500;
+                    color: #303030;
+                    cursor: pointer;
+                    padding-left: 0;
+                }
+                .doctor-tab-agednda-surgery-detail-body {
+                    padding: 1.5rem 0;
+                    .doctor-tab-agednda-surgery-detail-item {
+                        font-family: 'Poppins';
+                        font-weight: 400;
+                        font-size: 15px;
+                        color: #777777;
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 8px;
+                        .doctor-tab-agednda-surgery-detail-key {
+                        }
+
+                        .doctor-tab-agednda-surgery-detail-value {}
+                            text-align: right;
+                        }
+                }
+            }
+        }
+    }
+}
+.dateText {
+    font-size: 18px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    color: #00325D;
+    margin-bottom: 1.5rem;
+}
+.date_content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.numericInputStyle {
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+.calendar_date_content {
+    .react-calendar {
+        width: 95%;
+        max-width: 300px;
+        font-family: 'Poppins';
+        border-color: transparent;
+        .calendar__navigation__label {
+            .calendar__navigation__label__labelText  {
+                font-size: 18px;
+                color: #00325D;
+            }
+        }
+        button {
+            color: #2A99AB;
+            outline: none;
+        }
+        button {
+            background-color: transparent;
+            border-width: 0;
+            min-width: 10px;
+            font-size: 22px;
+            span {
+                font-size: 20px;
+                color: #00325D;
+                font-weight: 500;
+                text-transform: capitalize;
+            }
+            &:focus, &:hover {
+                background-color: transparent;
+            }
+        }
+        .react-calendar__navigation {
+            margin-bottom: 0;
+        }
+        .react-calendar__viewContainer {
+            .react-calendar__month-view__weekdays {
+                margin: 1rem 0 4px 0;
+                .react-calendar__month-view__weekdays__weekday {
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
+                }
+                abbr {
+                    color: #a8a8a8;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                }
+            }
+            .react-calendar__month-view__days {
+                .react-calendar__month-view__days__day {
+                    padding: 4px 0;
+                }
+                button {
+                    abbr {
+                        color: #303030;
+                        font-weight: 600;
+                        min-width: 18px;
+                    }
+                    &:focus, &:hover {
+                        outline: none;
+                        abbr {
+                            color: #ffffff;
+                            border-color: #2A99AB;
+                            background-color: #2A99AB;
+                            border-radius: 50%;
+                            padding: 2px 4px;
+                        }
+                    }
+                }
+                .react-calendar__month-view__days__day--neighboringMonth {
+                    abbr {
+                        color: #dddddd;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+        abbr {
+            font-size: 12px;
+        }
+    }
+}
+// space
+.mb-x3 {
+    margin-bottom: 32px;
+}

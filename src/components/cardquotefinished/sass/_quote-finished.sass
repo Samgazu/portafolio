@@ -1,0 +1,280 @@
+%deleteButtonTemplate
+    padding: 5px 6px 0 6px
+    background-color: #ffffff
+    color: #FF0000
+    border: none
+    outline: none
+    font-size: 20px
+    cursor: pointer
+    transition: .5s
+
+.input-tittle
+    width: 100%
+    padding: 5px
+    text-align: center
+    border: 1px solid #aaaaaa
+    border-radius: 5px
+    padding: 5px
+    outline: none
+
+.whiteCardBase 
+    margin-top: 1rem
+    margin-bottom: 4rem
+    position: relative
+    .whiteCardContent 
+        border: 3px solid #DCDCDC
+        border-radius: 5px
+        padding: 1rem
+        display: flex
+        flex-direction: column
+        align-items: center
+        position: relative
+        .titleContent 
+            padding: 8px 4rem
+            display: inline-block
+            width: 80%
+            p 
+                color: #094070
+                font-size: 1.4vw
+                text-align: center
+        .tableContent 
+            margin-top: 1rem
+            width: 100%
+        .discountInputToCard
+            width: 100%
+            display: flex
+            flex-direction: row
+            justify-content: flex-end
+            align-items: center
+            .discountInputToCard_input
+                color: #6e6e6e
+                width: 25%
+                font-family: 'Poppins', sans-serif
+                font-weight: normal
+                font-stretch: normal
+                font-style: normal
+                line-height: 1.2
+                letter-spacing: normal
+                background: none
+                outline: none
+                font-size: 1vw
+                text-align: center
+                border: 1px solid #cccccc
+                border-radius: 5px
+        .tableHeader 
+            display: flex
+            margin-bottom: 1rem
+            .element2
+                width: calc( 100% / 5)
+                display: flex
+                justify-content: center
+                align-items: center
+                p 
+                    color: #094070
+                    text-align: center
+                    font-weight: 500
+                    font-size: 1.1vw
+                &:first-child 
+                    width: 15%
+                &:nth-child(2) 
+                    width: 30%
+            .element 
+                width: calc( 100% / 6)
+                display: flex
+                justify-content: center
+                align-items: center
+                p 
+                    color: #094070
+                    text-align: center
+                    font-weight: 500
+                    font-size: 1.1vw
+                &:first-child 
+                    width: 15%
+                &:nth-child(2) 
+                    width: 30%
+        .tableBody 
+            display: flex
+            .element2
+                width: calc( 100% / 5)
+                margin: 8px
+                padding: 8px 0
+                display: flex
+                align-items: center
+                justify-content: center
+                p 
+                    color: #303030
+                    text-align: center
+                    font-size: 1vw
+                    text-align: left
+                &:first-child 
+                    width: 15%
+                &:nth-child(2) 
+                    width: 30%
+                &:last-child 
+                    background-color: transparent
+                .form-inputs-description
+                    resize: both
+                    overflow: auto
+                .form-inputs
+                    width: 80%
+                    font-family: 'Poppins', sans-serif
+                    font-weight: normal
+                    font-stretch: normal
+                    font-style: normal
+                    line-height: 1.2
+                    letter-spacing: normal
+                    text-align: left
+                    background: none
+                    border: none
+                    outline: none
+                    text-align: center
+                    border: 1px solid #aaaaaa
+                    border-radius: 5px
+                    padding: 5px
+                    &::-webkit-input-placeholder,
+                    &:-ms-input-placeholder,
+                    &::placeholder
+                        color: #303030
+                &.priceResumenContainer
+                    display: flex
+                    flex-direction: column
+                    .title 
+                        color: #094070
+                        font-weight: 500
+                        padding: 16px 0 0 16px
+                    .value 
+                        color: #303030
+                        padding: 16px 0 0 16px
+            .element
+                width: calc( 100% / 6)
+                margin: 8px
+                padding: 8px 0
+                display: flex
+                align-items: center
+                justify-content: center
+                p 
+                    color: #303030
+                    text-align: center
+                    font-size: 1vw
+                &:first-child 
+                    width: 15%
+                &:nth-child(2) 
+                    width: 30%
+                    p
+                        text-align: left
+                &:last-child 
+                    background-color: transparent
+                .form-inputs-description
+                    resize: both
+                    overflow: auto
+                .form-inputs
+                    width: 80%
+                    font-family: 'Poppins', sans-serif
+                    font-weight: normal
+                    font-stretch: normal
+                    font-style: normal
+                    line-height: 1.2
+                    letter-spacing: normal
+                    text-align: left
+                    background: none
+                    border: none
+                    outline: none
+                    text-align: center
+                    border: 1px solid #aaaaaa
+                    border-radius: 5px
+                    padding: 5px
+                    &::-webkit-input-placeholder,
+                    &:-ms-input-placeholder,
+                    &::placeholder
+                        color: #303030
+                &.priceResumenContainer
+                    display: flex
+                    flex-direction: column
+                    .title 
+                        color: #094070
+                        font-weight: 500
+                        padding: 16px 0 0 16px
+                    .value 
+                        color: #303030
+                        padding: 16px 0 0 16px
+            .delete_button
+                @extend %deleteButtonTemplate
+                &:hover
+                    color: #094070
+                    transition: .5s
+
+
+    .deletButton 
+        position: absolute
+        top: -8px
+        padding: 5px 6px 0 6px
+        background-color: #ffffff
+        border-radius: 50%
+        color: #FF0000
+        border: 3px solid #DCDCDC
+        font-size: 20px
+        cursor: pointer
+        left: -1px
+    .addButton 
+        position: absolute
+        bottom: -8px
+        right: 20px
+        background-color: #ffffff
+        border-radius: 50%
+        color: #094070
+        border: 3px solid #DCDCDC
+        font-size: 20px
+        cursor: pointer
+        width: 28px
+        display: flex
+        height: 25px
+        outline: none
+        justify-content: center
+        line-height: 1
+        align-items: center
+        text-align: center
+.boxPriceContent 
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    margin-top: 2rem
+    .priceElements 
+        display: inline-flex
+        margin: 0 2rem
+        .element 
+            display: flex
+            min-width: 228px
+            justify-content: space-between
+            p 
+                font-size: 14px
+                padding: 8px 0
+            .title 
+                color: #094070
+                font-weight: 500
+                padding-right: 1rem
+            .value 
+                color: #303030
+            .form-inputs
+                width: 50%
+                font-family: 'Poppins', sans-serif
+                font-weight: normal
+                font-stretch: normal
+                font-style: normal
+                line-height: 1.2
+                letter-spacing: normal
+                text-align: left
+                background: none
+                outline: none
+                text-align: center
+                border: 1px solid #aaaaaa
+                border-radius: 5px
+                &::-webkit-input-placeholder,
+                &:-ms-input-placeholder,
+                &::placeholder
+                    color: #303030
+                        
+                    
+                
+            
+        

@@ -1,0 +1,151 @@
+%cardToFactoryContainer{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* min-height: 4vw; */
+    margin-bottom: 1vw;
+    cursor: pointer;
+    border-radius: 1vw;
+    padding: .5vw;
+    .factoryConfigList-card-container-img{
+        width: 50%;
+
+        .factoryConfigList-card-img{
+            width: 50%;
+        }
+    }
+}
+
+
+%formSearchPermissionsUser{
+    border-radius: .7vw;
+    border: none;
+    outline: none;
+    color: #666666;
+    background: #e4e4e4;
+}
+    .permissionsManage_component_card_container_info{
+
+        display: grid;
+        justify-content: space-between;
+        align-items: center;
+        width: 95%;
+        margin-right: 5px;
+        font-weight: 300;
+        overflow: hidden;
+        font-family: 'Poppins';
+        font-size: 1.2vw;
+        .permissionsManage_component_card_container_info_name{
+            margin-bottom: .5vw;
+        }
+        .permissionsManage_component_card_container_info_mail{
+
+        }
+        .permissionsManage_component_card_container_info_other{
+            margin-top: .5vw;
+        }
+    }
+
+    .permissionsManage_component_card_container_arrow{
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 10%;
+        margin-right: 5px;
+        .arrowRight{
+
+        }
+    }
+.permissionsManage_component_rigth{
+    grid-template-rows: 1fr !important;
+}
+
+.container_permissionsManage_component{
+
+    width: 100%;
+    height: 73vh;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    grid-template-rows: .1fr .1fr 1fr;
+    border-radius: 18px;
+    box-shadow:  0px 2px 5px #666666, 1px -5px 0px #ffffff;
+
+    .permissionsManage_component_container_search{
+        display: grid;
+        width: 80%;
+        justify-items: center;
+        align-items: center;
+        grid-gap: .4vw;
+        font-family: 'Poppins';
+        font-size: .8vw;
+        height: 0vh;
+        .permissionsManage_component_search{
+            width: 90%;
+            padding: .5vw;
+            @extend %formSearchPermissionsUser;
+
+        }
+        .permissionsManage_component_search_combobox{
+            width: 100%;
+            padding: .3vw;
+            @extend %formSearchPermissionsUser;
+
+        }
+    }
+
+    .permissionsManage_component_container_title{
+
+        .permissionsManage_component_title{
+
+            text-align: center;
+            font-family: 'Poppins';
+            font-weight: 400;
+            color: #00325D;
+            font-size: 1.5vw;
+        }
+    }
+    .permissionsManage_component_cards_rigth{
+
+    }
+    .permissionsManage_component_container_cards{
+        width: 95%;
+        overflow: auto;
+        margin-bottom: 2vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        
+        .permissionsManage_component_container_card_selected{
+
+            @extend %cardToFactoryContainer;
+            background: #37a7b9;
+            color: #fff;
+            border-left: .5vw solid #37a7b9;
+            
+        }
+        .permissionsManage_component_container_card{
+
+            @extend %cardToFactoryContainer;
+            background: #fff;
+            border-left: .5vw solid #37a7b9;
+            border-top: 1px solid #37a7b9;
+            border-bottom: 1px solid #37a7b9;
+            border-right: 1px solid #37a7b9;
+            color: #666666;
+        }
+        
+    }
+}
+
+
+
+
+
+
+

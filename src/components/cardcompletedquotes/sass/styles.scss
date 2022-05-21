@@ -1,0 +1,98 @@
+.baseccq {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.whiteSmallCardBase {
+    padding: 1rem;
+    border: 3px solid #dcdcdc;
+    border-radius: 7px;
+    width: 45%;
+    margin-top: 1.5rem;
+    * {
+        font-family: 'Poppins';
+    }
+    .twoElements {
+        display: flex;
+        width: 100%;
+        .element {
+            width: 60%;
+            .quoteName {
+                font-size: 18px;
+                color: #313131;
+                margin-bottom: 10px;
+            }
+            .quoteNumber {
+                font-size: 18px;
+                color: #38A8B9;
+                font-weight: 500;
+                margin-bottom: 20px;
+            }
+            .quoteprodName {
+                font-size: 18px;
+                color: #0F416F;
+                font-weight: 500;
+                margin-bottom: 8px;
+                margin-top: -6px;
+                margin-bottom: 20px;
+            }
+            .twograys {
+                display: flex;
+                justify-content: space-between;
+                font-size: 16px;
+                margin-top: -4px;
+                margin-bottom: 10px;
+                .lightgray {
+                    color: #CDCCCC;
+                    font-weight: 500;
+                    text-align: start;
+                }
+                .darkgray {
+                    color: #777778;
+                    margin-left: 8px;
+                    font-weight: 500;
+                    text-align: end;
+                }
+            }
+            .quote-finished-button {
+                align-items: center;
+                background: linear-gradient(270deg, rgba(9,64,112,1) 0%, rgba(26,188,156,1) 91%);
+                border-radius: 5px;
+                border: none;
+                color: #fff;
+                cursor: pointer;
+                display: flex;
+                font-size: 16px;
+                flex-direction: row;
+                font-family: 'Poppins';
+                font-weight: 300;
+                text-transform: none;
+                padding: 2px 1rem;
+                min-width: 100px;
+                width: 90%;
+                justify-content: center;
+                font-weight: 500;
+                margin-top: 8px;
+                span {
+                    margin-right: 4px;
+                }
+            }
+            .arrowIcon {
+                font-size: 16px;
+            }
+            &:first-child {
+                width: 40%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                img {
+                    width: 10.5vw;
+                }
+            }
+        }
+    }
+}

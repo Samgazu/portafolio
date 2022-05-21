@@ -1,0 +1,342 @@
+.admin-schedule-content-box{
+    font-family: 'Poppins';
+    background-color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    position: relative;
+    width: 100%;  
+    //height: 50vh;
+
+    .admin-schedule-filter-box{
+        width: 55%;
+        height: 40px;
+
+        .admin-schedule-right{
+            width: 100px;
+            float: right;
+            padding-left: 100px;
+            border-bottom: 2px solid #0B8E06;
+            position: relative;
+
+            .admin-schedule-filter{
+                border: none;
+                outline: none;
+                width: 50%;
+                height: 40px;
+                background: transparent;
+                font-family: 'Montserrat';
+                font-size: 22px;
+                color: #094070;
+            }
+        
+            select {
+                -moz-appearance:none; /* Firefox */
+                -webkit-appearance:none; /* Safari and Chrome */
+                appearance:none;
+                text-align: right;
+            }
+    
+            .admin-schedule-filter-arrow{
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                color: #0B8E06;
+                height: 40px;
+                width: 40px;
+                z-index: 0;
+            }
+        }
+    }
+    
+    .admin-schedule-title{
+        text-align: left;
+        letter-spacing: 0px;
+        color: #000000;
+        font-size: 25px;
+        font-family: 'Poppins';
+    }
+
+    .admin-schedule-calendar{
+        width: 100%;
+        //border-bottom: 2px solid #084EA1;
+        
+        * {box-sizing: border-box;}
+        ul {list-style-type: none;}
+
+        .month {
+            padding: 15px 5px;
+            width: 100%;
+            background: transparent;
+            text-align: center;
+            font-family: 'Poppins';
+        }
+
+        .month ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .month ul li {
+            color:#00325D;
+            font-size: 28px;
+            letter-spacing: 3px;
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+
+        .month .prev {
+            
+            float: left;
+            padding-top: 5px;
+            color: #2A99AB;
+            outline: none;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+
+        .month .next {
+            color: #2A99AB;
+            float: right;
+            padding-top: 5px;
+            outline: none;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+
+        .weekdays {
+            display: grid;
+            grid-template-columns: repeat(7,1fr);
+            text-align: center;
+            margin: 1rem 0 0 0;
+            border-top: 1px solid rgba(112,112,122,0.5);
+            border-bottom: 1px solid rgba(112,112,122,0.5);
+            font-weight: 500;
+        }
+
+        .weekdays li {
+            display: inline-block;
+            color: #707070;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 500;
+            text-transform: capitalize;
+            text-decoration: none;
+            justify-self: center;
+        }
+
+        .days {
+            display: grid;
+            grid-template-columns: repeat(7,1fr);
+            // padding: 10px 10px 10px 10px;
+            background: #F2F2F2;
+            margin: 0;
+        }
+
+        .days li {
+            display: grid;
+            grid-template-rows: 1fr .1fr;
+            list-style-type: none;
+            text-align: center;
+            margin-bottom: .5vw;
+            margin-top: .5vw;
+            color: #303030;
+            min-width: 18px;
+            justify-self: center;
+            .CalendarComponent-day-appointment{
+                justify-self: center;
+                width: .1vw;
+                background: #0B8E06;
+                border-radius: 50%;
+            }
+            .CalendarComponent-day-holiday-appointment{
+                justify-self: center;
+                width: .1vw;
+                background: rgb(88, 88, 242);
+                border-radius: 50%;
+
+            }
+            &:hover{
+                cursor: pointer;
+            } 
+        }
+
+        .days li span{
+            padding: .3vw;
+            font-size: 20px;
+            font-weight: 500;
+
+            &:hover{
+                color: #FFFFFF;
+                border-radius: 50%;
+                border-color: #094070;
+                align-self: center;
+                background-color: #094070;
+            }
+        }
+
+        .days li .active {
+            padding: 5px;
+            //background: transparent radial-gradient(closest-side at 50% 50%, #50B748 0%, #0B8E06 100%) 0% 0% no-repeat padding-box;
+            //color: white !important;
+            //border-radius: 15px;
+            color: #FFFFFF;
+            align-self: center;
+            border-radius: 50%;
+            border-color: #094070;
+            background-color: #094070;
+        }
+        .days li .guardDaysActive {
+            padding: 5px;
+            //background: transparent radial-gradient(closest-side at 50% 50%, #50B748 0%, #0B8E06 100%) 0% 0% no-repeat padding-box;
+            //color: white !important;
+            //border-radius: 15px;
+            color: #FFFFFF;
+            align-self: center;
+            border-radius: 50%;
+            border-color: #35a2b3;
+            background-color: #35a2b3;
+        }
+
+        .days li .dissapear-text {
+            display: none;
+        }
+
+      // SAMUEL  .days li .green-sunday {
+      // SAMUEL     color: #0B8E06;
+      // SAMUEL }
+
+        /* Add media queries for smaller screens */
+        @media screen and (max-width:720px) {
+            .weekdays li, .days li {width: 13.1%;}
+        }
+
+        @media screen and (max-width: 420px) {
+            .weekdays li, .days li {width: 12.5%;}
+            .days li .active {padding: 2px;}
+        }
+
+        @media screen and (max-width: 290px) {
+            .weekdays li, .days li {width: 12.2%;}
+        }
+    }
+
+    .admin-schedule-view{
+        width: 100%;
+
+        .admin-schedule-square{
+            width: 100%;
+            padding: 10px;
+            text-align: left;
+            font: normal normal normal 25px/38px Poppins;
+            letter-spacing: 0px;
+            color: #000000;
+            margin-left: 20px;
+            position: relative;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #084EA1;
+
+            .admin-schedule-square-dot{
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                color: #0B8E06;
+                height: 25px;
+                width: 25px;
+            }
+
+            .admin-schedule-square-text{
+                color: black;
+                margin-left: 50px;
+            }
+
+            .admin-schedule-square-arrow{
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                color: #0B8E06;
+                height: 50px;
+                width: 50px;
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+
+            .admin-schedule-square-edit{
+                position: absolute;
+                bottom: 5px;
+                right: 45px;
+                color: #0B8E06;
+                height: 30px;
+                width: 30px;
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+
+            .admin-schedule-square-delete{
+                position: absolute;
+                bottom: 5px;
+                right: 5px;
+                color: #0B8E06;
+                height: 30px;
+                width: 30px;
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+
+            .admin-schedule-square-objectives{
+                text-align: left;
+                font: normal normal normal 25px/38px Poppins;
+                letter-spacing: 0px;
+                color: #000000;
+                opacity: 0.7;
+
+                p{
+                    margin: 0px 0px 0px 70px; 
+                }
+            }
+        }
+    }
+
+    
+    .container-show-holiday{
+        display: flex;
+        margin-top: 2vw;
+        align-items: center;
+        margin-left: 2vw;
+
+        .CalendarComponent-day-appointment{
+            justify-self: center;
+            min-width: 0.8vw;
+            height: .8vw;
+            min-height: 1vw;
+            margin-right: 1.5vw;
+            background: #5858f2;
+            border-radius: 50%;
+            justify-content: center;
+        }
+    
+        .CalendarComponent-day-holiday-view-appointment{
+            color: #707070;
+            font-size: 1.3vw;
+            font-weight: 400;
+            font-family: "Poppins";
+    
+        }
+
+
+
+    }
+
+
+
+}

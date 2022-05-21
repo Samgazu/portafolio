@@ -1,0 +1,48 @@
+.ModalProductLocationScanningComponent-component{
+
+    .ModalProductLocationScanningComponent_labelCounter {
+        font-family: 'Poppins';
+        font-size: 7vw;
+        font-weight: 'normal';
+        font-stretch: 'normal';
+        font-style: 'normal';
+        line-height: 1.76;
+        letter-spacing: 'normal';
+        text-align: 'center';
+        color: '#FFFFFF';
+    }
+
+    .ModalProductLocationScanningComponent_continueButton {
+        fontFamily: 'Poppins';
+        fontSize: 31;
+        fontWeight: 500;
+        fontStretch: 'normal';
+        fontStyle: 'normal';
+        lineHeight: 1.2;
+        letterSpacing: 'normal';
+        textAlign: 'center';
+        color: '#303030';
+        boxShadow: '4px 4px 3px 0 rgba(0, 0, 0, 0.35)';
+        backgroundColor: '#ffffff';
+        borderRadius: '15.7px';
+        borderStyle: 'none';
+        outline: 'none';
+        margin: 'auto';
+        marginTop: 10;
+        padding: '4.3px 95.7px 1.6px 95.5px';
+    }
+
+    .ModalProductLocationScanningComponent_itemText {
+        color: '#FFFFFF';
+        outline: 'none';
+        fontSize: '16px';
+        fontFamily: 'Poppins';
+        fontWeight: 'normal';
+        fontStretch: 'normal';
+        fontStyle: 'normal';
+        letterSpacing: 'normal';
+        width: '100%';
+        marginBottom: '15px';
+    
+    }
+}

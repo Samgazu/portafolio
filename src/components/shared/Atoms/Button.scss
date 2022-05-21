@@ -1,0 +1,38 @@
+.baseButton {
+    align-items: center;
+    border-radius: 20px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    font-size: 14px;
+    flex-direction: row;
+    font-family: 'Poppins';
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 8px 1rem;
+    margin-left: 1rem;
+    min-width: 150px;
+    justify-content: center;
+    font-weight: 500;
+    height: 30px;
+    box-shadow: #707070 3px 3px 6px -3px;
+}
+.blue_light_color {
+    background: linear-gradient(270deg, #1ABC9C 0%, #31ABB3 91%);
+}
+.blue_light_color_reverse {
+    background: linear-gradient(270deg, #31ABB3 0%, #1ABC9C 91%);
+}
+.blue_dark_color {
+    background: linear-gradient(270deg, #094070 0%, #1ABC9C 91%);
+}
+.blue_medium_color {
+    background: linear-gradient(270deg, #00325D 0%, #2A99AB 91%);
+}
+.white_dark_color{
+    background: #ffffff;
+    color: #303030;
+    border: 2px solid #2A99AB;
+    outline: none;
+}

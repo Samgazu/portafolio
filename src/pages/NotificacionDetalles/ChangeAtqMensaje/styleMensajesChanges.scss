@@ -1,0 +1,85 @@
+.mensaje_changes_atq_containes {
+    width: 100%;
+    height: 85vh ;
+    padding-top: 15vh ;
+    position: relative;
+    background: rgb(9,64,112);
+    background: linear-gradient(152deg, rgba(9,64,112,1) 0%, rgba(56,168,185,1) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow-y: auto;
+    * {
+        font-family: Poppins;
+    }
+    .mensjae_changes_atq_general_c {
+        width: 100%;
+        height: 78vh;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        .mensaje_changes-images {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            .atq_changes-success-img {
+                width: 20vw;
+                margin-bottom: 2vw;
+            }
+            .Final_encuesta-success-icon {
+                width: 3vw;
+                position: absolute;
+                top: 0;
+                right: 0;
+                cursor: pointer;
+            }
+        }
+        .mensaje_atq_inf_subtitle_1 {
+            font-size: 1.3vw;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+        }
+        .mensaje_atq_inf_subtitle_2 {
+            font-size: 2.5vw;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+        }
+        .mensaje_atq_inf_subtitle_3 {
+            font-size: 1.1vw;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+        }
+        .menaje_atq-subtitle{
+            font-size: 2vw;
+            color: #ffffff;
+            margin-bottom: 2vw;
+        }
+        
+        .mensaje_atq_order_buttons {
+            display: flex;
+            justify-content: center;
+            .mensaje_atq_white_button {
+                font-size: 1.5vw;
+                color: #094070;
+                background-color: #ffffff;
+                border-radius: 20px;
+                cursor: pointer;
+                display: flex;
+                font-weight: 500;
+                text-transform: uppercase;
+                padding: 6px 1rem;
+                margin-left: 1rem;
+                min-width: 14vw;
+                border: none;
+                justify-content: center;
+                text-transform: uppercase;
+                opacity: .7;
+            }
+        }
+    }
+}

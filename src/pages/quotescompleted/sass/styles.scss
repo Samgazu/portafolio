@@ -1,0 +1,45 @@
+
+    .quote_completed_general_c {
+        margin: 40px auto 40px auto;
+        width: 90%;
+        position: relative;
+        padding-top: 7vw;
+        * {
+            font-family: 'Poppins';
+        }
+        .button_elements_content {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 1rem;
+            .radioButtonOptions {
+                color: #777778;
+                .MuiRadio-colorSecondary.Mui-checked {
+                    color: #38A8B9;
+                }
+                .MuiTypography-body1 {
+                    font-family: 'Poppins';
+                }
+            }
+        }
+        .buttons_options {
+            display: contents;
+        }
+    }
+    .c-quote_completed_allelements{
+        overflow-y: scroll;
+        height: 75vh;
+
+        ::-webkit-scrollbar{
+            display: none;
+            scrollbar-width: none;
+        }
+
+        .quote_completed_allelements {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .cardB {
+                width: 100%;
+        }
+    }
+}

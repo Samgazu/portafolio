@@ -1,0 +1,64 @@
+.doctor-tab-profile-container {
+    margin-top: 4rem;
+    padding: 0 4rem;
+    .doctor-tab-profile-row {
+        display: flex;
+        .text-element {
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+// MODAL
+.modal-atq-list {
+    width: 100%;
+    .table-list-header {
+        width: 100%;
+        display: flex;
+        .header-element {
+            p {
+                font-family: 'Poppins';
+                font-size: 16px;
+                font-weight: 500;
+                color: #094070;
+                text-align: center;
+            }
+            &:first-child {
+                width: 25%;
+            }
+            &:nth-child(2) {
+                width: 75%;
+            }
+        }
+    }
+    .table-list-body {
+        width: 100%;
+        display: flex;
+        margin-top: 1rem;
+        .body-element {
+            p {
+                font-family: 'Poppins';
+                font-size: 15px;
+                font-weight: 500;
+                color: #303030;
+            }
+            &:first-child {
+                width: 25%;
+                p {
+                    text-align: center;
+                }
+            }
+            &:nth-child(2) {
+                width: 75%;
+                p {
+                    text-align: left;
+                }
+            }
+        }
+        .material-element {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}

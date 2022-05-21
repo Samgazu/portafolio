@@ -1,0 +1,199 @@
+import React, { useEffect, useRef, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux'
+import { SubNavBarComponent } from '../../components/layouts/layout1/subnavbar/SubNavBarComponent';
+import { CardProductComponent } from '../../components/cardproduct/CardProductComponent';
+import { DetalleProducto } from '../../components/layouts/layout1/detalleproducto/DetalleProducto';
+import { getMainSurgeryType, getProducts, getSystemByMainSurgencyType } from '../../actions/systemsAction';
+import { useParams } from 'react-router';
+import { ModalProduct } from '../../components/cardproduct/CardProductModal';
+import { setReposnseSearch } from '../../actions/storeHouseAction';
+
+
+export const QuoteProductsScreen = () => {
+    const { tipoCirugia } = useParams();
+    const { systemId } = useParams();
+    const dispatch = useDispatch();
+
+    const mainSurgeryTypes = useSelector(state => state.systems.mainSurgeryTypes);
+    const quoteProductsData = useSelector(state => state.systems.systems);
+    const listElementTypeSurgeryCompleted = useSelector(state => state.scheduleSurgery.listElementTypeSurgeryCompleted);
+    const listElementTypeSurgeryBeing = useSelector(state => state.scheduleSurgery.listElementTypeSurgeryBeing);
+    // const listElementOptionalMaterialBeing = useSelector( state => state.scheduleSurgery.listElementOptionalMaterialBeing);
+    const newQuote = useSelector(state => state.newQuote);
+    const listElementOptionalMaterialSucces = useSelector(state => state.scheduleSurgery.listElementOptionalMaterialSucces);
+    const searchList = useSelector(state => state.storeHouse.respuestaSearch);
+
+
+    const [cervicales, setCervicales] = useState(null);
+    const [lumbares, setLumbares] = useState(null);
+    const [complementos, setComplementos] = useState(null);
+    const [toraxico, setToraxico] = useState(null);
+    const [existUniqueProduct, setExistUniqueProduct] = useState(true);
+    const [existMainSurgeryTypes, setExistMainSurgeryTypes] = useState(null);
+    const [newArray, setNewArray] = useState(null)
+    const { programarCX } = useParams();
+
+
+    useEffect(() => {
+
+        if (listElementTypeSurgeryBeing) {
+            openModal.current.handleOpen(listElementTypeSurgeryBeing.system);
+
+        }
+    }, [listElementTypeSurgeryBeing])
+
+    useEffect(() => {
+        return () => {
+          dispatch(setReposnseSearch(null))
+        }
+      }, [])
+
+
+    const openModal = useRef();
+    useEffect(() => {
+        if (mainSurgeryTypes) {
+            setExistMainSurgeryTypes(mainSurgeryTypes);
+        }
+    }, [mainSurgeryTypes])
+
+    useEffect(() => {
+        if (mainSurgeryTypes.length > 0) {
+            mainSurgeryTypes.map(item => dispatch(getSystemByMainSurgencyType(item)));
+            dispatch(getProducts());
+        } else if (!existMainSurgeryTypes) {
+            dispatch(getMainSurgeryType());
+            dispatch(getProducts());
+        }
+    }, [mainSurgeryTypes]);
+
+    useEffect(() => {
+        if (newQuote && newQuote.systems && newQuote.systems.length > 0) {
+            newQuote.systems.forEach(item => {
+                if (newQuote
+                    && newQuote.systems
+                    && newQuote.systems.length === 1
+                    && item.productDescription === "Productos"
+                    && item.configuration[0].configuration.items.length === 0) {
+                    setExistUniqueProduct(false);
+                } else {
+                    setExistUniqueProduct(true);
+                }
+            })
+        }
+    }, [newQuote])
+
+
+    useEffect(() => {
+        //Cambiar 3 y 4 +  todos
+        if (Object.keys(quoteProductsData).length >= 3 && Object.keys(quoteProductsData).length < 4) {
+            // Pedimos el 5 Elemento
+        } else if (Object.keys(quoteProductsData).length >= 4) {
+            setCervicales(quoteProductsData['CERVICAL']);
+            setLumbares(quoteProductsData['LUMBAR']);
+            setComplementos(quoteProductsData['COMPLEMENTOS']);
+            setToraxico(quoteProductsData['TORACICO']);
+        }
+    }, [quoteProductsData]);
+
+    useEffect(() => {
+        
+        let newArray = [];
+        searchList&&
+        newArray.push(searchList.product);
+        setNewArray(newArray)
+
+    }, [searchList])
+
+    
+
+    return (
+        <div className='c-quoteScreen animate__animated animate__fadeIn'>
+            {
+                !tipoCirugia && systemId
+                    ? <SubNavBarComponent title={"Sistemas"} systemId={systemId} historyPage={`/Inicio`} searchActive={true} />
+                    : <SubNavBarComponent title={"Sistemas"} historyPage={`/Inicio`} searchActive={true} />
+            }
+            {
+                tipoCirugia &&
+                <SubNavBarComponent title={"Programar CX"} historyPage={`/ProgramarCX`} searchActive={true} programarCX={'ProgramarCX'} />
+
+            }
+            <div>
+            </div>
+            <div>
+                {!searchList
+                
+                ?<CardProductComponent
+                    cervicales={cervicales}
+                    lumbares={lumbares}
+                    complementos={complementos}
+                    toraxico={toraxico}
+                    tipoCirugia={tipoCirugia}
+                    systemId={systemId}
+                    existUniqueProduct={existUniqueProduct}
+
+                />
+                :(searchList.type === 'cervicales'
+                    ?<CardProductComponent
+                    cervicales={newArray}
+                    tipoCirugia={tipoCirugia}
+                    systemId={systemId}
+                    search={'exist'}
+                    existUniqueProduct={existUniqueProduct}
+                    />
+                    
+                    :searchList.type === 'lumbares'
+                    ?<CardProductComponent
+                    lumbares={newArray}
+                    tipoCirugia={tipoCirugia}
+                    systemId={systemId}
+                    search={'exist'}
+                    existUniqueProduct={existUniqueProduct}
+                    />
+                    :searchList.type === 'complementos'
+                    ?<CardProductComponent
+                    complementos={newArray}
+                    tipoCirugia={tipoCirugia}
+                    systemId={systemId}
+                    search={'exist'}
+                    existUniqueProduct={existUniqueProduct}
+                    />
+                    :searchList.type === 'toraxicos' &&
+                    <CardProductComponent
+                    toraxico={newArray}
+                    tipoCirugia={tipoCirugia}
+                    systemId={systemId}
+                    search={'exist'}
+                    existUniqueProduct={existUniqueProduct}
+                    />
+                    )
+                }
+                {
+                    listElementTypeSurgeryBeing &&
+                    <ModalProduct
+                        ref={openModal}
+                        productItem={listElementTypeSurgeryBeing.system}
+                        urlToArragement={'ProgramarCX'}
+                        mainSurgeryTypeId={listElementTypeSurgeryBeing.system.mainSurgeryTypeId}
+                        programarCX={programarCX} />
+                }
+                {
+                    !tipoCirugia && newQuote && newQuote.systems && newQuote.systems.length > 0 && existUniqueProduct &&
+                    <DetalleProducto />
+                }
+
+                {
+                    tipoCirugia && listElementOptionalMaterialSucces && listElementOptionalMaterialSucces.length > 0 &&
+                    <DetalleProducto />
+                }
+
+                {
+                    tipoCirugia && listElementTypeSurgeryCompleted && listElementTypeSurgeryCompleted.length > 0 &&
+                    <DetalleProducto />
+                }
+            </div>
+
+        </div>
+
+    );
+}

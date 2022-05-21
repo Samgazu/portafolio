@@ -1,0 +1,44 @@
+.ChatComponent-container{
+    width: 30%;
+    height: 85vh;
+    background-color: rgba(#fff, .97);
+    box-shadow: -2px 0px 5px -2px #777;
+    position: fixed;
+    right: 0%;
+    transition: 850ms;
+    z-index: 9999;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    top: 5vw;
+    font-family: 'Poppins';
+    border-radius: .4vw;
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    .ChatComponent-subContainer{
+        width: 98%;
+        height: calc(83vh-2vw);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: .2fr 1fr;
+        grid-gap: 2vw;
+        justify-items: center;
+        align-items: center;
+        .ChatComponent-header-container{
+            width: 80%;
+            .ChatComponent-header-info-container{
+                width: 100%;
+            }
+            .ChatComponent-header-info{
+                font-size: 1.5vw;
+                font-weight: 500;
+                color: #303030;
+            }
+        }
+
+        .ChatComponent-messages-info-container{
+            width: 100%;
+        }
+    }
+}

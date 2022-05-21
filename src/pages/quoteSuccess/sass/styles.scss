@@ -1,0 +1,92 @@
+.quoteSuccess {
+    width: 100%;
+    height: 100vh ;
+    position: relative;
+    background: linear-gradient(320deg, #1abc9c 0%, #094070 91%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow-y: auto;
+    * {
+        font-family: Poppins;
+    }
+    .quoteSuccess_general_c {
+        width: 40vw;
+        height: 78vh;
+        padding-top: 8vw;
+        padding-bottom: 40px;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        .quote-images {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            .quote-success-img {
+                width: 50%;
+            }
+            .quote-success-icon {
+                width: 3vw;
+                position: absolute;
+                top: 0;
+                right: 0;
+                cursor: pointer;
+            }
+        }
+        .quoteSuccess_title {
+            font-size: 3vw;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+        }
+        .quoteSuccess-subtitle {
+            font-size: 2vw;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+        .quoteSucess-number {
+            font-size: 3vw;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+        .order_buttons {
+            display: flex;
+            justify-content: space-between;
+            .quote-white-button {
+                font-size: 1.5vw;
+                color: #094070;
+                background-color: #ffffff;
+                border-radius: 20px;
+                cursor: pointer;
+                display: flex;
+                font-weight: 500;
+                text-transform: uppercase;
+                padding: 6px 1rem;
+                margin-left: 1rem;
+                min-width: 14vw;
+                border: none;
+                justify-content: center;
+                text-transform: uppercase;
+            }
+            .quote-transparent-button {
+                font-size: 1.5vw;
+                color: #ffffff;
+                background-color: transparent;
+                border: 1px solid #ffffff;
+                border-radius: 20px;
+                cursor: pointer;
+                display: flex;
+                font-weight: 500;
+                text-transform: uppercase;
+                padding: 6px 1rem;
+                margin-left: 1rem;
+                min-width: 14vw;
+                justify-content: center;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+$gradient: linear-gradient(270deg, rgba(9,64,112,1) 0%, rgba(55,167,185,1) 91%)
+
+.container-FactoryConfigurationProductTab
+    width: 95%
+    display: grid
+    grid-template-areas: "FactoryConfigurationProductTab-container-button" "FactoryConfigurationProductTab-container-list-products"
+    .FactoryConfigurationProductTab-container-button-create
+        width: 100%
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        grid-area: "FactoryConfigurationProductTab-container-button"
+        .FactoryConfigurationProductTab-button-create
+            background: $gradient
+            color: #fff
+            border: none
+            border-radius: 5px
+            outline: none
+            margin: 10px 10px 0 0
+            padding: 5px 15px
+    .FactoryConfigurationProductTab-container-list-products
+        display: grid
+        grid-area: "FactoryConfigurationProductTab-container-list-products"
+        grid-template-columns: 1fr 1fr
+        grid-template-areas: "FactoryConfigurationProductTab-container-list FactoryConfigurationProductTab-container-add"
+        width: 100%
+        .FactoryConfigurationProductTab-container-card-product-list
+            width: 95%
+            height: 50vh
+            grid-area: "FactoryConfigurationProductTab-container-list"
+        .FactoryConfigurationProductTab-container-card-product-add
+            width: 95%
+            grid-area: "FactoryConfigurationProductTab-container-add"

@@ -1,0 +1,200 @@
+.search_input_content {
+    margin-left: 3rem;
+    input {
+        width: 300px!important;
+    }
+}
+.doctor-tab-process-ul {
+    text-decoration: none;
+    list-style-type: none;
+    width: calc( 100% - 6rem);
+    justify-content: space-around;
+    margin: 2rem 1rem 0 1rem;
+    .doctor-tab-process-li {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #CDCCCC;
+
+    }
+        .doctor-tab-process-li-header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: none;
+            background-color: white;
+            outline: none;
+            padding: 0 2rem;
+            font-family: 'Poppins';
+            font-size: 17px;
+            font-weight: 500;
+            color: #00325D;
+            cursor: pointer;
+            .blueArrowListIcon {
+                width: 7px;
+            }
+        }
+        .doctor-tab-process-li-body {
+            padding-top: 20px;
+            .doctor-tab-process-ol {
+                text-decoration: none;
+                list-style-type: none;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                position: relative;
+                margin-left: 1rem;
+                li {
+                    display: flex;
+                    font-family: 'Poppins';
+                    padding: 11px 0;
+                    position: relative;
+                    align-items: center;
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        background: #CDCCCC;
+                        display: block;
+                        width: 2px;
+                        height: 23px;
+                        top: 34px;
+                        left: 11px;
+                        z-index: 1;
+                    }
+                    &:last-child {
+                        &:after {
+                            width: 0!important;
+                            height: 0!important;
+                        }
+                    }
+                }
+                .textNonActualState {
+                    font-family: 'Poppins';
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: #777777;
+                    .processNumber {
+                        border: 2px solid #707070;
+                        color: #303030;
+                        font-weight: 400;
+                        z-index: 1;
+                        span {
+                            border: 1px solid #ffffff;
+                        }
+                    }
+                }
+                .textActualState {
+                    font-family: 'Poppins';
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: #303030;
+                    .processNumber {
+                        width: 20px!important;
+                        height: 20px!important;
+                        border: 2px solid #37A7B9;
+                        color: #ffffff;
+                        font-weight: 500;
+                        background-color: #37A7B9;
+                        span {
+                            border: 1px solid #ffffff;
+                            border-radius: 50%;
+                            width: 18px;
+                            height: 18px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+                }
+                .processNumber {
+                    width: 19px;
+                    height: 19px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 14px;
+                    border-radius: 50%;
+                    margin-right: 1rem;
+                    span {
+                        width: 17px;
+                        height: 17px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 50%;
+                    }
+                }
+            }
+            .doctor-tab-process-li-button {
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+}
+.tab_content_base {
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+// MODAL
+.modal-order {
+    width: 100%;
+    .table-order-header {
+        width: 100%;
+        display: flex;
+        .header-element {
+            p {
+                font-family: 'Poppins';
+                font-size: 16px;
+                font-weight: 500;
+                color: #094070;
+                text-align: center;
+            }
+            &:first-child {
+                width: 10%;
+            }
+            &:nth-child(2) {
+                width: 55%;
+            }
+            &:nth-child(3) {
+                width: 20%;
+            }
+            &:last-child {
+                width: 15%;
+            }
+        }
+    }
+    .table-order-body {
+        width: 100%;
+        display: flex;
+        margin-top: 1rem;
+        .body-element {
+            p {
+                font-family: 'Poppins';
+                font-size: 15px;
+                font-weight: 500;
+                text-transform: uppercase;
+                color: #303030;
+                text-align: center;
+            }
+            &:first-child {
+                width: 10%;
+            }
+            &:nth-child(2) {
+                width: 55%;
+                text-align: left;
+            }
+            &:nth-child(3) {
+                width: 20%;
+            }
+            &:last-child {
+                width:15%;
+            }
+        }
+        .material-element {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}

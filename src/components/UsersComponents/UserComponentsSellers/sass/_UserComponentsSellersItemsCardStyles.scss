@@ -1,0 +1,20 @@
+
+.UserComponentsSellersItemsCard_list_component_container_cards_button_select_all{
+    width: 80%;
+    max-height: 2.2vw;
+    font-family: 'Poppins';
+    padding: .5vw;
+    margin-bottom: 1vw;
+    border-radius: .5vw;
+    background: #fff;
+    color: #37a7b9;
+    border: .15vw solid #37a7b9;
+    cursor: pointer;
+    transition: .4s;
+}
+.UserComponentsSellersItemsCard_list_component_container_cards_button_select_all:hover{
+    background: #37a7b9;
+    color: #fff;
+    transition: .4s;
+    border: .15vw solid #37a7b9;
+}

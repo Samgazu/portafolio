@@ -1,0 +1,129 @@
+.container_schedule_arragement
+    .container_schedule_arragement-page
+        padding-top: 11vw
+        width: 90%
+        margin: auto
+        display: grid
+        grid-template-columns: minmax(200px, 260px) 1fr
+        grid-template-areas: 'container_schedule_arragement-c-info schedule_arragement-c-items'
+        grid-gap: 40px
+    .schedule_arragement-c-info
+        display: grid
+        grid-template-areas: 'schedule_arragement-info-c-name' 'container_schedule_arragement-c-items'
+        grid-area: container_schedule_arragement-c-info
+        .schedule_arragement-info-c-name
+            width: 100%
+            min-height: 40px
+            height: 10vh
+            background: linear-gradient(270deg, rgba(9,64,112,1) 0%, rgba(55,167,185,1) 91%)
+            display: flex
+            flex-direction: row
+            text-align: right
+            justify-content: space-around
+            align-items: center
+            font-family: 'Poppins'
+            border-radius: 15px
+            .schedule_arragement-info-name
+                color: #fff
+                width: 85%
+                padding-right: 10px
+            .schedule_arragement-info-img
+                width: 15%
+                padding-left: 10px
+        .container_schedule_arragement-c-items
+            width: 90%
+            height: 220px
+            justify-self: center
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            border-radius: 32px
+            background: #ffffff
+            box-shadow:  12px 12px 35px #969696, -12px -12px 35px #ffffff
+            .schedule_arragement-item-img
+                margin-top: 15px
+                width: 7vw
+            .schedule_arragement-item-name
+                text-align: center
+                font-family: 'Poppins'
+                font-weight: 400
+    .schedule_arragement-c-items
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-auto-flow: dense
+        grid-template-rows: 200px 200px
+        grid-gap: 30px
+        height: 70vh
+        // overflow: scroll
+        .schedule_arragement-c-item
+            width: 220px
+            height: 200px
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            position: relative
+            justify-self: center
+            align-self: center
+            border-radius: 18px
+            background: #ffffff
+            border: 3px solid #DCDCDC
+            cursor: pointer
+            .schedule_arragement-item-c-name
+                width: 90%
+                text-align: center
+                background: none
+                border: none
+                cursor: pointer
+                outline: none
+                font-family: 'Poppins' serif
+                font-size: 18px
+                font-weight: 300
+                .schedule_arragement-item-name
+                    font-family: 'Poppins'
+                    font-weight: 300
+            .schedule_arragement-item-c-img
+                width: 100%
+                border: none
+                outline: none
+                display: flex
+                justify-content: center
+                align-items: center
+                position: absolute
+                bottom: 0
+                padding: .8vw 0
+                border-radius: 0 0 13px 13px
+                background: linear-gradient(270deg, rgba(9,64,112,1) 0%, rgba(55,167,185,1) 91%)
+                cursor: pointer
+                .schedule_arragement-item-img
+                    color: #fff
+                    font-size: 18px
+            .schedule_arragement-item-c-infoitem
+                width: 100%
+                background: linear-gradient(270deg, rgba(9,64,112,1) 0%, rgba(55,167,185,1) 91%)
+                overflow-y: scroll
+                border-radius: 13px
+                color: #ececec
+                padding: 10px 0
+                display: flex
+                flex-direction: column
+                align-items: center
+                height: 220px
+                .schedule_arragement-item-c-infoitem-item
+                    width: 92%
+                    padding-bottom: 10px
+                    cursor: pointer
+                    background: none
+                    color: #fff
+                    border: none
+                    text-align: initial
+                    outline: none
+                    .schedule_arragement-infoitem-item-name
+                        font-size: 12px
+                        font-family: 'Poppins'
+                        margin-bottom: 3px
+                    .schedule_arragement-infoitem-item-desc
+                        font-size: 12px
+                        font-family: 'Poppins'
+            

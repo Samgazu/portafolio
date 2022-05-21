@@ -1,0 +1,87 @@
+.c-navbar-tools
+    display: flex
+    margin: 0 0 0 auto
+    flex-direction: row
+    z-index: 10
+    margin-right: 30px
+    align-self: center
+    justify-self: center
+    grid-area: c-navbar-tools
+    .tools-logo
+        margin-left: 1.5vw
+        cursor: pointer
+        background: none
+        border-radius: 50%
+        border: 1px solid #fff
+        width: 2vw
+        height: 2vw
+        display: flex
+        justify-content: center
+        align-items: center
+        position: relative
+        outline: none
+        box-shadow: #000 3px 3px 6px -3px
+        &:hover
+            color: rgba(#9ad0ff, .5 )
+            transition: .3s
+        .tools-logo-img
+            width: 2vw
+
+        .bolita-roja
+                background: #f72f2f
+                width: .7vw
+                height: 1.3vh
+                max-height: 1.3vh
+                max-width: .7vw
+                position: absolute
+                border-radius: 100%
+                margin-left: 2vw
+                margin-bottom: 3vh
+
+        .hidden
+            display: none
+    .c-tools-search
+        display: flex
+        flex-direction: row
+        justify-items: center
+        align-items: center
+        .active
+            opacity: 1 !important
+            transition: .5s
+        .tools-c-input-search
+            display: flex
+            opacity: 0
+            transition: .5s
+            align-items: center
+            justify-items: center
+            .c-tools-search-icobuscar
+                background: #dddddd
+                padding: 7px 2px 1px 6px
+                border-radius: 20px 0 0 20px
+                img
+                    width: 16px
+            .tools-input-search
+                border: none
+                background: #dddddd
+                border-radius: 0 20px 20px 0
+                outline: none
+                padding: 5px
+                height: 18px
+                color: #777777
+        .tools-logo-search
+
+    .tools-logo-notifications
+
+    .tools-logo-user
+        display: flex
+        flex-direction: row
+        justify-items: center
+        align-items: center
+        position: relative
+
+        .tools-logo-userName
+            font-size: 16px
+            margin: 0 0 0 10px
+            font-family: 'Roboto', sans-serif
+            font-weight: 100
+    .tools-logo-settings

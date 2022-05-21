@@ -1,0 +1,52 @@
+@media screen and ( max-width: 970px )
+    .c-home-principal
+        .c-home
+            .c-home-sec1
+                font-size: 14px
+                .c-home-item-horizontalform
+                    img
+                        width: 60px
+                .c-home-item-simpleform
+                    font-size: 16px
+                    img
+                        width: 90px
+            .c-home-sec2
+                .c-home-item-horizontalform
+                    img
+                        width: 90px
+                .c-home-item-simpleform
+                    img
+                        width: 60px
+                .c-home-c-informacion
+                    .home-item-title
+                        font-size: 18px
+
+@media screen and ( max-width: 900px )
+    .c-home-principal
+        height: auto
+        .c-home
+            grid-template-columns: 1fr
+            grid-template-areas: 'c-home-sec1' 'c-home-sec2'
+            .c-home-sec1
+                font-size: 18px
+                .c-home-item-horizontalform
+                    img
+                        width: 100px
+                .c-home-item-simpleform
+                    font-size: 18px
+                    img
+                        width: 130px
+            .c-home-sec2
+                grid-template-rows: 160px 120px 160px
+                grid-template-columns: 1fr 1fr
+                grid-template-areas: 'c-home-c-pedidos c-home-c-informacion''c-home-c-pedidos c-home-c-estatus' 'c-home-c-encuestas  c-home-c-estatus'
+                .c-home-item-horizontalform
+                    img
+                        width: 130px
+                .c-home-item-simpleform
+                    img
+                        width: 100px
+                .c-home-c-informacion
+                    .home-item-title
+                        font-size: 18px
+        

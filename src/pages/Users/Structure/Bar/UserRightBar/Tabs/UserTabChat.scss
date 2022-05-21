@@ -1,0 +1,41 @@
+.doctor-tab-chat-main-container {
+    display: flex;
+    flex-direction: row;
+    padding-top: 40px;
+    .doctor-tab-chat-left-bar {
+        width: 55%;
+        display: flex;
+        border-right: 1px solid #777777;
+        padding-right: 20px;
+        flex-direction: column;
+        height: calc( 100vh - 160px);
+        overflow-y: auto;
+    }
+    .doctor-tab-chat-main-right-bar {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        padding-left: 40px;
+    }
+}
+
+.doctor-tab-chat-left-bar::-webkit-scrollbar, .right-bar::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.doctor-tab-chat-left-bar::-webkit-scrollbar:vertical, .right-bar::-webkit-scrollbar:vertical {
+    width:10px;
+}
+.doctor-tab-chat-left-bar::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button, .right-bar::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+    display: none;
+} 
+.doctor-tab-chat-left-bar::-webkit-scrollbar:horizontal, .right-bar::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+.doctor-tab-chat-left-bar::-webkit-scrollbar-thumb, .right-bar::-webkit-scrollbar-thumb {
+    background-color: #777777;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+.doctor-tab-chat-left-bar::-webkit-scrollbar-track, .right-bar::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}

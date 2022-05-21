@@ -1,0 +1,175 @@
+
+.quote_description_base {
+    margin: 40px auto 40px auto;
+    width: 90%;
+    position: relative;
+    padding-top: 8vw;
+    * {
+        font-family: 'Poppins';
+    }
+    .twoColumns {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1.5rem;
+        .element {
+            width: 30%;
+            &:last-child {
+                width: 65%;
+                .verticalScroll {
+                    height: calc( 100vh - 285px);
+                    overflow-y: auto;
+                }
+            }
+        }
+    }
+}
+.quoteData {
+    width: 100%;
+    .elementQuoteData {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
+        border-bottom: 3px solid #c0c0c0;
+        .title {
+            font-size: 1.1vw;
+            color: #094070;
+            font-weight: 500;
+            text-align: start;
+        }
+        .value {
+            font-size: 1.1vw;
+            color: #777777;
+            font-weight: 500;
+            text-align: end;
+        }
+    }
+}
+.whiteCardQuoteDescription {
+    width: 95%;
+    padding: 1rem;
+    border: 2px solid #DCDCDC;
+    border-radius: 7px;
+    margin: 1rem 0 2rem 0;
+    .cardtitleContent {
+        width: 100%;
+        text-align: center;
+        margin: 1rem 0;
+    }
+    .cardtitle {
+        font-size: 1.2vw;
+        color: #094070;
+        font-weight: 600;
+        margin: 8px 0;
+        text-align: center;
+    }
+    .cardValue {
+        font-size: 1.1vw;
+        color: #303030;
+        font-weight: 300;
+        margin: 8px 0;
+        text-align: center;
+    }
+    .cardHeader, .cardBody {
+        display: flex;
+        justify-content: space-between;
+        .cardelement {
+            width: 15%;
+            margin-bottom: 1rem;
+            &:nth-child(2) {
+                width: 30%;
+                .cardValue {
+                    text-align: left;
+                }
+            }
+        }
+    }
+    .cardpricecontent {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        .cardprice {
+            width: 40%;
+            .priceElement {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 8px;
+                .priceTitle {
+                    font-size: 14px;
+                    color: #094070;
+                    font-weight: 600;
+                }
+                .priceValue {
+                    font-size: 14px;
+                    color: #303030;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+.totalpricecontent {
+    width: calc( 90% + 2rem);
+    display: flex;
+    justify-content: flex-end;
+    .totalprice {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        .totalpriceelement {
+            display: flex;
+            width: 90%;
+            justify-content: space-between;
+            border-radius: 10px;
+            border: 2px solid #DCDCDC;
+            padding: 2px 6px;
+            margin-bottom: 1rem;
+            &:nth-child(2) {
+                width: 90%;
+            }
+            .totalpriceelementtitle {
+                font-size: 18px;
+                color: #094070;
+                font-weight: 600;
+            }
+            .totalpriceelementvalue {
+                font-size: 18px;
+                color: #303030;
+                font-weight: 500;
+            }
+        }
+    }
+}
+.twoButtonsContent {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    .twoButtons {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        
+        .quote-description-button {
+            align-items: center;
+            background: linear-gradient(270deg, rgba(26,188,156,1) 0%, rgba(9,64,112,1) 91%);
+            border-radius: 20px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            font-size: 14px;
+            flex-direction: row;
+            font-family: 'Poppins';
+            font-weight: 300;
+            text-transform: uppercase;
+            padding: 8px 1rem;
+            margin-left: 1rem;
+            min-width: 16vw;
+            justify-content: center;
+            font-weight: 500;
+            outline: none;
+        }
+    }
+}

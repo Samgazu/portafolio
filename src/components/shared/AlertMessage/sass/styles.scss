@@ -1,0 +1,119 @@
+
+
+.alert-message-container-OK{
+    .alert-message-subContainer{
+
+        .alert-message-img-type{
+
+            .alert-message-img-type-img{
+                color: #37A585;
+            }
+        }
+        .alert-message-Text{
+            color: #797979;
+        }
+        .alert-message-close{
+
+            .alert-message-close-img{
+
+            }
+        }
+    }
+}
+.alert-message-container-ERROR{
+
+    .alert-message-subContainer{
+
+        .alert-message-img-type{
+
+            .alert-message-img-type-img{
+                color: #FF0000;
+            }
+        }
+        .alert-message-Text{
+            color: #797979;
+        }
+        .alert-message-close{
+
+            .alert-message-close-img{
+
+            }
+        }
+    }
+}
+.alert-message-container-WARNING{
+
+    .alert-message-subContainer{
+
+        .alert-message-img-type{
+
+            .alert-message-img-type-img{
+                color: #e29b01;
+            }
+        }
+        .alert-message-Text{
+            color: #797979;
+        }
+        .alert-message-close{
+
+            .alert-message-close-img{
+
+            }
+        }
+    }
+}
+
+.alert-message-container{
+    background: #fff;
+    box-shadow: 3px 1px 10px 0 rgb(166 171 189 / 50%);
+    width: 40%;
+    height: 5vw;
+    z-index: 100;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    right: 30vw;
+    bottom: 3vw;
+    border: 1px solid #eee;
+    border-radius: 1vw;
+    .alert-message-subContainer{
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        .alert-message-img-type{
+            width: 10%;
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 2px;
+            .alert-message-img-type-img{
+                width: 60%;
+                font-size: 2vw;
+            }
+        }
+        .alert-message-Text{
+            width: 100%;
+            font-family: 'Poppins';
+            text-align: center;
+        }
+        .alert-message-close{
+            width: 10%;
+            display: flex;
+            background: none;
+            border: none;
+            justify-content: flex-end;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            color: #797979;
+            .alert-message-close-img{
+                width: 40%;
+                cursor: pointer;
+                font-size: 1.5vw;
+            }
+        }
+    }
+}

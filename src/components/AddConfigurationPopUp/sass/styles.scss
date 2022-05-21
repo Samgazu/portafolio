@@ -1,0 +1,25 @@
+$gradient: linear-gradient(270deg, rgba(9,64,112,1) 0%, rgba(55,167,185,1) 91%);
+
+.addButton {
+    border-radius: 50%;
+    border: 1px solid #fff;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    outline: none;
+    box-shadow: #000 3px 3px 6px -3px;
+    cursor: pointer;
+    .addImg {
+        width: 10px;
+    }
+}
+
+.buttons {
+    color: #fff !important;
+    background: $gradient;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 30px 5px 30px;
+}

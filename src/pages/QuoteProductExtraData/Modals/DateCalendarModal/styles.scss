@@ -1,0 +1,110 @@
+.c-date {
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .react-calendar {
+        width: 90%;
+        font-family: 'Poppins';
+        border: none;
+        .calendar__navigation__label {
+            .calendar__navigation__label__labelText  {
+                font-size: 18px;
+                color: #00325D;
+            }
+        }
+        button {
+            color: #2A99AB;
+        }
+        button {
+            background-color: transparent;
+            border-width: 0;
+            span {
+                font-size: 20px;
+                color: #00325D;
+                font-weight: 500;
+                text-transform: capitalize;
+            }
+        }
+        .react-calendar__viewContainer {
+            .react-calendar__month-view__weekdays {
+                abbr {
+                    color: #a8a8a8;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                }
+            }
+            .react-calendar__month-view__days {
+                button {
+                    abbr {
+                        color: #303030;
+                        font-weight: 600;
+                        min-width: 18px;
+                    }
+                    &:focus {
+                        outline: none;
+                        abbr {
+                            color: #ffffff;
+                            // border-color: #2A99AB;
+                            // background-color: #2A99AB;
+                            // border-radius: 50%;
+                            // padding: 4px 6px;
+                        }
+                    }
+                }
+                .react-calendar__month-view__days__day--neighboringMonth {
+                    abbr {
+                        color: #dddddd;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+        abbr {
+            font-size: 12px;
+        }
+    }
+    .c-date-c-title {
+        width: 90%;
+        text-align: start;
+        .c-date-title {
+            margin-top: 0;
+            font-family: 'Poppins';
+            font-weight: 300;
+            font-size: 22px;
+            margin-bottom: .5rem;
+        }
+    }
+    .c-date-c-info {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        border-bottom: 1px solid #a3a3a3;
+        padding-bottom: 10px;
+        .c-date-info {
+            width: 30%;
+            color: #a3a3a3;
+            font-size: 20px;
+            font-weight: 300;
+            text-align: center;
+            border: none;
+            outline: none;
+        }
+    }
+    .c-date-button {
+        width: 60%;
+        padding: 10px;
+        font-family: 'Poppins';
+        margin-top: 30px;
+        border-radius: 20px;
+        border: none;
+        background: linear-gradient(270deg, rgba(26,188,156,1) 0%, rgba(55,167,185,1) 91%);
+        color: #fff;
+        outline: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+}

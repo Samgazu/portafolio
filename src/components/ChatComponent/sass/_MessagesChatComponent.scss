@@ -1,0 +1,60 @@
+
+
+
+.MessagesChatComponent-container{
+    width: 100%;
+    height: 66vh;
+    overflow: scroll;
+    border-bottom: 1px solid #303030;
+    border-top: 1px solid #303030;
+
+
+    .MessagesChatComponent-preContainer-active{
+        background: rgba(#1ABC9C, .3);
+    }
+    .MessagesChatComponent-preContainer-inactive{
+        background: #fff;
+    }
+    .MessagesChatComponent-preContainer{
+        width: 100%;
+       border-top: 1px solid #303030;
+
+    
+        .MessagesChatComponent-info-container{
+            width: 90%;
+            display: grid;
+            grid-template-columns: .2fr 1fr .2fr;
+            align-items: center;
+            margin-left: 1vw;
+            .MessagesChatComponent-info-imgUser{
+                justify-self: center;
+                width: 4vw;
+            }
+            .MessagesChatComponent-container-info{
+                justify-self: center;
+                cursor: pointer;
+                width: 90%;
+                .MessagesChatComponent-info-nameUser{
+                    font-size: 1vw;
+                    color: #303030;
+                    font-weight: 500;
+                    width: 24vw;
+                }
+                .MessagesChatComponent-info-messageUser{
+                    font-size: .9vw;
+                    color: #303030;
+                    font-weight: 300;
+                }
+                .MessagesChatComponent-info-timeMsg{
+                    color: #303030;
+                    font-weight: 300;
+                    font-size: .7vw;
+                }
+            }
+            .MessagesChatComponent-info-imgMessage{
+                justify-self: center;
+                width: 2vw;
+            }
+        }
+    }
+}

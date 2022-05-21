@@ -1,0 +1,75 @@
+.tabs-line-ul {
+    width: calc( 100% - 90px)!important;
+    display: flex;
+    text-decoration: none;
+    list-style-type: none;
+    width: 100%;
+    justify-content: space-around;
+}
+.stepOption {
+    background-color: #CDCCCC;
+    color: #303030;
+    border-radius: 5px;
+    width: 69px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        background: #777777;
+        display: block;
+        width: 12vw;
+        height: 2px;
+        top: 30px;
+        left: 99%;
+    }
+    &:first-child {
+        &:before {
+            content: '';
+            position: absolute;
+            background: #777777;
+            display: block;
+            width: 100%;
+            height: 2px;
+            top: 30px;
+            right: 99%;
+        }
+    }
+    &:last-child {
+        &:after {
+            width: 100%;
+        }
+    }
+    button {
+        width: 100%;
+        font-size:13px;
+        border-color: transparent;
+        color: #303030;
+        font-family: 'Poppins';
+        font-weight: 500;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        padding: 6px 0;
+        cursor: pointer;
+        z-index: 1;
+        img {
+            width: 30px;
+            margin-bottom: 4px;
+        }
+    }
+    .grayLineO {
+        width: 100%;
+        height: 1px;
+        background: black;
+    }
+}
+.stepOptionSelected {
+    background-color: #00325D!important;
+    button {
+        color: #ffffff;
+    }
+}

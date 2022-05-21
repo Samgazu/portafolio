@@ -1,0 +1,85 @@
+.c-Patient
+    width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    .c-Patient-c-search
+        width: 90%
+        margin: 20px 0
+        display: flex
+        flex-direction: row
+        justify-items: flex-start
+        align-items: center
+        font-size: 16px
+        .active
+            background: linear-gradient(270deg, rgba(9,64,112,1) 0%, rgba(55,167,185,1) 91%) !important
+        .c-Patient-button
+            width: 45%
+            padding: 8px 0
+            color: #fff
+            background: #707070
+            border: none
+            outline: none
+            border-radius: 20px
+        .tools-c-input-search
+            width: 100%
+            display: flex
+            align-items: center
+            justify-items: center
+            .c-tools-search-icobuscar
+                background: #dddddd
+                padding: 0px 6px 0px 12px
+                border-radius: 20px 0 0 20px
+                display: flex
+                justify-content: center
+                align-items: center
+                height: 27px
+                border: none
+                img
+                    width: 18px
+            .tools-input-search
+                border: none
+                width: 50%
+                background: #dddddd
+                border-radius: 0 20px 20px 0
+                outline: none
+                padding: 5px
+                height: 17px
+                color: #777777
+    .c-Patient-c-list-items
+        width: 90%
+        margin-bottom: 20px
+        .c-Patient-c-list-items-scroll
+            height: 100px
+            overflow-y: scroll
+            .c-Patient-c-item
+                width: 90%
+                display: flex
+                flex-direction: row
+                justify-content: space-between
+                align-items: center
+                padding-bottom: 5px
+                border-bottom: 1px solid #a8a8a8
+                .c-Patient-item-name
+                    font-family: 'Poppins'
+                    font-weight: 300
+                    font-size: 18px
+                    color: #696969
+                .c-Patient-item-check
+                    display: inline-block
+                    width: 18px
+                    height: 18px
+                    margin-right: .5rem
+                    background-size: cover
+        .c-Patient-button
+            width: 60%
+            padding: 10px
+            margin-top: 30px
+            border-radius: 20px
+            border: none
+            background: linear-gradient(270deg, rgba(26,188,156,1) 0%, rgba(55,167,185,1) 91%)
+            color: #fff
+            outline: none
+            cursor: pointer
+            font-size: 16px

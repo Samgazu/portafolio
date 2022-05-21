@@ -1,0 +1,48 @@
+.container-LoginVersionModal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50vw;
+    .container-LoginVersionModal-elements{
+        overflow-y: scroll;
+        height: 40vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        .container-LoginVersionModal-text{
+            width: 90%;
+            text-align: start;
+            border-top: 1px solid #c5c5c5;
+            border-bottom: 1px solid #c5c5c5;
+            padding: 1.5vw 0;
+            .LoginVersionModal-title{
+                font-weight: 300;
+                margin: 0;
+                color: #777777;
+                font-family: 'Poppins';
+            }
+            .container-LoginVersionModal-list-items{
+                width: 80%;
+                margin-left: 3vw;
+                text-align: justify;
+                margin-bottom: 1vw;
+                font-weight: 300;
+                color: #777777;
+                font-family: 'Poppins';
+            }
+        }
+    }
+    .LoginVersionModal-button{
+        cursor: pointer;
+        outline: none;
+        margin-top: 1vw;
+        width: 50%;
+        padding: .5vw;
+        border-radius: 1vw;
+        background: linear-gradient(23deg, rgba(55,167,185,1) 0%, rgba(9,64,112,1) 100%);
+        color: #fff;
+        box-shadow: 6px 5px 4px 0px rgb(0 0 0 / 25%);
+        border: none;
+    }
+}

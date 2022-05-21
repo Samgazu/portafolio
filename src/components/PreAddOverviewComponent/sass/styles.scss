@@ -1,0 +1,50 @@
+.schedulePreOrder-section-left-subTitle-container-observation{
+    margin-top: 3vw;
+}
+
+.schedulePreOrder-section-left-subTitle-container{
+    width: 40%;
+    padding: .4vw;
+    font-size: .9vw;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'Poppins';
+    background: rgb(9,64,112);
+    background: linear-gradient(90deg, rgba(9,64,112,1) 0%, rgba(26,188,156,1) 100%);
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    .schedulePreOrder-left-subTitem-title{
+        margin: 0;
+    }
+}
+.schedulePreOrder-left-item-items{
+    border-top: 1px solid #919191;
+    margin-top: 2vh;
+    font-family: 'Poppins';
+    .schedulePreOrder-left-item-item-title{
+        font-size: 1.2vw;
+        font-weight: 300;
+    }
+    .schedulePreOrder-left-item-list{
+        padding: 0px;
+        list-style-type: circle;
+        .schedulePreOrder-left-item-list-item{
+            font-size: 1vw;
+            width: 90%;
+            margin: 0 0 1vw 2vw;
+            font-weight: 300;
+            color: #707070;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .schedulePreOrder-left-item-list-item-img-delete{
+            color: #b60000;
+            cursor: pointer;
+            outline: none;
+            font-size: 1.1vw;
+        }
+    }
+}

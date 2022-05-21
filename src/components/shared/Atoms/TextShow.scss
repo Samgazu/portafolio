@@ -1,0 +1,24 @@
+
+.text-element {
+    width: calc( ( 100% / 3 ) - 1rem);
+    border-bottom: 2px solid rgba(42, 153, 171, 0.4);
+    margin: 0 2rem 2.5rem 0;
+    .text-title {
+        font-family: 'Poppins';
+        font-size: 18px;
+        font-weight: 600;
+        color: #00325D;
+        margin-bottom: 4px;
+    }
+    p {
+        font-family: 'Poppins';
+        font-size: 15px;
+        font-weight: 500;
+        color: #777777;
+        margin: 10px 0;
+        text-transform: capitalize;
+    }
+}
+.transparent-line {
+    border-bottom-color: transparent;
+}

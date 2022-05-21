@@ -1,0 +1,91 @@
+.profile-card-container {
+    display: flex;
+    flex-direction: row;
+    border-left-color: #2A99AB;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 3px 1px 10px 0 rgba(166, 171, 189, 0.5);
+    .blue-line-content {
+        width: 8px;
+        height: 100px;
+        background-color: #2A99AB;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+    }
+    .noImage {
+        display: none;
+    }
+    .profile-card-left-bar {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        .image-circle {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            border: 2px solid #37A7B9;
+            overflow: hidden;
+            img {
+                width: 80px;
+            }
+        }
+    }
+    .allwidthpart {
+        margin-left: 1rem;
+        width: 100%!important;
+    }
+    .profile-card-right-bar {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        color: #094070;
+        padding: 0 !important;
+        justify-content: center;
+        font-family: 'Poppins';
+        position: relative;
+        cursor: pointer;
+    }
+    span {
+        padding-right: 1.4rem;
+        margin-bottom: 2px;
+    }
+        .title-leftlist {
+            font-size: 1.2vw;
+            font-family: "Poppins";
+            font-weight: 500;
+            text-transform: capitalize;
+        }.title-left {
+            font-size: 1.2vw;
+            font-weight: 400;
+            text-transform: capitalize;
+        }
+        .subtitle-leftlist {
+            font-size: 14px;
+        }
+        .subtitle2-leftlist {
+            font-size: 1vw;
+            font-family: "Poppins";
+        }
+        .arrowIcon {
+            width: 10px;
+            position: absolute;
+            right: 15px;
+        }
+}
+.profile-blue-card-container {
+    background-color: #2A99AB!important;
+    .profile-card-left-bar {
+        .image-circle {
+            border-color: #CDCCCC;
+        }
+    }
+    .profile-card-right-bar {
+        color: #ffffff;
+    }
+}
