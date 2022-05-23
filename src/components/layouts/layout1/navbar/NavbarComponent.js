@@ -54,19 +54,6 @@ export const NavbarComponent = () => {
 
             <div className="c-navbar-tools">
 
-                <button className='tools-logo tools-logo-Chat' onClick={() => setOpenElement({ status: !openElement.status, typeElement: 'CHAT' })}>
-                    <img className='tools-logo-img tools-logo-Chat-img' src={icoChatBlanco} alt="" />
-                </button>
-
-
-                <button className='tools-logo tools-logo-Notificaciones' onClick={() => { setOpenElement({ status: !openElement.status, typeElement: 'NOTIFICATION' }); dispatch(setStateNewNotification(false)) }}>
-                    <div className={`${stateNewNotification ? 'bolita-roja' : 'hidden'}`}></div>
-                    <img className='tools-logo-img tools-logo-Notificaciones-img' src={icoNotificacionesBlanco} alt="" />
-                </button>
-
-                <button className='tools-logo tools-logo-Ajustes'>
-                    <img className='tools-logo-img tools-logo-Ajustes-img' src={icoAjustesBlanco} alt="" />
-                </button>
                 <button className='tools-logo tools-logo-Logout'
                     onClick={handleLogout}
                 >
