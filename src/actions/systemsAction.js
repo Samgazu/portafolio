@@ -168,10 +168,11 @@ export const getSystemByMainSurgencyBegin = () =>({
     type: GET_SYSTEM_BY_MAIN_SURGENCY_TYPE_BEGIN
 });
 
-export const getSystemByMainSurgencySuccess = (mainSurgeryType,system) =>({
+export const getSystemByMainSurgencySuccess = (systems) =>({
     type: GET_SYSTEM_BY_MAIN_SURGENCY_TYPE_SUCCESS,
-    mainSurgeryType,
-    system,
+    payload:{
+        systems
+    }
 });
 
 export const getSystemByMainSurgencyFailure = () =>({
@@ -210,9 +211,11 @@ export const getBundlesFormSystemBegin = () => ({
   type: GET_BUNDLES_FORM_SYSTEM_BEGIN,
 });
 
-export const getBundlesFormSystemSuccess = (bundles) => ({
+export const getBundlesFormSystemSuccess = (bundle) => ({
     type: GET_BUNDLES_FORM_SYSTEM_SUCCESS,
-    bundles,
+    payload:{
+        bundle
+    },
 });
 
 export const getBundlesFormSystemFailure = () => ({
@@ -1218,7 +1221,7 @@ export function postNewConfiguration( newConfig ) {
 
 export function getMainSurgeryType() {
     return function (dispatch, getState) {
-        dispatch(getMainSurgeryTypesBegin);
+        dispatch(getMainSurgeryTypesBegin());
         return request({
             partialUrl: `/API/System/GetMainSurgeryTypes/`,
             method: 'GET',

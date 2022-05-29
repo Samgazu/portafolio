@@ -165,18 +165,9 @@ export function systemsReducer(state = initialState.systems, action) {
     case GET_SYSTEM_BY_MAIN_SURGENCY_TYPE_BEGIN:
       return state;
     case GET_SYSTEM_BY_MAIN_SURGENCY_TYPE_SUCCESS: {
-      let systems = JSON.parse(JSON.stringify(state.systems));
-      systems[action.mainSurgeryType.description] = action.system.map(item => {
-        let product = item.product;
-        product.mainSurgeryTypeId = action.mainSurgeryType.id;
-        product.systemId = item.id;
-        return product;
-      
-      });
-    
       return {
         ...state,
-        systems,
+        systems: action.payload.systems,
       };
     }
     case GET_SYSTEM_BY_MAIN_SURGENCY_TYPE_FAILURE:
@@ -196,7 +187,7 @@ export function systemsReducer(state = initialState.systems, action) {
     case GET_BUNDLES_FORM_SYSTEM_SUCCESS:{
       return {
          ...state,
-         bundles:action.bundles,
+         bundles:action.payload.bundle,
       };
     }
     case GET_BUNDLES_FORM_SYSTEM_FAILURE:

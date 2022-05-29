@@ -1,0 +1,232 @@
+import { getMainSurgeryTypesBegin, getMainSurgeryTypesSuccess, getSystemByMainSurgencyBegin, getSystemByMainSurgencySuccess } from "../systemsAction";
+
+export function setSystems( ) {
+
+    return function (dispatch) {
+        dispatch(getSystemByMainSurgencyBegin());
+    const systems ={
+        CERVICAL:[
+            {
+                availableLocations: 11,
+                groupID: "ZIST",
+                id: 1,
+                identificationNumber: "",
+                isActive: true,
+                isBundle: true,
+                isDeleted: false,
+                mainSurgeryTypeId: 1,
+                manufacturerName: "",
+                productBrand: "",
+                productCode: "ADD",
+                productDescription: "ADD",
+                productImage: "https://asistenteapi.tsi.mx:8080/images/app/osmium.png",
+                productModel: "UNICO",
+                productObservation: "",
+                productSubmodel: "",
+                productType: "SI",
+                satProdServ: "",
+                shortDescription: null,
+                shouldSendToApp: true,
+                systemId: 1,
+            },
+            {
+                availableLocations: 1,
+                groupID: "ZIST",
+                id: 2,
+                identificationNumber: "",
+                isActive: true,
+                isBundle: true,
+                isDeleted: false,
+                mainSurgeryTypeId: 1,
+                manufacturerName: "",
+                productBrand: "",
+                productCode: "ANTERO",
+                productDescription: "ANT/LATERAL 1",
+                productImage: "https://asistenteapi.tsi.mx:8080/images/app/osmium.png",
+                productModel: "UNICO",
+                productObservation: "",
+                productSubmodel: "",
+                productType: "SI",
+                satProdServ: "",
+                shortDescription: null,
+                shouldSendToApp: true,
+                systemId: 2,
+            },
+        ],
+        COMPLEMENTOS:[
+            {
+                availableLocations: 4,
+                groupID: "ZIST",
+                id: 4,
+                identificationNumber: "",
+                isActive: true,
+                isBundle: true,
+                isDeleted: false,
+                mainSurgeryTypeId: 4,
+                manufacturerName: "",
+                productBrand: "",
+                productCode: "BROCAS",
+                productDescription: "BROCAS",
+                productImage: "https://asistenteapi.tsi.mx:8080/images/app/osmium.png",
+                productModel: "UNICO",
+                productObservation: "",
+                productSubmodel: "",
+                productType: "SI",
+                satProdServ: "",
+                shortDescription: null,
+                shouldSendToApp: true,
+                systemId: 4,
+            },
+            {
+                availableLocations: 10,
+                groupID: "ZIST",
+                id: 2,
+                identificationNumber: "",
+                isActive: true,
+                isBundle: true,
+                isDeleted: false,
+                mainSurgeryTypeId: 1,
+                manufacturerName: "",
+                productBrand: "",
+                productCode: "CUCH",
+                productDescription: "CUCHARILLAS 1",
+                productImage: "https://asistenteapi.tsi.mx:8080/images/app/osmium.png",
+                productModel: "UNICO",
+                productObservation: "",
+                productSubmodel: "",
+                productType: "SI",
+                satProdServ: "",
+                shortDescription: null,
+                shouldSendToApp: true,
+                systemId: 10,
+            },
+
+        ],
+        LUMBAR:[
+            {
+                availableLocations: 1,
+                groupID: "ZIST",
+                id: 7,
+                identificationNumber: "",
+                isActive: true,
+                isBundle: true,
+                isDeleted: false,
+                mainSurgeryTypeId: 2,
+                manufacturerName: "",
+                productBrand: "",
+                productCode: "CON",
+                productDescription: "CONTACT",
+                productImage: "https://asistenteapi.tsi.mx:8080/images/app/osmium.png",
+                productModel: "UNICO",
+                productObservation: "",
+                productSubmodel: "",
+                productType: "SI",
+                satProdServ: "",
+                shortDescription: null,
+                shouldSendToApp: true,
+                systemId: 7,
+            },
+            {
+                availableLocations: 1,
+                groupID: "ZIST",
+                id: 2,
+                identificationNumber: "",
+                isActive: true,
+                isBundle: true,
+                isDeleted: false,
+                mainSurgeryTypeId: 1,
+                manufacturerName: "",
+                productBrand: "",
+                productCode: "COS MIA",
+                productDescription: "COSMICMIA",
+                productImage: "https://asistenteapi.tsi.mx:8080/images/app/osmium.png",
+                productModel: "UNICO",
+                productObservation: "",
+                productSubmodel: "",
+                productType: "SI",
+                satProdServ: "",
+                shortDescription: null,
+                shouldSendToApp: true,
+                systemId: 9,
+            },
+
+        ],
+        TORACICO:[
+
+            {
+                availableLocations: 11,
+                groupID: "ZIST",
+                id: 13,
+                identificationNumber: "",
+                isActive: true,
+                isBundle: true,
+                isDeleted: false,
+                mainSurgeryTypeId: 2,
+                manufacturerName: "",
+                productBrand: "",
+                productCode: "DIANA",
+                productDescription: "DIANA",
+                productImage: "https://asistenteapi.tsi.mx:8080/images/app/osmium.png",
+                productModel: "NA",
+                productObservation: "",
+                productSubmodel: "",
+                productType: "SI",
+                satProdServ: "",
+                shortDescription: null,
+                shouldSendToApp: true,
+                systemId: 13,
+            },
+            {
+                availableLocations: 1,
+                groupID: "ZIST",
+                id: 16,
+                identificationNumber: "",
+                isActive: true,
+                isBundle: true,
+                isDeleted: false,
+                mainSurgeryTypeId: 2,
+                manufacturerName: "",
+                productBrand: "",
+                productCode: "FLAM",
+                productDescription: "FLAMENCO",
+                productImage: "https://asistenteapi.tsi.mx:8080/images/app/osmium.png",
+                productModel: "UNICO",
+                productObservation: "",
+                productSubmodel: "",
+                productType: "SI",
+                satProdServ: "",
+                shortDescription: null,
+                shouldSendToApp: true,
+                systemId: 16
+            },
+        ],
+    }
+        dispatch(getSystemByMainSurgencySuccess(systems));
+    }
+}
+
+export function setSurgeryTypes( ) {
+
+    return function (dispatch) {
+        dispatch(getMainSurgeryTypesBegin());
+    const types =[
+            {
+               description:"CERVICAL",
+               id:"1"
+            },
+            {
+                description:"LUMBAR",
+                id:"2"
+             },
+             {
+                description:"TORACICO",
+                id:"3"
+             },
+             {
+                description:"COMPLEMENTOS",
+                id:"4"
+             },
+    ]
+        dispatch(getMainSurgeryTypesSuccess(types));
+    }
+}

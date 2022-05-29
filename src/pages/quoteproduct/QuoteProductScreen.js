@@ -10,6 +10,7 @@ import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { getBundlesFormSystem } from '../../actions/systemsAction';
 import shortid from "shortid";
 import { ModalProduct } from "../../components/cardproduct/CardProductModal";
+import { setBundle } from "../../actions/JSON/bundleproductJSON";
 
 export const QuoteProductScreen = () => {
 
@@ -26,9 +27,11 @@ export const QuoteProductScreen = () => {
   const { programarCX, mainSurgeryTypeId, systemId } = useParams();
   const newQuote = useSelector((state) => state.newQuote);
 
-  useEffect( () => {
-    dispatch(getBundlesFormSystem(mainSurgeryTypeId,systemId));
-  },[]);
+   useEffect( () => {
+    dispatch(setBundle());
+  },[]); 
+
+
   const systems = useSelector((state) => state.systems);
   const mainSurgeryType = systems.mainSurgeryTypes.filter( item => item.id == mainSurgeryTypeId)[0];
   const selectedSystem = systems.systems[mainSurgeryType.description].filter( item => item.systemId == systemId)[0];
