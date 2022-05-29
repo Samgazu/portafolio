@@ -1,6 +1,4 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import './sass/styles.scss';
 import { RiDeleteBin6Line } from "react-icons/ri";

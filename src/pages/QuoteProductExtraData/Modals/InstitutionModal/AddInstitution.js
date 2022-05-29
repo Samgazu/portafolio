@@ -40,7 +40,7 @@ export const AddInstitution = (props) => {
           value={institution}
           onChange={handleInputChange}
           autoComplete="off"
-          autofocus
+          autoFocus
         />
         <button type="submit" className="c-institution-add-button">
             Agregar

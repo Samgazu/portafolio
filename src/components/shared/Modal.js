@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import CloseIcon from '@material-ui/icons/Close';
 import PropTypes from 'prop-types';

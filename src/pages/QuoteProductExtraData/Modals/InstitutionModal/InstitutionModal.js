@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import CustomModal from '../../../../components/shared/Modal';
@@ -11,19 +12,19 @@ export const InstitutionModal = (props) => {
 
     const modalBody = () => {
         return (
-            <SearchInstitutionModal  toggle={props.toggle}
-                    type = {props.type}
-                    setResult = {props.setResult}  />
+            <SearchInstitutionModal toggle={props.toggle}
+                type={props.type}
+                setResult={props.setResult} />
         );
     };
 
     return (
         <CustomModal
-                isOpen={props.isOpen}
-                toggle={props.toggle} 
-                imgModal={imgInstitution}
-                title="Institucion"
-                body={modalBody()}
+            isOpen={props.isOpen}
+            toggle={props.toggle}
+            imgModal={imgInstitution}
+            title="Institucion"
+            body={modalBody()}
         />
     );
 }

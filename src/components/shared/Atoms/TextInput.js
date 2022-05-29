@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
-import { connect, useDispatch, useSelector } from 'react-redux';
+/* eslint-disable react/prop-types */
+import React from 'react';
+import { connect } from 'react-redux';
 import { withRouter } from "react-router-dom";
 import './TextInput.scss';
 

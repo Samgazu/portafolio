@@ -1,13 +1,8 @@
-import React from 'react';
 import moment from 'moment';
 import shortid from "shortid";
 
 export const useNotifyAdd = (data) => {
-
-    console.log("Entra al hook")
-
     let notificaciones = {
-
         Notificacion: [
             {
                 uid: shortid.generate(),
@@ -20,9 +15,9 @@ export const useNotifyAdd = (data) => {
                 Tiempo: moment().format(),
             },
         ]
-    }
+    };
 
-    const local = getNewNotification("Newnotificacion")
+    const local = getNewNotification("Newnotificacion");
 
     if (local && local.length > 0) {
         let notificaciones1 = [...notificaciones.Notificacion, ...local,];
@@ -30,9 +25,7 @@ export const useNotifyAdd = (data) => {
     } else {
         localStorage.setItem("Newnotificacion", JSON.stringify(notificaciones.Notificacion));
     }
-
 }
-
 
 const getNewNotification = (valor) => {
     let newNotification = [];

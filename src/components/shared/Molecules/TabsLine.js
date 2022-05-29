@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import './TabsLine.scss';
 
 const TabsLine = ({options, selectedTabId, setSelectedTabId }) => {
 
-    const renderOptionItem = (item, index) => {
+    const renderOptionItem = (item) => {
         return (
             <li className={['stepOption', item.id == selectedTabId ? 'stepOptionSelected' : ''].join(' ')}>
                 <button onClick={() => setSelectedTabId(item.id)}>

@@ -55,14 +55,12 @@ class App extends React.Component {
 App.propTypes = {
   isAuthenticated: PropTypes.any,
   roleUser: PropTypes.any,
-  roleUserPermissions: PropTypes.any,
 };
 
 function mapStateToProps(state) {
   return {
     isAuthenticated: state.user.isAuthenticated,
     roleUser: state.user.user,
-    roleUserPermissions: state.user.user,
   };
 }
 

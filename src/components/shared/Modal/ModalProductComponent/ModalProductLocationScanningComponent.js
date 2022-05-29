@@ -1,26 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './sass/styles.scss';
 import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
 import { ObjectConverter } from '../../ObjectConverter';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getLocationByLocationCodeStoreHose, getLocationByLocationCodeStoreHoseSuccess, searchProductsStoreHose, searchProductsStoreHouseSuccess, setNewProductsAndSystems } from '../../../../actions/storeHouseAction';
 import shortid from 'shortid';
 
-function getModalStyle() {
-    const top = 50;
-    const left = 50
-  
-    return {
-        top: `${top}%`,
-        left: `${left}%`,
-        transform: `translate(-${top}%, -${left}%)`,
-    };
-}
-
 const useStyles = makeStyles(() => ({
-continueButton: {
+    continueButton: {
         fontFamily: 'Poppins',
         fontSize: 18,
         fontWeight: 500,
@@ -40,7 +28,7 @@ continueButton: {
         width: '40%',
         padding: '5px'
     },
-     counter: {
+    counter: {
         borderRadius: '10px',
         boxShadow: '0 0 3.7px 0 rgba(0, 0, 0, 0.4)',
         backgroundColor: '#ffffff',
@@ -48,18 +36,18 @@ continueButton: {
         height: '30px',
         appearance: 'none',
         fontWeight: '400',
-        fontSize:'1.4vw',
+        fontSize: '1.4vw',
         opacity: 0.7,
         border: 'none',
         margin: '0',
-        paddingLeft:'10px',
+        paddingLeft: '10px',
         width: '60%',
         marginTop: '10px',
         cursor: 'inherit',
         lineHeight: 'inherit',
         fontFamily: 'Poppins',
     },
-     labelCounter: {
+    labelCounter: {
         fontFamily: 'Poppins',
         fontSize: '1.5vw',
         fontWeight: '500',
@@ -73,17 +61,16 @@ continueButton: {
         marginBottom: '3vw',
         justifySelf: 'stretch',
         alignSelf: 'stretch',
-        textAlign:'center',
         cursor: 'pointer',
     },
     contenedor: {
         justifyItems: 'center',
         display: 'grid',
         width: '100%',
-        maxHeight:'45vh',
-        gridTemplateColumns:'1fr',
+        maxHeight: '45vh',
+        gridTemplateColumns: '1fr',
         alignItems: 'center',
-        gridTemplateRows: '1fr 1fr 1fr 1fr .5fr',   
+        gridTemplateRows: '1fr 1fr 1fr 1fr .5fr',
     },
 
     itemText: {
@@ -96,32 +83,31 @@ continueButton: {
         fontStyle: 'normal',
         letterSpacing: 'normal',
         width: '60%',
-        textAlign:'left',
+        textAlign: 'left',
         marginBottom: '0px',
-        marginTop:'10px',
-        display:'block',
-    
+        marginTop: '10px',
+        display: 'block',
+
     },
     divisor: {
         width: '100%',
-        display:'flex',
+        display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
     },
     containerForm: {
         width: '100%',
-        display:'flex',
+        display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         margin: '2vw 0',
     },
-    }));
+}));
 
 export const setNewProductsAndSystemsModalProductLocationScanningComponent = () => {
 
     const classes = useStyles();
     // getModalStyle is not a pure function, we roll the style only on the first render
-    const [modalStyle] = React.useState(getModalStyle);
     const [inputValueCodigo, setInputValueCodigo] = useState('');
     const [inputValueDeposito, setInputValueDeposito] = useState('');
     const [productQuantity, setProductQuantity] = useState('');
@@ -129,30 +115,30 @@ export const setNewProductsAndSystemsModalProductLocationScanningComponent = () 
     const [stateButton, setStateButton] = useState('TEXT');
     const locationItemToAdd = useSelector(state => state.storeHouse.locationItemToAdd);
     const listProducts = useSelector(state => state.storeHouse.listProducts);
-  /*   const productsListWithLocation = useSelector(state => state.storeHouse.productsListWithLocation); */
+    /*   const productsListWithLocation = useSelector(state => state.storeHouse.productsListWithLocation); */
 
 
-     //ESTE SELECTOR APUNTA AL REDUCER QUE SE CREO NUEVO PARA AGREGAR PRODUCTOS O SISTEMAS NUEVOS 
-     const newProdutsAndSystems = useSelector(state => state.storeHouse.newProducts);
+    //ESTE SELECTOR APUNTA AL REDUCER QUE SE CREO NUEVO PARA AGREGAR PRODUCTOS O SISTEMAS NUEVOS 
+    const newProdutsAndSystems = useSelector(state => state.storeHouse.newProducts);
 
     const history = useHistory();
     const dispatch = useDispatch();
 
     useEffect(() => {
         return () => {
-            dispatch( searchProductsStoreHouseSuccess(null) );
-            dispatch( getLocationByLocationCodeStoreHoseSuccess(null) );
+            dispatch(searchProductsStoreHouseSuccess(null));
+            dispatch(getLocationByLocationCodeStoreHoseSuccess(null));
         }
     }, [])
 
     useEffect(() => {
-        if(locationItemToAdd){
-            dispatch( searchProductsStoreHose(locationItemToAdd.productCode) );
+        if (locationItemToAdd) {
+            dispatch(searchProductsStoreHose(locationItemToAdd.productCode));
         }
     }, [locationItemToAdd])
 
     useEffect(() => {
-        if(locationItemToAdd && listProducts){
+        if (locationItemToAdd && listProducts) {
             setInputValueCodigo(listProducts[0].productDescription)
             setInputValueDeposito(locationItemToAdd.local)
         }
@@ -163,10 +149,10 @@ export const setNewProductsAndSystemsModalProductLocationScanningComponent = () 
         // const exampleObject = '{"Warehouse”:”Cucharillas 2","NombeUbicacion":"Cucharillas 2","LinkSource":"http://linkparageneralelpdf.tsi.mx","NumberOfBox”:2,"TotalOfBoxes":5}';
         const locationObject = ObjectConverter(inputValue);
 
-        if(locationObject && locationObject.NombeUbicacion){
+        if (locationObject && locationObject.NombeUbicacion) {
             dispatch(getLocationByLocationCodeStoreHose(locationObject.NombeUbicacion))
         }
-        if(locationObject && locationObject.NombreUbicacion){
+        if (locationObject && locationObject.NombreUbicacion) {
             dispatch(getLocationByLocationCodeStoreHose(locationObject.NombreUbicacion))
         }
         setInputValue('');
@@ -175,7 +161,7 @@ export const setNewProductsAndSystemsModalProductLocationScanningComponent = () 
     const handleSubmitNewLocation = (e) => {
         e.preventDefault();
 
-        if(locationItemToAdd && listProducts[0]&&listProducts[0] && productQuantity ){
+        if (locationItemToAdd && listProducts[0] && listProducts[0] && productQuantity) {
             dispatch(setNewProductsAndSystems(newProdutsAndSystems ? [...newProdutsAndSystems, {
                 id: shortid.generate(),
                 ownerProduct: true,
@@ -183,57 +169,57 @@ export const setNewProductsAndSystemsModalProductLocationScanningComponent = () 
                 locastionItem: locationItemToAdd && locationItemToAdd.ubicacion,
                 locastionItemId: locationItemToAdd && locationItemToAdd.id,
                 systemLevels: Number(productQuantity),
-            }]:
-            [{
-                id: shortid.generate(),
-                ownerProduct: true,
-                product: listProducts && listProducts[0],
-                locastionItem: locationItemToAdd && locationItemToAdd.ubicacion,
-                locastionItemId: locationItemToAdd && locationItemToAdd.id,
-                systemLevels: Number(productQuantity),
-            }]));
-            
+            }] :
+                [{
+                    id: shortid.generate(),
+                    ownerProduct: true,
+                    product: listProducts && listProducts[0],
+                    locastionItem: locationItemToAdd && locationItemToAdd.ubicacion,
+                    locastionItemId: locationItemToAdd && locationItemToAdd.id,
+                    systemLevels: Number(productQuantity),
+                }]));
+
             history.replace('/StoreHouse/StoreHouseApproveOrder');
         }
     }
 
-    return(
-        <form className={classes.carousel, classes.contenedor} onSubmit={handleSubmitNewLocation} >
+    return (
+        <form className={[classes.carousel, classes.contenedor]} onSubmit={handleSubmitNewLocation} >
             <div className={classes.divisor}>
-            <label className={classes.itemText}>Código</label>
-                <input  
+                <label className={classes.itemText}>Código</label>
+                <input
                     placeholder='Código'
                     type='text'
-                    value={inputValueCodigo} 
+                    value={inputValueCodigo}
                     className={classes.counter} />
             </div>
             <div className={classes.divisor}>
                 <label className={classes.itemText}>Deposito</label>
-                <input  
+                <input
                     placeholder='Deposito'
-                    value={inputValueDeposito} 
+                    value={inputValueDeposito}
                     type='text'
                     className={classes.counter} />
 
             </div>
             <div className={classes.divisor}>
                 <label className={classes.itemText}>Cantidad</label>
-                <input  onChange={(e) => {
-                            if(e.target.value > 0){
-                                setProductQuantity(e.target.value)
-                            }else{
-                                setProductQuantity(1)
-                            }
-                        }
+                <input onChange={(e) => {
+                    if (e.target.value > 0) {
+                        setProductQuantity(e.target.value)
+                    } else {
+                        setProductQuantity(1)
                     }
-                        autoFocus
-                        type='number'
-                        placeholder='Cantidad'
-                        value={productQuantity} 
-                        className={classes.counter} />
-  
+                }
+                }
+                    autoFocus
+                    type='number'
+                    placeholder='Cantidad'
+                    value={productQuantity}
+                    className={classes.counter} />
+
             </div>
-            
+
             {
                 stateButton === 'TEXT' &&
                 <label className={classes.labelCounter} onClick={() => setStateButton('INPUT')} >ESCANEA TU UBICACIÓN</label>
@@ -245,15 +231,15 @@ export const setNewProductsAndSystemsModalProductLocationScanningComponent = () 
                         autoFocus
                         placeholder='ESCANEA TU UBICACIÓN'
                         value={inputValue}
-                        onChange={({target}) => setInputValue(target.value)}
-                        className={classes.counter}/>
+                        onChange={({ target }) => setInputValue(target.value)}
+                        className={classes.counter} />
                 </form>
             }
-            <button className={classes.continueButton} 
-                    type='submit'
-                    >
-                    ACEPTAR
+            <button className={classes.continueButton}
+                type='submit'
+            >
+                ACEPTAR
             </button>
-        </form>     
+        </form>
     )
 } 

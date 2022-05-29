@@ -1,32 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import './sass/styles.scss';
 import { SubNavBarComponent } from '../../components/layouts/layout1/subnavbar/SubNavBarComponent';
-// import Radio from '@material-ui/core/Radio';
-// import RadioGroup from '@material-ui/core/RadioGroup';
-// import FormControlLabel from '@material-ui/core/FormControlLabel';
 /* eslint-disable import/no-unresolved */
-import { NavLink, Redirect} from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import { CardQuoteFinished } from '../../components/cardquotefinished/CardQuoteFinished';
 import { useSelector, useDispatch } from 'react-redux';
 import { QuoteGeneralInfo } from './QuoteGeneralInfo';
-import { updateNewQuote} from '../../actions/newQuoteAction';
+import { updateNewQuote } from '../../actions/newQuoteAction';
 import { CardQuoteDescription } from '../../components/cardquotefinished/CardQuoteDescription';
 import { QuoteNameModal } from './modal/QuoteNameModal';
+import _ from 'lodash';
 
 export const QuoteFinished = () => {
   const dispatch = useDispatch();
-  const [value, setValue] = React.useState('quote');
+  const [value,] = React.useState('quote');
   const newQuote = useSelector((state) => state.newQuote);
   const [configs, setConfigs] = useState([]);
   const [globalTotal, setGlobalTotal] = useState(0);
   const specificDescriptionQuotation = useSelector(state => state.newQuote.SpecificDescriptionQuotationItems);
 
   const [globalDiscountPercentage2, setGlobalDiscountPercentage2] = useState(0);
-
-
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
 
   const handleChangeIntoTypeOfMoney = (number) => {
     if (number) {
@@ -41,7 +34,7 @@ export const QuoteFinished = () => {
 
   const [openModal, setOpenModal] = useState(null);
   const toggleModal = () => {
-      setOpenModal(null);
+    setOpenModal(null);
   };
 
 
@@ -68,7 +61,7 @@ export const QuoteFinished = () => {
   };
 
   const calculateTotal = () => {
-    
+
     // Usaremos **configs** para hacer todo más facil
     const subTotals = configs.map((item) =>
       parseFloat(item.configuration.configuration.globalSubTotal || 0)
@@ -94,16 +87,16 @@ export const QuoteFinished = () => {
     const productQuantity_ = isNaN(parseFloat(item.productQuantity)) ? 0 : parseInt(item.productQuantity);
     const productPrice_ = isNaN(parseFloat(item.productPrice)) ? 0 : parseFloat(item.productPrice);
     const discountPercentage_ = isNaN(parseFloat(item.discountPercentage)) ? 0 : parseFloat(item.discountPercentage) / 100;
-    return (productQuantity_ * productPrice_ * ( 1 - discountPercentage_)).toFixed(2)
+    return (productQuantity_ * productPrice_ * (1 - discountPercentage_)).toFixed(2)
   }
 
   const calculateGlobalSubtotalToSpecificDescriptionQuotation = () => {
     let subTotals = 0;
     let subTotal = 0;
     let globalDiscountPercentage = 0;
-    if(specificDescriptionQuotation && specificDescriptionQuotation.values && specificDescriptionQuotation.values.length > 0){
+    if (specificDescriptionQuotation && specificDescriptionQuotation.values && specificDescriptionQuotation.values.length > 0) {
       subTotals = specificDescriptionQuotation.values.map((item) => parseFloat(calculateSubTotal(item)));
-      subTotal = _.reduce(subTotals, function(sum,n) { return sum+n; }).toFixed(2);
+      subTotal = _.reduce(subTotals, function (sum, n) { return sum + n; }).toFixed(2);
       let globalDiscountPercentageNumber = 0;
       specificDescriptionQuotation.values.map((item) => globalDiscountPercentageNumber += parseFloat(item.discountPercentage));
       globalDiscountPercentage = isNaN(specificDescriptionQuotation.values) ? 0 : parseFloat(globalDiscountPercentageNumber) / 100;
@@ -112,15 +105,15 @@ export const QuoteFinished = () => {
         globalDiscountPercentage: (subTotal * globalDiscountPercentage).toFixed(2),
         subtotal2: (subTotal * (1 - globalDiscountPercentage)).toFixed(2),
         iva: (subTotal * (1 - globalDiscountPercentage) * 0.16).toFixed(2),
-        total: (subTotal * (1 - globalDiscountPercentage) * 1.16).toFixed(2), 
+        total: (subTotal * (1 - globalDiscountPercentage) * 1.16).toFixed(2),
       });
-    }else{
+    } else {
       setGlobalTotal({
         subTotal: 0,
         globalDiscountPercentage: 0,
         subtotal2: 0,
         iva: 0,
-        total: 0, 
+        total: 0,
       });
     }
 
@@ -162,19 +155,19 @@ export const QuoteFinished = () => {
           event.target.value;
         break;
 
-        case 'productPrice':
-          newQuoteCopy.systems[systemIndex].configuration[
-            configurationIndex
-          ].configuration.items[productIndex].product[event.target.name] =
-            event.target.value;
-          break;
+      case 'productPrice':
+        newQuoteCopy.systems[systemIndex].configuration[
+          configurationIndex
+        ].configuration.items[productIndex].product[event.target.name] =
+          event.target.value;
+        break;
 
-        case 'discountPercentage':
-          newQuoteCopy.systems[systemIndex].configuration[
-            configurationIndex
-          ].configuration.items[productIndex].product[event.target.name] =
-            event.target.value;
-          break;
+      case 'discountPercentage':
+        newQuoteCopy.systems[systemIndex].configuration[
+          configurationIndex
+        ].configuration.items[productIndex].product[event.target.name] =
+          event.target.value;
+        break;
 
       /// a mejorar
       case 'globalDiscountPercentage2':
@@ -203,12 +196,12 @@ export const QuoteFinished = () => {
   }, [newQuote]);
 
   useEffect(() => {
-    if (configs && configs.length > 0 
-        && !specificDescriptionQuotation ) {
+    if (configs && configs.length > 0
+      && !specificDescriptionQuotation) {
       calculateTotal();
-    }else if( specificDescriptionQuotation 
-              && specificDescriptionQuotation.values 
-              && specificDescriptionQuotation.values.length > 0){
+    } else if (specificDescriptionQuotation
+      && specificDescriptionQuotation.values
+      && specificDescriptionQuotation.values.length > 0) {
       calculateGlobalSubtotalToSpecificDescriptionQuotation();
     }
   }, [configs]);
@@ -251,8 +244,8 @@ export const QuoteFinished = () => {
 
               {(!specificDescriptionQuotation)
                 && configs && configs.map((c) => renderCardQuoteFinished(c))}
-              {   (specificDescriptionQuotation && specificDescriptionQuotation.values && specificDescriptionQuotation.values.length > 0)
-                    &&renderCardQuoteDescription()}
+              {(specificDescriptionQuotation && specificDescriptionQuotation.values && specificDescriptionQuotation.values.length > 0)
+                && renderCardQuoteDescription()}
               <div className={'priceContent'}>
                 <div className={'priceElements'}>
                   <div className={'element'}>
@@ -324,7 +317,7 @@ export const QuoteFinished = () => {
               >
                 <span className="quote-item-button-name"> Añadir sistema </span>
               </NavLink>
-{/*               
+              {/*               
                   <NavLink
                     className="quote-finished-button quote-back-invert"
                     to={`/orden_solicitada`}
@@ -335,7 +328,7 @@ export const QuoteFinished = () => {
 
               <a
                 className="quote-finished-button quote-back-invert"
-                onClick={ () => setOpenModal("QuoteName") }
+                onClick={() => setOpenModal("QuoteName")}
               >
                 <span className="quote-item-button-name"> Continuar </span>
               </a>

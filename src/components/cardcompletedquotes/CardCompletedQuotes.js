@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import './sass/styles.scss';
@@ -8,7 +9,7 @@ import icoQuote from '../../assets/img/126PX/Productos/Cervicales/Img_Osmium_126
 import { DateFormat } from '../shared/DateFormat';
 import { getFinishedAllQoute, getFinishedAllQouteSuccess, getFinishedQoute, getFinishedQouteSuccess, getUnfinishedQouteSuccess, setListComplete } from '../../actions/systemsAction';
 
-export const CardCompletedQuotes = ({schedule, searchQuoteFinished, facturacion, searchFactura, value,view=null}) => {
+export const CardCompletedQuotes = ({schedule, searchQuoteFinished, facturacion, searchFactura, value, view=null}) => {
 
   const quotesFinished = useSelector((state) => state.systems.quotesFinished);
   const searchQuotesFinished = useSelector((state) => state.systems.searchFinishQuote);

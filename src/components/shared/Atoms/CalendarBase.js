@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable react/prop-types */
+import React from 'react';
 import PropTypes from 'prop-types';
 import './CalendarBase.scss';
-import Calendar from 'react-calendar';
 import moment from 'moment';
 import CalendarComponent from '../../Calendar/CalendarComponent';
-import Search from '../../../pages/Schedule/Search';
 
 
 export const CalendarBase = (props) => {

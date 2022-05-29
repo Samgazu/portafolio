@@ -1,10 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './sass/schedule-surgery-modal.sass';
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSystemRequirements, getSystemRequirementsSuccess, setElementOptionalMaterialBeing, setElementOptRequireMaterialBeing, setElementRequireMaterialBeing, setElementTypeSurgeryBeing } from '../../actions/scheduleSurgeryAction';
-import { useState } from 'react';
 import { ErrorModal } from '../../pages/ScheduleSurgery/ScheduleModals/ErrorModal/ErrorModal';
 
 export const ScheduleSurgeryTypeSurgeyModal = ({itemProduct, toggle, itemProductBundle}) => {

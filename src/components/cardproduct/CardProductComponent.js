@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect, useRef, useState } from "react";
 import PropTypes from 'prop-types';
 import { IoCaretForwardCircleSharp } from "react-icons/io5";
@@ -12,7 +13,7 @@ import './sass/styles.sass';
 import { ScheduleSurgeryModal } from "./ScheduleSurgeryModal";
 import { ScheduleSurgeryConfirmModal } from "./ScheduleSurgeryConfirmModal";
 
-export const CardProductComponent = ({ cervicales, lumbares, complementos, toraxico, tipoCirugia, systemId, existUniqueProduct,search }) => {
+export const CardProductComponent = ({ cervicales, lumbares, complementos, toraxico, tipoCirugia, systemId, existUniqueProduct, search }) => {
 
     const [openModalSchedule, setOpenModalSchedule] = useState(null);
     const [openModalConfirm, setOpenModalConfirm] = useState(null);

@@ -9,7 +9,6 @@ import { createLogger } from 'redux-logger'
 
 export const history = createBrowserHistory();
 const connectRouterHistory = connectRouter(history);
- 
 
 function configureStoreProd(initialState) {
   const reactRouterMiddleware = routerMiddleware(history);

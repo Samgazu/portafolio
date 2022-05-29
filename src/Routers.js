@@ -2,15 +2,7 @@ import icoUsuario from './assets/img/126PX/Icono_Usuarios_Blanco_126px.png';
 
 import icoHistorial from './assets/img/126PX/Icono_Hist.CotizacionesMenu_126px.png';
 import icoFacturacion from './assets/img/126PX/Icono_FacturacionMenu_126px.png';
-import icoProductos from './assets/img/126PX/Icono_ProductosMenu_126px.png';
 import icoProgramar from './assets/img/126PX/Icono_ProgramarCXMenu_126px.png';
-import icoEstatus from './assets/img/126PX/Icono_StatusMenu_126px.png';
-import icoEncuestas from './assets/img/126PX/Icono_EncuestasMenu_126px.png';
-import icoPerfil from './assets/img/126PX/Icono_PerfilMenu_126px.png';
-import icoPQX from './assets/img/126PX/Icono_PQXMenu_126px.png';
-import icoPaquetes from './assets/img/126PX/Icono_PaqueteBudles_126px.png';
-import icoAjustes from './assets/img/126PX/Icono_AjustesMenu_126px.png';
-import icoProgramarCX from './assets/img/126PX/Icono_ProgramaCX_126px.png';
 import icoCotizar from './assets/img/126PX/Icono_CotizarProducto_126px.png';
 
 import HomePage from "./components/HomePage";
@@ -28,29 +20,14 @@ import { QuoteOrders } from './pages/QuoteOrders/QuoteOrders';
 import { QuoteDescription } from './pages/quotedescription/QuoteDescription';
 import { SearchProduct } from './pages/search/SearchProduct';
 import { QuotesCompleted } from './pages/quotescompleted/QuotesCompleted';
-import { FactoryConfigurationScreen } from './pages/factoryconfiguration/FactoryConfigurationScreen';
 import { ScheduleSurgeryScreen } from './pages/ScheduleSurgery/ScheduleSurgeryScreen';
 import { ScheduleQuoteFinished } from './pages/ScheduleSurgery/ScheduleQuoteFinished/ScheduleQuoteFinished';
 
-import { UsersHome } from './pages/Users/UsersHome';
-import { DoctorsHome } from './pages/Users/Doctors/DoctorsHome';
-import { InstitutionsHome } from './pages/Users/Institutions/InstitutionsHome';
-import { PatientsHome } from './pages/Users/Patients/PatientsHome';
-import { RepartidorHome } from './pages/Users/Repartidor/RepartidorHome';
-import { SellerHome } from './pages/Users/Seller/SellerHome';
-
-
-import { PendingApprovalUsers } from './pages/PendingApprovalUsers/PendingApprovalUsers';
-import { PermissionsManagementScreen } from './pages/PermissionsManagement/PermissionsManagementScreen';
-
-import { FactoryMaterialScreen } from './pages/FactoryMaterial/FactoryMaterialScreen';
 import { ScheduleSurgeryArrangementScreen } from './pages/ScheduleSurgeryArrangementScreen/ScheduleSurgeryArrangementScreen';
 import { ScheduleSurgeryPreOrderView } from './pages/ScheduleSurgery/ScheduleSurgeryPreOrderView/ScheduleSurgeryPreOrderView';
 import { ScheduleSurgeryFinishScreen } from './pages/ScheduleSurgery/ScheduleSurgeryFinishScreen/ScheduleSurgeryFinishScreen';
-import { Schedule } from './pages/Schedule/Schedule';
-import { SellerPermisions } from './pages/Users/Seller/SellerPermisions';
 
-export const routes = ({ permissions }) =>{
+export const routes = () =>{
     const availableRoutes = [
         {
             uid: shortid.generate(),
@@ -62,37 +39,6 @@ export const routes = ({ permissions }) =>{
             isSideBarLinks: true,
             layout: AppBar,
             Component: HomePage,
-        },
-        {
-            uid: shortid.generate(),
-            title:'Usuario',
-            path: 'usuarios',
-            icon: icoUsuario,
-            exact: true,
-            authenticatedAccess: true,
-            isSideBarLinks: true,
-            layout: AppBar,
-            Component: UsersHome,
-        },
-        {
-            uid: shortid.generate(),
-            title:'Usuarios pendientes',
-            path: `usuarios-pendientes`,
-            icon: icoUsuario,
-            exact: true,
-            authenticatedAccess: true,
-            layout: AppBar,
-            Component: PendingApprovalUsers,
-        },
-        {
-            uid: shortid.generate(),
-            title:'PermissionsManage',
-            path: `permisos_usuarios`,
-            icon: icoUsuario,
-            exact: true,
-            authenticatedAccess: true,
-            layout: AppBar,
-            Component: PermissionsManagementScreen,
         },
         {
             uid: shortid.generate(),
@@ -134,15 +80,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            title:'Productos',
-            path: 'Inicio',
-            icon: icoProductos,
-            exact: true,
-            authenticatedAccess:false,
-            Component: HomePage,
-        },
-        {
-            uid: shortid.generate(),
             title:'Programar',
             path: 'ProgramarCX',
             icon: icoProgramar,
@@ -181,80 +118,6 @@ export const routes = ({ permissions }) =>{
         },
         {
             uid: shortid.generate(),
-            title:'Estatus',
-            path: 'Inicio',
-            icon: icoEstatus,
-            exact: true,
-            authenticatedAccess:false,
-            Component: HomePage,
-        },
-        {
-            uid: shortid.generate(),
-            title:'Encuestas',
-            path: 'Inicio',
-            icon: icoEncuestas,
-            exact: true,
-            authenticatedAccess:false,
-            Component: HomePage,
-        },
-        {
-            uid: shortid.generate(),
-            title:'Perfil',
-            path: 'Inicio',
-            icon: icoPerfil,
-            exact: true,
-            authenticatedAccess:false,
-            Component: HomePage,
-        },
-        {
-            uid: shortid.generate(),
-            title:'PQX',
-            path: 'Inicio',
-            icon: icoPQX,
-            exact: true,
-            authenticatedAccess:false,
-            Component: HomePage,
-        },
-        {
-            uid: shortid.generate(),
-            title:'Configuración de Plantillas',
-            path: 'configuracionPlantillas',
-            icon: icoPaquetes,
-            exact: true,
-            authenticatedAccess:true,
-            layout: AppBar,
-            Component:  FactoryConfigurationScreen,
-        },
-        {
-            uid: shortid.generate(),
-            title:'Ajustes',
-            path: 'Inicio',
-            icon: icoAjustes,
-            exact: true,
-            authenticatedAccess:false,
-            Component: HomePage,
-        },
-        {
-            uid: shortid.generate(),
-            title:'Perfil',
-            path: 'Inicio',
-            icon: icoProgramarCX,
-            exact: true,
-            authenticatedAccess:false,
-            Component: HomePage,
-        }, 
-        {
-            uid: shortid.generate(),
-            title:'Agenda',
-            path: `agenda/:page`,
-            icon: icoProgramar,
-            exact: true,
-            authenticatedAccess: true,
-            layout: AppBar,
-            Component: Schedule,
-        }, 
-        {
-            uid: shortid.generate(),
             title:'Cotizar productos',
             path: 'cotizaciones',
             icon: icoCotizar,
@@ -267,15 +130,6 @@ export const routes = ({ permissions }) =>{
             uid: shortid.generate(),
             title:'cotizaciones',
             path: 'cotizacion/:systemId',
-            exact: true,
-            authenticatedAccess:true,
-            layout: AppBar,
-            Component: QuoteProductsScreen,
-        },
-        {
-            uid: shortid.generate(),
-            title:'TipoCirugia',
-            path: 'ProgramarCX/:tipoCirugia',
             exact: true,
             authenticatedAccess:true,
             layout: AppBar,
@@ -413,82 +267,6 @@ export const routes = ({ permissions }) =>{
             layout: AppBar,
             Component: ScheduleQuoteFinished,
         },
-        {
-            uid: shortid.generate(),
-            title:'Configuración de Materiales',
-            path: `materialFactory`,
-            authenticatedAccess: true,
-            icon: icoUsuario,
-            layout: AppBar,
-            Component: FactoryMaterialScreen,
-        }, 
-        {
-            uid: shortid.generate(),
-            title:'Médicos',
-            path: 'usuarios/medicos',
-            icon: icoUsuario,
-            exact: true,
-            authenticatedAccess: true,
-            isSideBarLinks: true,
-            layout: AppBar,
-            Component: DoctorsHome,
-        },
-        {
-            uid: shortid.generate(),
-            title:'Instituciones',
-            path: 'usuarios/instituciones',
-            icon: icoUsuario,
-            exact: true,
-            authenticatedAccess: true,
-            isSideBarLinks: true,
-            layout: AppBar,
-            Component: InstitutionsHome,
-        },
-        {
-            uid: shortid.generate(),
-            title:'Pacientes',
-            path: 'usuarios/pacientes',
-            icon: icoUsuario,
-            exact: true,
-            authenticatedAccess: true,
-            isSideBarLinks: true,
-            layout: AppBar,
-            Component: PatientsHome,
-        },
-        {
-            uid: shortid.generate(),
-            title:'Repartidores',
-            path: 'usuarios/repartidores',
-            icon: icoUsuario,
-            exact: true,
-            authenticatedAccess: true,
-            isSideBarLinks: true,
-            layout: AppBar,
-            Component: RepartidorHome,
-        },
-        {
-            uid: shortid.generate(),
-            title:'Vendedores',
-            path: 'usuarios/:vendedores',
-            icon: icoUsuario,
-            exact: true,
-            authenticatedAccess: true,
-            isSideBarLinks: true,
-            layout: AppBar,
-            Component: SellerHome,
-        },
-        {
-            uid: shortid.generate(),
-            title:'Permiso de Vendedores',
-            path: 'usuarios/vendedores/permisos',
-            icon: icoUsuario,
-            exact: true,
-            authenticatedAccess: true,
-            isSideBarLinks: true,
-            layout: AppBar,
-            Component: SellerPermisions,
-        },
-    
         {
             Component: NotFoundPage,
         },

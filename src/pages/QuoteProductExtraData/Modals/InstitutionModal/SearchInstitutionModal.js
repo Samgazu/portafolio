@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from '../../../../hooks/useForm';
@@ -17,27 +18,27 @@ export const SearchInstitutionModal = (props) => {
   const systems = useSelector((state) => state.systems);
 
   const getInstitutionsStore = systems.getInstitutions;
-    
-  const [list, setList] = useState([]);     
-  
+
+  const [list, setList] = useState([]);
+
   useEffect(() => {
-    if(list && list.length > 0){
-    setList([...list,...getInstitutionsStore])
-    }else if(getInstitutionsStore && getInstitutionsStore.length > 0){
+    if (list && list.length > 0) {
+      setList([...list, ...getInstitutionsStore])
+    } else if (getInstitutionsStore && getInstitutionsStore.length > 0) {
       setList(getInstitutionsStore)
     }
-  },[getInstitutionsStore])
+  }, [getInstitutionsStore])
   const handleScroll = (event) => {
-      const {scrollTop, clientHeight, scrollHeight} = event.currentTarget;
-      
-      if(scrollHeight-Math.round(scrollTop) === clientHeight){
-          setPage(prev => prev + 1)
-      }
+    const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
+
+    if (scrollHeight - Math.round(scrollTop) === clientHeight) {
+      setPage(prev => prev + 1)
+    }
   }
 
   useEffect(() => {
     dispatch(getInstitutions(currentPage));
-}, [currentPage])
+  }, [currentPage])
 
   useEffect(() => {
     if (searchHospitals.trim().length !== 0) {
@@ -59,21 +60,21 @@ export const SearchInstitutionModal = (props) => {
   const handleInstitution = (e) => {
     e.preventDefault();
 
-    if(props.type === 'onlyInstitution'){
-      if(institution){
+    if (props.type === 'onlyInstitution') {
+      if (institution) {
         props.setResult(JSON.parse(institution));
         props.toggle();
-    }
-    else{
+      }
+      else {
         props.toggle();
+      }
     }
-    }
-     else{
+    else {
 
-       institution ?dispatch(updateInstitutionQuote(JSON.parse(institution)))
+      institution ? dispatch(updateInstitutionQuote(JSON.parse(institution)))
         : dispatch(updateInstitutionQuote(null))
-        props.toggle();
-     }
+      props.toggle();
+    }
   };
   const [screen, setScreen] = useState(false);
 
@@ -100,17 +101,17 @@ export const SearchInstitutionModal = (props) => {
         </form>
         {
           !props.type &&
-        <button
-          className={
-            !screen ? 'c-institution-button ' : 'c-institution-button active'
-          }
-          onClick={handleChangeScreen}
-        >
-          Datos de Contacto
-        </button>
+          <button
+            className={
+              !screen ? 'c-institution-button ' : 'c-institution-button active'
+            }
+            onClick={handleChangeScreen}
+          >
+            Datos de Contacto
+          </button>
         }
       </div>
-        
+
 
       {!screen ? (
         <form
@@ -126,7 +127,7 @@ export const SearchInstitutionModal = (props) => {
                   <input
                     className="c-institution-item-check"
                     type="radio"
-                    checked={ institution&&institution.id&& JSON.parse(institution).id === item.id}
+                    checked={institution && institution.id && JSON.parse(institution).id === item.id}
                     value={JSON.stringify(item)}
                     name="institution"
                     onChange={handleInputChangeInputs}
@@ -141,7 +142,7 @@ export const SearchInstitutionModal = (props) => {
                   <input
                     className="c-institution-item-check"
                     type="radio"
-                    checked={ institution&&institution.id&& JSON.parse(institution).id === item.id}
+                    checked={institution && institution.id && JSON.parse(institution).id === item.id}
                     value={JSON.stringify(item)}
                     name="institution"
                     onChange={handleInputChangeInputs}
@@ -154,7 +155,7 @@ export const SearchInstitutionModal = (props) => {
           </button>
         </form>
       ) : (
-        <AddInstitution toggle={props.toggle}/>
+        <AddInstitution toggle={props.toggle} />
       )}
     </div>
   );

@@ -1,8 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { postNewQuote, resetToInitialStateQuote } from '../../../../../actions/newQuoteAction';
-import { resetToInitialState } from '../../../../../actions/systemsAction';
+import { postNewQuote } from '../../../../../actions/newQuoteAction';
 import { useForm } from '../../../../../hooks/useForm';
 import PropTypes from 'prop-types';
 
@@ -10,7 +9,7 @@ import PropTypes from 'prop-types';
 export const FormNameModal = (props) => {
   const newQuote = useSelector((state) => state.newQuote);
   // const systems = useSelector((state) => state.systems);
-  const [formValues, handleInputChange, reset] = useForm({
+  const [formValues, handleInputChange] = useForm({
     name: '',
   });
   const history = useHistory();
@@ -20,10 +19,9 @@ export const FormNameModal = (props) => {
   const pendingQuoteName = (e) => {
     e.preventDefault();
     history.replace(`/Inicio`);
+    
     dispatch(postNewQuote(newQuote, null , name, true ));
-    // dispatch(resetToInitialStateQuote());
-    // dispatch(resetToInitialState());
-    // reset();
+
     props.toggle();
   };
   return (

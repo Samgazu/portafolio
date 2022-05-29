@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import './sass/styles.scss';
 import { useDispatch } from 'react-redux';
 import { cleanStateUserAprove, cleanStateUserUnapprove, resetPassClean, userSignupClean } from '../../../actions/userActions';
@@ -9,6 +8,7 @@ import ErrorOutlineRounded from '@material-ui/icons/ErrorOutlineRounded';
 import CloseRounded from '@material-ui/icons/CloseRounded';
 import { useHistory } from 'react-router';
 
+// eslint-disable-next-line react/prop-types
 const AlertMessage = ({typeMessage = 'OK', textInfo, isActiveAlert=true, typeUserAlert=null, redirecName=null, setFormToShow}) => {
 
     const dispatch = useDispatch();

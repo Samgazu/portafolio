@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from '../../../../hooks/useForm';
@@ -14,24 +15,22 @@ export const SearchInstitutionModal = (props) => {
   const systems = useSelector((state) => state.systems);
   const getInstitutionsStore = systems.getInstitutions;
   const searchHospitalStore = useSelector((state) => state.systems.searchHospitals);
-   //MODULOS NUEVOS PARA HACER EL MODULO DE LA LISTA
-   const [currentPage, setPage] = useState(0);
-   const [list, setList] = useState([]);   
+  //MODULOS NUEVOS PARA HACER EL MODULO DE LA LISTA
+  const [currentPage, setPage] = useState(0);
+  const [list, setList] = useState([]);
 
 
-   useEffect(() => {
-     if(list && list.length > 0){
-       //setClientsList([...clientsList,...getClientsStore])
-       setList([...list,...getInstitutionsStore])
-     }else if(getInstitutionsStore && getInstitutionsStore.length > 0){
-       setList(getInstitutionsStore)
-       //setClientsList(getClientsStore)
-     }
-   },[getInstitutionsStore])
-   
-   //-----------------------------------------
+  useEffect(() => {
+    if (list && list.length > 0) {
+      setList([...list, ...getInstitutionsStore])
+    } else if (getInstitutionsStore && getInstitutionsStore.length > 0) {
+      setList(getInstitutionsStore)
+    }
+  }, [getInstitutionsStore])
 
-   useEffect(() => {
+  //-----------------------------------------
+
+  useEffect(() => {
     dispatch(getInstitutions(currentPage));
   }, [currentPage])
 
@@ -39,18 +38,16 @@ export const SearchInstitutionModal = (props) => {
   useEffect(() => {
     return () => {
       dispatch(getInstitutionsSucess([]));
-    } 
+    }
   }, [])
 
-  //METODO SCROLL PARA RECARGAR EL PAGINADO ----------
-const handleScroll = (event) => {
-  const {scrollTop, clientHeight, scrollHeight} = event.currentTarget;
-  
-  if(scrollHeight-Math.round(scrollTop) === clientHeight){
+  const handleScroll = (event) => {
+    const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
+
+    if (scrollHeight - Math.round(scrollTop) === clientHeight) {
       setPage(prev => prev + 1)
+    }
   }
-}
-//----------------------------------
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -65,13 +62,13 @@ const handleScroll = (event) => {
 
   const handleInstitution = (e) => {
     e.preventDefault();
-    if(institution){
+    if (institution) {
       dispatch(setInstitutionToSchedule(JSON.parse(institution)));
       props.toggle();
-    }else{
-        props.setLastOpenModal("INSTITUTION-MODAL");
-        props.setMessageModal('¡No se ha seleccionado institución!');
-        props.setOpenModal('errorModal');
+    } else {
+      props.setLastOpenModal("INSTITUTION-MODAL");
+      props.setMessageModal('¡No se ha seleccionado institución!');
+      props.setOpenModal('errorModal');
     }
   };
 
@@ -94,48 +91,48 @@ const handleScroll = (event) => {
         </form>
       </div>
 
-        <form
-          className="c-institution-c-list-items"
-          onSubmit={handleInstitution}
-        >
-          <div className="c-institution-c-list-items-scroll1" onScroll={handleScroll}>
-            
+      <form
+        className="c-institution-c-list-items"
+        onSubmit={handleInstitution}
+      >
+        <div className="c-institution-c-list-items-scroll1" onScroll={handleScroll}>
+
           {searchHospitalStore &&
             searchInstitution.trim().length > 0 &&
             searchHospitalStore.map((item) => (
-                <div key={item.id} className="c-institution-c-item">
-                  <p className="c-institution-item-name">{item.name}</p>
-                  <input
-                    className="c-institution-item-check"
-                    type="radio"
-                    checked={ institution&&institution.id&& JSON.parse(institution).id === item.id}
-                    value={JSON.stringify(item)}
-                    name="institution"
-                    onChange={handleInputChangeInputs}
-                  />
-                </div>
-              ))}
-            
-            {list &&
-              searchInstitution.trim().length === 0 &&
-              list.map((item) => (
-                <div key={item.id} className="c-institution-c-item">
-                  <p className="c-institution-item-name">{item.name}</p>
-                  <input
-                    className="c-institution-item-check"
-                    type="radio"
-                    checked={ institution&&institution.id&& JSON.parse(institution).id === item.id}
-                    value={JSON.stringify(item)}
-                    name="institution"
-                    onChange={handleInputChangeInputs}
-                  />
-                </div>
-              ))}
-          </div>
-          <button className="c-institution-button" type="submit">
-            CONTINUAR
-          </button>
-        </form>
+              <div key={item.id} className="c-institution-c-item">
+                <p className="c-institution-item-name">{item.name}</p>
+                <input
+                  className="c-institution-item-check"
+                  type="radio"
+                  checked={institution && institution.id && JSON.parse(institution).id === item.id}
+                  value={JSON.stringify(item)}
+                  name="institution"
+                  onChange={handleInputChangeInputs}
+                />
+              </div>
+            ))}
+
+          {list &&
+            searchInstitution.trim().length === 0 &&
+            list.map((item) => (
+              <div key={item.id} className="c-institution-c-item">
+                <p className="c-institution-item-name">{item.name}</p>
+                <input
+                  className="c-institution-item-check"
+                  type="radio"
+                  checked={institution && institution.id && JSON.parse(institution).id === item.id}
+                  value={JSON.stringify(item)}
+                  name="institution"
+                  onChange={handleInputChangeInputs}
+                />
+              </div>
+            ))}
+        </div>
+        <button className="c-institution-button" type="submit">
+          CONTINUAR
+        </button>
+      </form>
     </div>
   );
 };

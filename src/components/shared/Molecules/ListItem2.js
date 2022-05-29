@@ -1,10 +1,9 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import './ListItem2.scss';
-
-// ICONS
 import blueArrow from '../../../assets/img/126PX/blue-arrow.png'
 
-const ListItem2 = ({id, title, subtitle, subtitle2}) => {
+const ListItem2 = ({title, subtitle, subtitle2}) => {
     const handleClick= () => {
     
     };
@@ -23,9 +22,6 @@ const ListItem2 = ({id, title, subtitle, subtitle2}) => {
                     }
                     {
                         <img className={"arrowIcon"} src={blueArrow} alt=""/>
-                    }
-                    {
-                        /*<img className={"arrowIcon"} src={whiteArrow} alt=""/>*/
                     }
                 </div>
             </div>

@@ -5,8 +5,6 @@ import { useForm } from '../../../../hooks/useForm';
 import { setHourToSchedule } from '../../../../actions/scheduleSurgeryAction';
 import DatePicker from 'react-date-picker';
 import moment from 'moment';
-import { NotListedLocationOutlined } from '@material-ui/icons';
-
 
 export const FormDateModal = (props) => {
   const [getDate, setGetDate] = useState(new Date());

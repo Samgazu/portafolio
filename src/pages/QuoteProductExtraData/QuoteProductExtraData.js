@@ -14,18 +14,17 @@ import {OfferValidityModal} from './Modals/OfferValidityModal/OfferValidityModal
 import {EmailModal} from './Modals/EmailModal/EmailModal';
 import {PhoneNumberModal} from './Modals/PhoneNumberModal/PhoneNumberModal';
 import  './sass/styles.sass';
-import { getClients, getInstitutions, getMedics, getPatients, getStates } from '../../actions/systemsAction';
+import { getStates } from '../../actions/systemsAction';
 import { CgOpenCollective } from "react-icons/cg";
 import Swal from 'sweetalert2';
 
 import atnImg from '../../assets/img/126PX/Icono_Perfil-Bco_126px.png';
-import imgDateModal from '../../assets/img/126PX/Icono_ProgramarCXMenu_126px.png';
+import { imgDateModal, imgOfferModal } from '../../assets/img/126PX/Icono_ProgramarCXMenu_126px.png';
 import imgPatient from '../../assets/img/126PX/Icono_Paciente-Bco_126px.png';
 import imgInstitution from '../../assets/img/126PX/Icono_Institucion_126px.png';
 import imgCity from '../../assets/img/126PX/Icono_CdEstado-Bco_126px.png';
 import imgWayToPay from '../../assets/img/126PX/Icono_Pago-Bco_126px.png';
 import imgTimeDelivery from '../../assets/img/126PX/Icono_Tiempo-Bco_126px.png';
-import imgOfferModal from '../../assets/img/126PX/Icono_ProgramarCXMenu_126px.png';
 import imgCorreoModal from '../../assets/img/126PX/Icono_Correo_126px.png';
 import imgPhoneModal from '../../assets/img/126PX/Icono_Telefono_126px.png';
 import { DateFormat } from '../../components/shared/DateFormat';

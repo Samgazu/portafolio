@@ -173,7 +173,7 @@ export const ScheduleSurgeryScreen = () => {
                                     <div className='extra-button-information'> 
                                         {/* <span className='extra-button-information'> {itemSurgeryType} - </span> */}
                                         {
-                                            typeSurgeryList[itemSurgeryType].map( (itemSurgerySystem, index) => (
+                                            typeSurgeryList[itemSurgeryType].map( (itemSurgerySystem) => (
                                                 <span className='extra-button-information-span' key={itemSurgerySystem.id}> 
                                                     {itemSurgerySystem}{typeSurgeryList[itemSurgeryType].length > 1 && ', ' } 
                                                 </span>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CloseIcon from '@material-ui/icons/Close';
 import { RiDeleteBin6Line } from "react-icons/ri";
 import addImgButton from '../../../assets/img/512PX/Icono_Mas_512px.png';
@@ -7,7 +7,6 @@ import alertImgButton from '../../../assets/img/126PX/Icono_Warning_126px.png';
 import errorImgButton from '../../../assets/img/126PX/Icono_Advertencia_126px.png';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
-import { useState } from 'react';
 import { ScheduleSurgeryConfirmModalToPreOrderTable } from './ScheduleSurgeryConfirmModalToPreOrderTable';
 
 export const ScheduleSurgeryPreOrderTable = ({listItems, typeList}) => {

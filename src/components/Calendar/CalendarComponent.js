@@ -1,5 +1,5 @@
-import { FreeBreakfastRounded, MoveToInbox } from '@material-ui/icons';
-import moment from 'moment';
+/* eslint-disable no-undef */
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -60,7 +60,7 @@ function takeWeek(start) {
 
 
 
-function CalendarComponent({ selectedDateOnChange, selectedDate: selectedDateItem, setNewFinalDayMonth, page = 'agenda', newFinalDayMonth, changeMonth }) {
+function CalendarComponent({ selectedDateOnChange, setNewFinalDayMonth, changeMonth }) {
 
   const [selectedDate, setSelectedDate] = useState(new Date());
   const appointmentsListCalendar = useSelector(state => state.storeHouse.appointmentsListCalendar);
@@ -70,12 +70,6 @@ function CalendarComponent({ selectedDateOnChange, selectedDate: selectedDateIte
 
   const holidays = new DateHolidays.default();
   holidays.init('MX');
-  //console.warn(holidays)
-
-  const formatDate = () => {
-    return `${moment(selectedDate).format('DD')}-${moment(selectedDate).format('MM')}-${moment(selectedDate).format('YYYY')}`;
-  }
-
 
   useEffect(() => {
     selectedDateOnChange(selectedDate);
@@ -104,14 +98,6 @@ function CalendarComponent({ selectedDateOnChange, selectedDate: selectedDateIte
 
       return range;
     };
-  }
-
-  const compareDates = () => {
-    if (format(selectedDate, 'dd/MM/yyyy') === format(new Date(), 'dd/MM/yyyy')) {
-      return "Hoy"
-    } else {
-      return format(selectedDate, 'dd/MM/yyyy')
-    }
   }
 
   const dayColor = (day) => {
@@ -169,7 +155,7 @@ function CalendarComponent({ selectedDateOnChange, selectedDate: selectedDateIte
     setHolidayMessage(message);
   }
 
-/*   console.log('page',page) */
+  /*   console.log('page',page) */
   return (
     <div className={"admin-schedule-content-box"}>
       <div className={"admin-schedule-calendar"}>
@@ -231,7 +217,7 @@ function CalendarComponent({ selectedDateOnChange, selectedDate: selectedDateIte
 
                   <li
                     key={day.id}
-                    onClick={() => { el &&  page === "COORDINADORATQ" ? showHoliday(day, `${format(new Date(day), "dd")} ${holidays.holidays[el].name.es}`) : showHoliday(day) }}
+                    onClick={() => { el && page === "COORDINADORATQ" ? showHoliday(day, `${format(new Date(day), "dd")} ${holidays.holidays[el].name.es}`) : showHoliday(day) }}
                   >
 
                     {
@@ -243,7 +229,7 @@ function CalendarComponent({ selectedDateOnChange, selectedDate: selectedDateIte
 
 
                     {
-                      page === 'agenda'  &&
+                      page === 'agenda' &&
                       appointmentsListCalendar && appointmentsListCalendar.map(el => format(new Date(el.surgeryDate), "dd")).includes(format(day, "dd")) && isSameMonth(day, selectedDate) &&
                       <span className={"CalendarComponent-day-appointment"}>
                       </span>
@@ -251,19 +237,19 @@ function CalendarComponent({ selectedDateOnChange, selectedDate: selectedDateIte
 
 
                     {
-                      page === 'COORDINADORATQ'  &&
+                      page === 'COORDINADORATQ' &&
                       appointmentsListCalendar && appointmentsListCalendar.map(el => format(new Date(el.surgeryDate), "dd")).includes(format(day, "dd")) && isSameMonth(day, selectedDate) &&
                       <span className={"CalendarComponent-day-appointment"}>
                       </span>
                     }
 
-                    { page === "COORDINADORATQ" &&
+                    {page === "COORDINADORATQ" &&
                       //holidays?.holidays... Lo mismo que abajo 
                       el &&
 
-                      <span className={"CalendarComponent-day-holiday-appointment"} onClick={() => setHolidayMessage(holidays.holidays[el].name.es) }
+                      <span className={"CalendarComponent-day-holiday-appointment"} onClick={() => setHolidayMessage(holidays.holidays[el].name.es)}
                       ></span>
-                      
+
 
                     }
 
@@ -280,30 +266,18 @@ function CalendarComponent({ selectedDateOnChange, selectedDate: selectedDateIte
 
       {holidayMessage !== "" &&
 
-      <div className='container-show-holiday'>
+        <div className='container-show-holiday'>
 
-      <div className='CalendarComponent-day-appointment'>
-      </div>
+          <div className='CalendarComponent-day-appointment'>
+          </div>
 
-        <span className={"CalendarComponent-day-holiday-view-appointment"}> {holidayMessage}</span>
+          <span className={"CalendarComponent-day-holiday-view-appointment"}> {holidayMessage}</span>
 
-      </div>
+        </div>
 
       }
 
-
-
-
-
-
-
-
-
-      <span className={"admin-schedule-title"}>
-        {//compareDates()
-        }
-      </span>
-
+      <span className={"admin-schedule-title"}> </span>
 
     </div>
 

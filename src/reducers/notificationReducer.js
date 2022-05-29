@@ -1,4 +1,4 @@
-import { GET_APPOINTMENT_NOTIFICACION_BEGIN, GET_APPOINTMENT_NOTIFICACION_FAILURE, GET_APPOINTMENT_NOTIFICACION_SUCCESS, NOTIFICATION_ADD, NOTIFICATION_CLEAR } from '../constants/actionTypes';
+import {  NOTIFICATION_ADD, NOTIFICATION_CLEAR } from '../constants/actionTypes';
 
 import initialState from './initialState';
 

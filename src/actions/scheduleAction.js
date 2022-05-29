@@ -9,8 +9,6 @@ import {
 
 } from '../constants/actionTypes';
 
-import request from '../utils/request';
-
 // GET SCHEDULED SURGERIES
 
 export const getScheduledSurgeriesBegin= () => ({
@@ -48,18 +46,12 @@ export const getStatesInSurgeryFailure = () => ({
 
 // GET MEDICS
 
-export function getScheduledSurgeries( currentPage=0, offset=10, date=null ) {
-    return function (dispatch, getState) {
+// TODO: UTILIZAR ESTE TIPO DE PETICIONES PARA CARGAR INFORMACION PARA REDUX
+
+export function getScheduledSurgeries() {
+    return function (dispatch) {
         dispatch(getScheduledSurgeriesBegin());
-        /* return request({
-            partialUrl: `/API/?currentPage=${currentPage}&offset=${offset}`,
-            method: 'GET',
-            state: getState().user.request,
-            body: {}
-        })
-        .then(response => response.json())
-        .then(data => {
-             */
+
             const data = [
                 {
                     id: 1,
@@ -93,10 +85,6 @@ export function getScheduledSurgeries( currentPage=0, offset=10, date=null ) {
                 },
             ]
             dispatch(getScheduledSurgeriesSuccess(data));
-        /* })
-        .catch(err => {
-            return dispatch(getScheduledSurgeriesFailure(err));
-        }); */
     }
 }
 
@@ -104,10 +92,9 @@ export function getScheduledSurgeries( currentPage=0, offset=10, date=null ) {
 
 export function getStatesInSurgery( ) {
     
-    return function (dispatch, getState) {
+    return function (dispatch) {
         
         dispatch(getStatesInSurgeryBegin());
-        const userId = getState().allUsers.selectedUserId;
         // AQUI VA LA PETICION DONDE SE TRAE LOS STATES DE LOS PROCESOS DEL USUARIO CON UN ROL ESPECIFICO
         const states = [
             {

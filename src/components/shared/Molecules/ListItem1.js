@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import './ListItem1.scss';
 import PropTypes from 'prop-types';

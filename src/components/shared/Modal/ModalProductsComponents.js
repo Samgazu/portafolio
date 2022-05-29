@@ -1,18 +1,17 @@
-import React, { forwardRef, useImperativeHandle} from 'react';
+import React, { forwardRef, useImperativeHandle } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import PropTypes from 'prop-types';
 
 import ClearIcon from '@material-ui/icons/Clear';
 
-import { ModalAddQuantityComponent  } from './ModalProductComponent/ModalAddQuantityComponent';
-import { ModalProductLocationScanningComponent } from './ModalProductComponent/ModalProductLocationScanningComponent';
+import { ModalAddQuantityComponent } from './ModalProductComponent/ModalAddQuantityComponent';
 import { ModalIndividualProductsScanningComponent } from './ModalProductComponent/ModalIndividualProductsScanningComponent';
 
 function getModalStyle() {
     const top = 50;
     const left = 50;
-  
+
     return {
         top: `${top}%`,
         left: `${left}%`,
@@ -21,7 +20,7 @@ function getModalStyle() {
 }
 
 const useStyles = makeStyles(() => ({
-    paperQuote:{
+    paperQuote: {
         background: 'linear-gradient(125deg, rgba(55,167,185,1) 1%, rgba(26,188,156,1) 98%)',
         position: 'absolute',
         width: '35%',
@@ -35,7 +34,7 @@ const useStyles = makeStyles(() => ({
         justifyContent: 'center',
         flexDirection: 'column'
     },
-    paperSchedule:{
+    paperSchedule: {
         background: 'linear-gradient(23deg, rgba(55,167,185,1) 0%, rgba(9,64,112,1) 100%)',
         position: 'absolute',
         width: '35%',
@@ -67,7 +66,7 @@ const useStyles = makeStyles(() => ({
         width: '30%',
         margin: 'auto',
         marginBottom: 10,
-        
+
     },
     productImageProgramarCX: {
         padding: '4.3px 41.7px 1.6px 41.5px',
@@ -81,7 +80,7 @@ const useStyles = makeStyles(() => ({
         display: 'flex',
         alignItems: 'center',
     },
-    itemImage:{
+    itemImage: {
         width: '100%',
     },
     itemText: {
@@ -95,7 +94,7 @@ const useStyles = makeStyles(() => ({
         letterSpacing: 'normal',
         width: '100%',
         marginBottom: '15px',
-    
+
     },
     //MODIFICION AQUI
     labelCounter: {
@@ -119,7 +118,7 @@ const useStyles = makeStyles(() => ({
         height: '30px',
         appearance: 'none',
         fontWeight: '600',
-        fontSize:'20px',
+        fontSize: '20px',
         opacity: 0.7,
         border: 'none',
         margin: '0',
@@ -127,9 +126,9 @@ const useStyles = makeStyles(() => ({
         marginTop: '10px',
         cursor: 'inherit',
         lineHeight: 'inherit',
-        
+
     },
-    selected:{
+    selected: {
         textAlign: 'center',
         padding: '10px',
         borderBottom: '1px solid #bdbdbd',
@@ -176,45 +175,41 @@ export const ModalProductsComponents = forwardRef((props, ref) => {
             }
         }),
     )
-    
+
     const handleClose = () => {
         setOpen(false);
-        props.toggle&&
+        props.toggle &&
             props.toggle();
     };
 
     const body = (
         <div style={modalStyle} className={classes.paperSchedule}>
             <div className={classes.closeIcon}>
-                <ClearIcon onClick={handleClose}/>
+                <ClearIcon onClick={handleClose} />
             </div>
             {
-                props.typeModal === 'ProductLocationScanningComponent' &&
-                    <ModalProductLocationScanningComponent />
-            }
-            {
                 props.typeModal === 'AddQuantityComponent' &&
-                    <ModalAddQuantityComponent productToModal={props.productToModal} />
+                <ModalAddQuantityComponent productToModal={props.productToModal} />
             }
             {
                 props.typeModal === 'IndividualProductsScanningComponent' &&
-                    <ModalIndividualProductsScanningComponent isScann={props.isScann} productToModal={props.productToModal}/>
+                <ModalIndividualProductsScanningComponent isScann={props.isScann} productToModal={props.productToModal} />
             }
         </div>
     );
-    
-    
+
+
     return (
         <Modal
             open={open}
             onClose={handleClose}
             aria-labelledby="simple-modal-title"
             aria-describedby="simple-modal-description"
-            >
+        >
             {body}
         </Modal>
     )
-    
+
 })
 
 ModalProductsComponents.propTypes = {

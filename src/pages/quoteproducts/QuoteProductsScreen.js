@@ -1,3 +1,4 @@
+/* eslint-disable no-empty */
 import React, { useEffect, useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { SubNavBarComponent } from '../../components/layouts/layout1/subnavbar/SubNavBarComponent';
@@ -18,7 +19,7 @@ export const QuoteProductsScreen = () => {
     const quoteProductsData = useSelector(state => state.systems.systems);
     const listElementTypeSurgeryCompleted = useSelector(state => state.scheduleSurgery.listElementTypeSurgeryCompleted);
     const listElementTypeSurgeryBeing = useSelector(state => state.scheduleSurgery.listElementTypeSurgeryBeing);
-    // const listElementOptionalMaterialBeing = useSelector( state => state.scheduleSurgery.listElementOptionalMaterialBeing);
+
     const newQuote = useSelector(state => state.newQuote);
     const listElementOptionalMaterialSucces = useSelector(state => state.scheduleSurgery.listElementOptionalMaterialSucces);
     const searchList = useSelector(state => state.storeHouse.respuestaSearch);
@@ -44,9 +45,9 @@ export const QuoteProductsScreen = () => {
 
     useEffect(() => {
         return () => {
-          dispatch(setReposnseSearch(null))
+            dispatch(setReposnseSearch(null))
         }
-      }, [])
+    }, [])
 
 
     const openModal = useRef();
@@ -84,9 +85,8 @@ export const QuoteProductsScreen = () => {
 
 
     useEffect(() => {
-        //Cambiar 3 y 4 +  todos
         if (Object.keys(quoteProductsData).length >= 3 && Object.keys(quoteProductsData).length < 4) {
-            // Pedimos el 5 Elemento
+            
         } else if (Object.keys(quoteProductsData).length >= 4) {
             setCervicales(quoteProductsData['CERVICAL']);
             setLumbares(quoteProductsData['LUMBAR']);
@@ -96,15 +96,15 @@ export const QuoteProductsScreen = () => {
     }, [quoteProductsData]);
 
     useEffect(() => {
-        
+
         let newArray = [];
-        searchList&&
-        newArray.push(searchList.product);
+        searchList &&
+            newArray.push(searchList.product);
         setNewArray(newArray)
 
     }, [searchList])
 
-    
+
 
     return (
         <div className='c-quoteScreen animate__animated animate__fadeIn'>
@@ -122,50 +122,50 @@ export const QuoteProductsScreen = () => {
             </div>
             <div>
                 {!searchList
-                
-                ?<CardProductComponent
-                    cervicales={cervicales}
-                    lumbares={lumbares}
-                    complementos={complementos}
-                    toraxico={toraxico}
-                    tipoCirugia={tipoCirugia}
-                    systemId={systemId}
-                    existUniqueProduct={existUniqueProduct}
 
-                />
-                :(searchList.type === 'cervicales'
-                    ?<CardProductComponent
-                    cervicales={newArray}
-                    tipoCirugia={tipoCirugia}
-                    systemId={systemId}
-                    search={'exist'}
-                    existUniqueProduct={existUniqueProduct}
+                    ? <CardProductComponent
+                        cervicales={cervicales}
+                        lumbares={lumbares}
+                        complementos={complementos}
+                        toraxico={toraxico}
+                        tipoCirugia={tipoCirugia}
+                        systemId={systemId}
+                        existUniqueProduct={existUniqueProduct}
+
                     />
-                    
-                    :searchList.type === 'lumbares'
-                    ?<CardProductComponent
-                    lumbares={newArray}
-                    tipoCirugia={tipoCirugia}
-                    systemId={systemId}
-                    search={'exist'}
-                    existUniqueProduct={existUniqueProduct}
-                    />
-                    :searchList.type === 'complementos'
-                    ?<CardProductComponent
-                    complementos={newArray}
-                    tipoCirugia={tipoCirugia}
-                    systemId={systemId}
-                    search={'exist'}
-                    existUniqueProduct={existUniqueProduct}
-                    />
-                    :searchList.type === 'toraxicos' &&
-                    <CardProductComponent
-                    toraxico={newArray}
-                    tipoCirugia={tipoCirugia}
-                    systemId={systemId}
-                    search={'exist'}
-                    existUniqueProduct={existUniqueProduct}
-                    />
+                    : (searchList.type === 'cervicales'
+                        ? <CardProductComponent
+                            cervicales={newArray}
+                            tipoCirugia={tipoCirugia}
+                            systemId={systemId}
+                            search={'exist'}
+                            existUniqueProduct={existUniqueProduct}
+                        />
+
+                        : searchList.type === 'lumbares'
+                            ? <CardProductComponent
+                                lumbares={newArray}
+                                tipoCirugia={tipoCirugia}
+                                systemId={systemId}
+                                search={'exist'}
+                                existUniqueProduct={existUniqueProduct}
+                            />
+                            : searchList.type === 'complementos'
+                                ? <CardProductComponent
+                                    complementos={newArray}
+                                    tipoCirugia={tipoCirugia}
+                                    systemId={systemId}
+                                    search={'exist'}
+                                    existUniqueProduct={existUniqueProduct}
+                                />
+                                : searchList.type === 'toraxicos' &&
+                                <CardProductComponent
+                                    toraxico={newArray}
+                                    tipoCirugia={tipoCirugia}
+                                    systemId={systemId}
+                                    search={'exist'}
+                                    existUniqueProduct={existUniqueProduct}
+                                />
                     )
                 }
                 {
