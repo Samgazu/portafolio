@@ -5,7 +5,7 @@ import { withRouter, NavLink } from "react-router-dom";
 import { userSignup } from '../../actions/userActions';
 import '../../styles/styles.scss';
 import './signup.scss';
-import logo from '../../assets/logoFromLogin.png';
+import logo from '../../assets/logoFromLogin.svg';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import PhoneIcon from '@material-ui/icons/Phone';
 import passIcon from '../../assets/img/126PX/Icono_Contrasenia_126px.png';

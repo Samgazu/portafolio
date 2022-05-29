@@ -4,7 +4,7 @@ import './sass/styles.sass';
 import { useDispatch } from 'react-redux';
 import icoMenuAzul from '../../../../assets/img/512PX/Icono_Menu_Azul_512px.png';
 import icoLogoutBlanco from '../../../../assets/img/512PX/Icono_CerrarSesion_Blanco_512px.png';
-import icoTraumaService from '../../../../assets/img/512PX/Logo_TSI_512px.png';
+import icoLogo from '../../../../assets/img/512PX/icoLogo.svg';
 import { initialSideActive } from '../../../../actions/sidebar';
 import { NavLink, useHistory } from 'react-router-dom';
 import { userLogout } from '../../../../actions/userActions';
@@ -39,7 +39,7 @@ export const NavbarComponent = () => {
 
             <div className='c-navbar-c-icoLogo'>
                 <NavLink to='/Inicio'>
-                    <img className='c-navbar-icoLogo' src={icoTraumaService} alt="" />
+                    <img className='c-navbar-icoLogo' src={icoLogo} alt="" />
                 </NavLink>
             </div>
 

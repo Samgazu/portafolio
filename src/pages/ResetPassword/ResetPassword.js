@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../../assets/logoFromLogin.png';
+import logo from '../../assets/logoFromLogin.svg';
 import passIcon from '../../assets/img/126PX/Icono_Contrasenia_126px.png';
 import { useDispatch, useSelector } from 'react-redux';
 import AlertMessage from '../../components/shared/AlertMessage/AlertMessage';

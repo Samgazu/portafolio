@@ -4,29 +4,28 @@
     border: none
     
 .c-home-sec1
-    grid-template-columns: 1fr 1fr
-    grid-template-areas: 'c-home-c-programar c-home-c-historial''c-home-c-programar c-home-c-historial' 'c-home-c-facturas c-home-c-cotizar''c-home-c-facturas c-home-c-cotizar'                          
-    .c-home-item-simpleform-disabled
-        background: linear-gradient(190deg, rgba(9,9,121,.7) 0%, rgba(55,167,185,.7) 100%, rgba(9,9,121,.7) 094070%) !important
-    .c-home-item-simpleform
-        display: flex
-        justify-content: center
-        flex-direction: column
-        align-items: center
-        background: linear-gradient(190deg, rgba(9,9,121,1) 0%, rgba(55,167,185,1) 100%, rgba(9,9,121,1) 094070%)
-        img
-            width: 9vw
+    padding-bottom: 2rem
+    overflow-y: scroll
+    display: grid
+    grid-template-rows: 1fr 1fr 1fr 1fr
+    grid-template-columns: 1fr
     .c-home-item-horizontalform
         display: flex
         flex-direction: column
         justify-content: center
         align-items: center
-        background: linear-gradient(0deg, rgba(9,9,121,1) 0%, rgba(32,90,154,1) 29%, rgba(55,167,185,1) 100%)
+        background: #fff
+        border: .05rem solid #8a8a8a
+        transition: all 0.5s cubic-bezier(0.45, 0.05, 0.55, 0.95)
         img
             width: 7vw
+        &:hover
+            color: #fff
+            background: linear-gradient(to right, #000046, #1cb5e0)
     .c-home-item
+        padding: 1rem
         border-radius: 10px
-        color: #fff
+        color: #303036
         cursor: pointer
         text-align: center
         align-self: stretch
@@ -34,17 +33,11 @@
         text-decoration: none
         @extend %stylesToButton
         .home-item-title
-            font-size: 1.5vw
+            font-size: 1.2rem
             font-family: 'Poppins'
-            font-weight: 300
+            font-weight: 400
     .c-home-c-programar
         display: flex
-        grid-area: c-home-c-programar
         flex-direction: column
     .c-home-c-historial
-        grid-area: c-home-c-historial
         padding-left: 15px
-    .c-home-c-facturas
-        grid-area: c-home-c-facturas
-    .c-home-c-cotizar
-        grid-area: c-home-c-cotizar
