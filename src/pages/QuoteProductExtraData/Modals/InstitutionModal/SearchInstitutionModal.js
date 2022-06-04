@@ -7,6 +7,7 @@ import { AddInstitution } from './AddInstitution';
 import { updateInstitutionQuote } from '../../../../actions/newQuoteAction';
 import { getInstitutions, searchHospital } from '../../../../actions/systemsAction';
 import PropTypes from 'prop-types';
+import { setInstitutions } from '../../../../actions/JSON/atnJSON';
 
 export const SearchInstitutionModal = (props) => {
   const dispatch = useDispatch();
@@ -37,7 +38,7 @@ export const SearchInstitutionModal = (props) => {
   }
 
   useEffect(() => {
-    dispatch(getInstitutions(currentPage));
+    dispatch(setInstitutions());
   }, [currentPage])
 
   useEffect(() => {

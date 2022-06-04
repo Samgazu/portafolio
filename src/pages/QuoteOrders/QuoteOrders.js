@@ -18,6 +18,7 @@ import './sass/styles.scss';
 import Swal from 'sweetalert2';
 import _ from 'lodash';
 import { getPricesLists } from '../../actions/systemsAction';
+import { setPriceList } from '../../actions/JSON/listPriceJSON';
 
 // import  './sass/styles.sass';
 
@@ -67,7 +68,7 @@ export const QuoteOrders = () => {
   useEffect(() => {
     if( system.productListPrices && system.productListPrices.length !== listPricesProducts ){
       setListPricesProducts(system.productListPrices.length)
-      dispatch(getPricesLists());
+      dispatch(setPriceList());
     }
   }, [system.productListPrices]);
 

@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from '../../../../hooks/useForm';
 import icoBuscarGris from '../../../../assets/img/126PX/Icono_Buscar_Gris_126px.png';
 import { updateAtnMedicQuote} from '../../../../actions/newQuoteAction';
-import { getMedics, searchMedics, getMedicsSucess } from '../../../../actions/systemsAction';
+import { searchMedics, getMedicsSucess } from '../../../../actions/systemsAction';
 import PropTypes from 'prop-types';
+import { setMedicsAtq } from '../../../../actions/JSON/atnJSON';
 
 export const AtnMedicos = (props) => {
     const systems = useSelector( state => state.systems);
@@ -37,7 +38,7 @@ export const AtnMedicos = (props) => {
 
     useEffect(() => {
       
-      dispatch(getMedics(currentPage));
+      dispatch(setMedicsAtq());
   }, [currentPage])
 
   useEffect(() => {

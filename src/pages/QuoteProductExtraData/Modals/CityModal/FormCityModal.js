@@ -4,6 +4,7 @@ import { updateCityAndStateQuote } from '../../../../actions/newQuoteAction';
 import PropTypes from 'prop-types';
 import { getCities, getCitiesSucess } from '../../../../actions/systemsAction';
 import shortid from 'shortid';
+import { setCities } from '../../../../actions/JSON/cities_state_JSON';
 
 export const FormCityModal = (props) => {
   const getStates = useSelector((state) => state.systems.getStates);
@@ -28,15 +29,14 @@ export const FormCityModal = (props) => {
     //   setCity('');
     // }
 
-    if (nameState && nameState.name ) {
-      fisrtRender && setCity('');
+   
       dispatch(getCities(nameState.id)); 
-    }
+    
   }, [state])
 
   useEffect(() => {
     return () => {
-      dispatch(getCitiesSucess(null)); 
+      dispatch(setCities()); 
     }
   }, [])
 

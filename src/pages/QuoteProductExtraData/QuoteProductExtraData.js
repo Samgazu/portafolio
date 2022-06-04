@@ -28,6 +28,7 @@ import imgTimeDelivery from '../../assets/img/126PX/Icono_Tiempo-Bco_126px.png';
 import imgCorreoModal from '../../assets/img/126PX/Icono_Correo_126px.png';
 import imgPhoneModal from '../../assets/img/126PX/Icono_Telefono_126px.png';
 import { DateFormat } from '../../components/shared/DateFormat';
+import { setStates } from '../../actions/JSON/cities_state_JSON';
 
 
 export const QuoteProductExtraData = () => {
@@ -36,7 +37,7 @@ export const QuoteProductExtraData = () => {
     const history = useHistory();
     
     useEffect(() => {
-        dispatch(getStates());
+        dispatch(setStates());
     }, [])
 
     const newQuote = useSelector(state => state.newQuote);

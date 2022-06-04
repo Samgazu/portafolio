@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import CustomModal from '../../components/shared/Modal';
 import './sass/PriceListModal.sass';
 import { getProductPrices, updatePriceListTypeQuote } from '../../actions/newQuoteAction';
+import { setPrice } from '../../actions/JSON/listPriceJSON';
 
 export const PriceListModal = (props) => {
 
@@ -33,6 +34,7 @@ export const PriceListModal = (props) => {
                 "Products": productsList
             } ))
         dispatch(updatePriceListTypeQuote(item))
+        dispatch(setPrice())
         props.toggle();
     }
 

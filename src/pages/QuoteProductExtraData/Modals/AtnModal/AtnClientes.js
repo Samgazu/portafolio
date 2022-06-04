@@ -5,6 +5,7 @@ import icoBuscarGris from '../../../../assets/img/126PX/Icono_Buscar_Gris_126px.
 import {updateAtnClientQuote} from '../../../../actions/newQuoteAction';
 import { getClients, getClientsSucess, searchClients } from '../../../../actions/systemsAction';
 import PropTypes from 'prop-types';
+import { setclients } from '../../../../actions/JSON/atnJSON';
 
 export const AtnClientes = (props) => {
 
@@ -33,8 +34,8 @@ export const AtnClientes = (props) => {
         }
     }
     useEffect(() => {
-      dispatch(getClients(currentPage));
-  }, [currentPage])
+      dispatch(setclients());
+  }, [])
 
 
   useEffect(() => {

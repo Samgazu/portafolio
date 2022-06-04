@@ -7,6 +7,7 @@ import icoBuscarGris from '../../../../assets/img/126PX/Icono_Buscar_Gris_126px.
 import { updatePatientQuote } from '../../../../actions/newQuoteAction';
 import './sass/styles.sass';
 import PropTypes from 'prop-types';
+import { setPatients } from '../../../../actions/JSON/atnJSON';
 
 export const SearchPatientModal = (props) => {
     const dispatch = useDispatch();
@@ -38,7 +39,7 @@ export const SearchPatientModal = (props) => {
     }
 
     useEffect(() => {
-      dispatch(getPatients(currentPage));
+      dispatch(setPatients());
   }, [currentPage])
 
   useEffect(() => {
